@@ -1,16 +1,26 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh_CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="倔强的小强">
+  <meta name="keywords" content="倔强的小强">
   
-  <title>Redis | Сǿ�Ĳ���</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="常用指令，数据类型，通用指令，Jedis，持久化，Redis事务，删除策略，数据结构">
+    <meta name="description" content="常用指令，数据类型，通用指令，Jedis，持久化，Redis事务，删除策略，数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="http://example.com/2021/11/16/Redis/index.html">
-<meta property="og:site_name" content="Сǿ�Ĳ���">
+<meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="常用指令，数据类型，通用指令，Jedis，持久化，Redis事务，删除策略，数据结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2021/11/16/Redis/Redis/image-20220402231459951.png">
@@ -29,93 +39,246 @@
 <meta property="og:image" content="http://example.com/2021/11/16/Redis/Redis/image-20220402231733279.png">
 <meta property="article:published_time" content="2021-11-16T11:03:57.000Z">
 <meta property="article:modified_time" content="2022-04-02T15:17:37.602Z">
-<meta property="article:author" content="��ǿ��Сǿ">
-<meta property="article:tag" content="��ǿ��Сǿ">
-<meta name="twitter:card" content="summary">
+<meta property="article:author" content="倔强的小强">
+<meta property="article:tag" content="倔强的小强">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2021/11/16/Redis/Redis/image-20220402231459951.png">
   
-    <link rel="alternate" href="/atom.xml" title="Сǿ�Ĳ���" type="application/atom+xml">
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Redis - 小强的博客</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Сǿ�Ĳ���</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">��ӭ�����������</a>
-        </h2>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>❤</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Startseite
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archiv
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Kategorien
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Schlagwörter
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                Über
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Redis"></span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-16 19:03" pubdate>
+          2021年11月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          19k wörter
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        
+          157 minuten
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-Redis" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/16/Redis/" class="article-date">
-  <time class="dt-published" datetime="2021-11-16T11:03:57.000Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Redis
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p><em><strong>Redis</strong></em> 是典型的 <em><strong>NoSQL</strong></em> 数据库。</p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Redis</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p><em><strong>Redis</strong></em> 是典型的 <em><strong>NoSQL</strong></em> 数据库。</p>
 <p><em><strong>redis官网</strong></em>：<a target="_blank" rel="noopener" href="https://redis.io/download">https://redis.io/download</a></p>
 <blockquote>
 <p>Redis 是一个开源的 key-value 存储系统。</p>
@@ -129,24 +292,24 @@
 </blockquote>
 <h2 id="安装和启动"><a href="#安装和启动" class="headerlink" title="安装和启动"></a>安装和启动</h2><p><strong>运行在linux系统上，默认端口号：6379</strong></p>
 <p>安装 C 语言的编译环境和redis，解压redis并在给目录下执行 make</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make &amp;&amp; make install<br></code></pre></td></tr></table></figure>
 
 <p>默认安装在 <code>/usr/local/bin</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">redis-benchmark：性能测试工具，可以在自己本子运行，看看自己本子性能如何</span><br><span class="line">redis-check-aof：修复有问题的AOF文件，rdb和aof后面讲</span><br><span class="line">redis-check-dump：修复有问题的dump.rdb文件</span><br><span class="line">redis-sentinel：Redis集群使用</span><br><span class="line">redis-server：Redis服务器启动命令</span><br><span class="line">redis-cli：客户端，操作入口</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-benchmark：性能测试工具，可以在自己本子运行，看看自己本子性能如何<br>redis-check-aof：修复有问题的AOF文件，rdb和aof后面讲<br>redis-check-dump：修复有问题的dump.rdb文件<br>redis-sentinel：Redis集群使用<br>redis-server：Redis服务器启动命令<br>redis-cli：客户端，操作入口<br></code></pre></td></tr></table></figure>
 
 <p>前台启动：***&#x2F;usr&#x2F;local&#x2F;bin*** 目录下启动 <em><strong>redis</strong></em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server(前台启动)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server(前台启动)<br></code></pre></td></tr></table></figure>
 
 <p>后台启动：</p>
 <ul>
 <li><p>安装 <em><strong>redis</strong></em> 的目录 <em><strong>&#x2F;opt&#x2F;redis-6.2.6</strong></em> 中将 <em><strong>redis.conf</strong></em> 复制到任意一个文件夹下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> redis.conf /etc/redis.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> redis.conf /etc/redis.conf<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>修改 <em><strong>&#x2F;etc&#x2F;redis.conf</strong></em> 配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim redis.conf<span class="comment"># daemonize no 修改为 daemonize yes</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim redis.conf<span class="hljs-comment"># daemonize no 修改为 daemonize yes</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p><em><strong>&#x2F;usr&#x2F;local&#x2F;bin</strong></em> 目录下启动 <em><strong>redis</strong></em>，并进入客户端操作redis</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-server /etc/redis.conf</span><br><span class="line">redis-cli -a 4213</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server /etc/redis.conf<br>redis-cli -a 4213<br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>关闭 ：</p>
 <ul>
@@ -341,26 +504,26 @@
 <h2 id="Redis的发布与订阅"><a href="#Redis的发布与订阅" class="headerlink" title="Redis的发布与订阅"></a>Redis的发布与订阅</h2><p>Redis 发布订阅（ <em><strong>pub&#x2F;sub</strong></em> ）是一种消息通信模式：发送者（ <em><strong>pub</strong></em> ）发送消息，订阅者（ <em><strong>sub</strong></em> ）接收消息</p>
 <p>Redis 客户端可以订阅任意数量的频道</p>
 <p>客户端可以订阅频道</p>
-<img src="Redis/image-20220402231459951.png" alt="image-20220402231459951" style="zoom:80%;" />
+<img src="Redis/image-20220402231459951.png" srcset="/img/loading.gif" lazyload alt="image-20220402231459951" style="zoom:80%;" />
 
 <p>当给这个频道发布消息后，消息就会发送给订阅的客户端</p>
-<img src="Redis/image-20220402231509749.png" alt="image-20220402231509749" style="zoom:80%;" />
+<img src="Redis/image-20220402231509749.png" srcset="/img/loading.gif" lazyload alt="image-20220402231509749" style="zoom:80%;" />
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel  <span class="comment">#订阅channel频道</span></span><br><span class="line">publish channel hello  <span class="comment">#频道发送hello信息</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">subscribe channel  <span class="hljs-comment">#订阅channel频道</span><br>publish channel hello  <span class="hljs-comment">#频道发送hello信息</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h2 id="事务和锁机制"><a href="#事务和锁机制" class="headerlink" title="事务和锁机制"></a>事务和锁机制</h2><p>Redis 事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行，事务在执行的过程中，不会被其他客户端发送来的命令请求所打断</p>
 <p>Redis 事务的主要作用就是<strong>串联多个命令</strong>防止别的命令插队</p>
-<p><img src="Redis/image-20220402231519830.png" alt="image-20220402231519830" style="zoom:80%;" /><img src="/Redis/image-20220402231537723.png" alt="image-20220402231537723"></p>
+<p><img src="Redis/image-20220402231519830.png" srcset="/img/loading.gif" lazyload alt="image-20220402231519830" style="zoom:80%;" /><img src="/Redis/image-20220402231537723.png" srcset="/img/loading.gif" lazyload alt="image-20220402231537723"></p>
 <p>从输入 <em><strong>Multi</strong></em> 命令开始，输入的命令都会依次进入命令队列中，但不会执行，直到输入 <em><strong>Exec</strong></em> 后，<em><strong>Redis</strong></em> 会将之前的命令队列中的命令依次执行（组队的过程中可以通过 <em><strong>Discard</strong></em> 来放弃组队）</p>
 <p>当组队中某个命令出现了报告错误，执行时整个的所有队列都会被取消；执行时某个命令出现了错误报告，只是出错的命令不被执行，其他命令正常执行</p>
 <ul>
 <li><p>组队成功，提交成功</p>
-<img src="Redis/image-20220402231541245.png" alt="image-20220402231541245" style="zoom:80%;" />
+<img src="Redis/image-20220402231541245.png" srcset="/img/loading.gif" lazyload alt="image-20220402231541245" style="zoom:80%;" />
 </li>
 <li><p>放弃组队</p>
-<img src="Redis/image-20220402231550506.png" alt="image-20220402231550506" style="zoom:80%;" /></li>
+<img src="Redis/image-20220402231550506.png" srcset="/img/loading.gif" lazyload alt="image-20220402231550506" style="zoom:80%;" /></li>
 </ul>
 <h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><p>悲观锁（<em><strong>Pessimistic Lock</strong></em>），即每次去拿数据的时候都认为有其他线程会修改，所以每次在拿数据的时候都会上锁，这样其他线程想要拿到这个数据就会被 <em><strong>block</strong></em> 直到成功拿到锁（效率低）</p>
 <h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h3><p>乐观锁（<em><strong>Optimistic Lock</strong></em>），即每次去拿数据的时候都认为其他线程不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间有没有其他线程去更新这个数据，可以使用版本号等机制（更新数据时版本号同样更新）</p>
@@ -380,7 +543,7 @@
 </li>
 </ul>
 <h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h3><p>在指定的时间间隔内将内存中的数据集快照写入磁盘， 即 <em><strong>Snapshot</strong></em> 快照，恢复时是将快照文件直接读到内存里</p>
-<img src="Redis/image-20220402231605922.png" alt="image-20220402231605922" style="zoom:80%;" />
+<img src="Redis/image-20220402231605922.png" srcset="/img/loading.gif" lazyload alt="image-20220402231605922" style="zoom:80%;" />
 
 <p>Redis会单独创建一个子进程（<em><strong>fork</strong></em>）来进行持久化</p>
 <p>先将数据写入到一个临时文件中，待持久化过程完成后，再将这个临时文件内容覆盖到 <em><strong>dump.rdb</strong></em></p>
@@ -439,7 +602,7 @@
 <p>不建议单独用 <em><strong>AOF</strong></em>，因为可能会出现 <em><strong>Bug</strong></em></p>
 <p>如果只是做纯内存缓存，可以都不用</p>
 <h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><p>主机数据更新后根据配置和策略， 自动同步到从机的 <em><strong>master&#x2F;slaver</strong></em> 机制，<em><strong>Master</strong></em> 以写为主，<em><strong>Slaver</strong></em> 以读为主</p>
-<img src="Redis/image-20220402231618214.png" alt="image-20220402231618214" style="zoom:80%;" />
+<img src="Redis/image-20220402231618214.png" srcset="/img/loading.gif" lazyload alt="image-20220402231618214" style="zoom:80%;" />
 
 <ol>
 <li>读写分离，性能扩展</li>
@@ -447,41 +610,41 @@
 <li>一主多从</li>
 </ol>
 <h3 id="搭建一主两从"><a href="#搭建一主两从" class="headerlink" title="搭建一主两从"></a>搭建一主两从</h3><p>将 <em><strong>redis.conf</strong></em> 复制到当前目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> /etc/redis.conf /opt/etc/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> /etc/redis.conf /opt/etc/<br></code></pre></td></tr></table></figure>
 
 <p>创建 3 个 <em><strong>redis.conf</strong></em> 配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">redis6379.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># redis6379.conf</span></span><br><span class="line">include /opt/etc/redis.conf <span class="comment">#引入原来的redis配置文件</span></span><br><span class="line">pidfile /var/run/redis_6379.pid</span><br><span class="line">port 6379</span><br><span class="line">dbfilename dump6379.rdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis6379.conf<br><br><span class="hljs-comment"># redis6379.conf</span><br>include /opt/etc/redis.conf <span class="hljs-comment">#引入原来的redis配置文件</span><br>pidfile /var/run/redis_6379.pid<br>port 6379<br>dbfilename dump6379.rdb<br></code></pre></td></tr></table></figure>
 
 <p>启动 3 台 <em><strong>redis</strong></em> 服务器，并查看主机运行情况</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">redis-server /etc/redis6379.conf</span><br><span class="line">redis-cli -p 6379</span><br><span class="line"></span><br><span class="line">info replication</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs baash">redis-server /etc/redis6379.conf<br>redis-cli -p 6379<br><br>info replication<br></code></pre></td></tr></table></figure>
 
 <p>配从不配主</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof  &lt;ip&gt;&lt;port&gt;   <span class="comment">#成为某个实例的从服务器</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slaveof  &lt;ip&gt;&lt;port&gt;   <span class="hljs-comment">#成为某个实例的从服务器</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="一主二仆"><a href="#一主二仆" class="headerlink" title="一主二仆"></a>一主二仆</h3><p>一个主机，两个从机</p>
 <p>当从机宕机，重新启动后不在是从机（重新设置为从机后会把主机的数据重新复制）</p>
 <p>当主机宕机，从机仍然保持是从机，重新启动后仍然是主机</p>
-<h3 id="薪火相传"><a href="#薪火相传" class="headerlink" title="薪火相传"></a>薪火相传</h3><img src="Redis/image-20220402231627461.png" alt="image-20220402231627461" style="zoom:80%;" />
+<h3 id="薪火相传"><a href="#薪火相传" class="headerlink" title="薪火相传"></a>薪火相传</h3><img src="Redis/image-20220402231627461.png" srcset="/img/loading.gif" lazyload alt="image-20220402231627461" style="zoom:80%;" />
 
 <p>上一个 <em><strong>slave</strong></em> 可以是下一个 <em><strong>slave</strong></em> 的 <em><strong>master</strong></em>，<em><strong>slave</strong></em> 同样可以接收其他 <em><strong>slave</strong></em>的连接和同步请求，那么该 <em><strong>slave</strong></em> 作为了链条中下一个的 <em><strong>master</strong></em>，可以有效减轻 <em><strong>master</strong></em> 的写压力，去中心化降低风险</p>
 <p>中途变更转向：会清除之前的数据，重新建立拷贝最新的</p>
 <p>当某个 <em><strong>slave</strong></em> 宕机，后面的 <em><strong>slave</strong></em> 都没法备份</p>
 <h3 id="反客为主"><a href="#反客为主" class="headerlink" title="反客为主"></a>反客为主</h3><p>当一个 <em><strong>master</strong></em> 宕机后，后面的 <em><strong>slave</strong></em> 可以立刻升为 <em><strong>master</strong></em>，其后面的 <em><strong>slave</strong></em> 不用做任何修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof no one</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slaveof no one<br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><p><strong>反客为主的自动版</strong>，即能够后台监控主机是否故障，如果故障了根据投票数自动将从库转换为主库</p>
 <p>创建 <em><strong>sentinel.conf</strong></em> 文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> /opt/etc/sentinel.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> /opt/etc/sentinel.conf<br></code></pre></td></tr></table></figure>
 
 <p>配置哨兵</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mymaster：监控对象起的服务器名称</span></span><br><span class="line"><span class="comment"># 1表示至少有1个哨兵同意迁移的数量</span></span><br><span class="line">sentinel monitor mymaster ip 端口号 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># mymaster：监控对象起的服务器名称</span><br><span class="hljs-comment"># 1表示至少有1个哨兵同意迁移的数量</span><br>sentinel monitor mymaster ip 端口号 1<br></code></pre></td></tr></table></figure>
 
 <p>启动哨兵</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-sentinel  /opt/etc/sentinel.conf </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-sentinel  /opt/etc/sentinel.conf <br></code></pre></td></tr></table></figure>
 
 <p>主机宕机，会从机选举中产生新的主机（宕机的主机重新启动后会变为从机）</p>
 <p><strong>选举规则</strong></p>
@@ -502,29 +665,29 @@
 <h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><p>解决容量不够和并发写操作问题</p>
 <ul>
 <li><p>代理主机（ <em><strong>之前</strong></em> ）</p>
-<img src="Redis/image-20220402231639618.png" alt="image-20220402231639618" style="zoom:80%;" />
+<img src="Redis/image-20220402231639618.png" srcset="/img/loading.gif" lazyload alt="image-20220402231639618" style="zoom:80%;" />
 </li>
 <li><p>无中心化集群配置（ <em><strong>redis3.0</strong></em> ）</p>
 </li>
 </ul>
-<img src="Redis/image-20220402231651540.png" alt="image-20220402231651540" style="zoom:80%;" />
+<img src="Redis/image-20220402231651540.png" srcset="/img/loading.gif" lazyload alt="image-20220402231651540" style="zoom:80%;" />
 
 <p>Redis 集群实现了对 Redis 的水平扩容，即启动 <em><strong>N</strong></em> 个 Redis 节点，将整个数据库分布存储在这 <em><strong>N</strong></em> 个节点中，每个节点存储总数据的 <em><strong>1&#x2F;N</strong></em> </p>
 <p>Redis 集群通过分区（<em><strong>partition</strong></em>）来提供一定程度的可用性（<em><strong>availability</strong></em>），即使集群中有一部分节点失效或者无法进行通讯， 集群也可以继续处理命令请求</p>
 <h3 id="搭建-Redis-集群"><a href="#搭建-Redis-集群" class="headerlink" title="搭建 Redis 集群"></a>搭建 <em>Redis</em> 集群</h3><p>创建配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">include /opt/etc/redis.conf <span class="comment">#引入原来的redis配置文件</span></span><br><span class="line">pidfile /var/run/redis_6379.pid</span><br><span class="line">port 6379</span><br><span class="line">dbfilename dump6379.rdb</span><br><span class="line">cluster-enabled <span class="built_in">yes</span>  <span class="comment">#打开集群模式</span></span><br><span class="line">cluster-config-file nodes-6379.conf  <span class="comment">#设置节点配置文件名称，需要更改</span></span><br><span class="line">cluster-node-timeout 15000  <span class="comment">#设置节点失联事件，超过该时间（ms），集群自动进行主从切换</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">include /opt/etc/redis.conf <span class="hljs-comment">#引入原来的redis配置文件</span><br>pidfile /var/run/redis_6379.pid<br>port 6379<br>dbfilename dump6379.rdb<br>cluster-enabled <span class="hljs-built_in">yes</span>  <span class="hljs-comment">#打开集群模式</span><br>cluster-config-file nodes-6379.conf  <span class="hljs-comment">#设置节点配置文件名称，需要更改</span><br>cluster-node-timeout 15000  <span class="hljs-comment">#设置节点失联事件，超过该时间（ms），集群自动进行主从切换</span><br></code></pre></td></tr></table></figure>
 
 <p>创建集群</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入redis安装目录</span></span><br><span class="line"><span class="built_in">cd</span> /opt/redis-6.2.6/src</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行  （--cluster-replicas 1，表示希望为集群中的每个主节点创建一个从节点）</span></span><br><span class="line">redis-cli --cluster create --cluster-replicas 1 172.16.88.168:6379 172.16.88.168:6380 172.16.88.168:6381 172.16.88.168:6389 172.16.88.168:6390 172.16.88.168:6391</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入redis安装目录</span><br><span class="hljs-built_in">cd</span> /opt/redis-6.2.6/src<br><br><span class="hljs-comment"># 执行  （--cluster-replicas 1，表示希望为集群中的每个主节点创建一个从节点）</span><br>redis-cli --cluster create --cluster-replicas 1 172.16.88.168:6379 172.16.88.168:6380 172.16.88.168:6381 172.16.88.168:6389 172.16.88.168:6390 172.16.88.168:6391<br></code></pre></td></tr></table></figure>
 
 <p>采用集群策略连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -c -p 端口号  <span class="comment">#启动集群</span></span><br><span class="line">cluster nodes  <span class="comment">#命令查看集群信息</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-cli -c -p 端口号  <span class="hljs-comment">#启动集群</span><br>cluster nodes  <span class="hljs-comment">#命令查看集群信息</span><br></code></pre></td></tr></table></figure>
 
 
 
 <h4 id="集群分配"><a href="#集群分配" class="headerlink" title="集群分配"></a>集群分配</h4><p>一个集群至少要有三个主节点</p>
 <p>分配原则尽量保证每个主数据库运行在不同的 <em><strong>IP</strong></em> 地址，每个从库和主库不在一个 <em><strong>IP</strong></em> 地址上</p>
-<img src="Redis/image-20220402231700831.png" alt="image-20220402231700831" style="zoom:80%;" />
+<img src="Redis/image-20220402231700831.png" srcset="/img/loading.gif" lazyload alt="image-20220402231700831" style="zoom:80%;" />
 
 
 
@@ -562,42 +725,42 @@
 <li>由于集群方案出现较晚，很多公司已经采用了其他的集群方案，而代理或者客户端分片的方案想要迁移至<em><strong>redis cluster</strong></em>，需要整体迁移而不是逐步过渡，复杂度较大</li>
 </ul>
 <h2 id="Jedis操作Redis"><a href="#Jedis操作Redis" class="headerlink" title="Jedis操作Redis"></a>Jedis操作Redis</h2><p><strong>依赖</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>redis.clients<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jedis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.2.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>连接 Redis</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;192.168.57.101&quot;</span>, <span class="number">6379</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">pong</span> <span class="operator">=</span> jedis.ping();</span><br><span class="line">        System.out.println(<span class="string">&quot;连接成功：&quot;</span> + pong);</span><br><span class="line">        jedis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JedisDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Jedis</span> <span class="hljs-variable">jedis</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Jedis</span>(<span class="hljs-string">&quot;192.168.57.101&quot;</span>, <span class="hljs-number">6379</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">pong</span> <span class="hljs-operator">=</span> jedis.ping();<br>        System.out.println(<span class="hljs-string">&quot;连接成功：&quot;</span> + pong);<br>        jedis.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>Key</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jedis.set(<span class="string">&quot;k1&quot;</span>, <span class="string">&quot;v1&quot;</span>);</span><br><span class="line">Set&lt;String&gt; keys = jedis.keys(<span class="string">&quot;*&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line"> System.out.println(key);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(jedis.exists(<span class="string">&quot;k1&quot;</span>));</span><br><span class="line">System.out.println(jedis.ttl(<span class="string">&quot;k1&quot;</span>));                </span><br><span class="line">System.out.println(jedis.get(<span class="string">&quot;k1&quot;</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">jedis.set(<span class="hljs-string">&quot;k1&quot;</span>, <span class="hljs-string">&quot;v1&quot;</span>);<br>Set&lt;String&gt; keys = jedis.keys(<span class="hljs-string">&quot;*&quot;</span>);<br><span class="hljs-keyword">for</span> (String key : keys) &#123;<br> System.out.println(key);<br>&#125;<br>System.out.println(jedis.exists(<span class="hljs-string">&quot;k1&quot;</span>));<br>System.out.println(jedis.ttl(<span class="hljs-string">&quot;k1&quot;</span>));                <br>System.out.println(jedis.get(<span class="hljs-string">&quot;k1&quot;</span>));<br></code></pre></td></tr></table></figure>
 
 <p><strong>String</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jedis.mset(<span class="string">&quot;str1&quot;</span>,<span class="string">&quot;v1&quot;</span>,<span class="string">&quot;str2&quot;</span>,<span class="string">&quot;v2&quot;</span>,<span class="string">&quot;str3&quot;</span>,<span class="string">&quot;v3&quot;</span>);</span><br><span class="line">System.out.println(jedis.mget(<span class="string">&quot;str1&quot;</span>,<span class="string">&quot;str2&quot;</span>,<span class="string">&quot;str3&quot;</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">jedis.mset(<span class="hljs-string">&quot;str1&quot;</span>,<span class="hljs-string">&quot;v1&quot;</span>,<span class="hljs-string">&quot;str2&quot;</span>,<span class="hljs-string">&quot;v2&quot;</span>,<span class="hljs-string">&quot;str3&quot;</span>,<span class="hljs-string">&quot;v3&quot;</span>);<br>System.out.println(jedis.mget(<span class="hljs-string">&quot;str1&quot;</span>,<span class="hljs-string">&quot;str2&quot;</span>,<span class="hljs-string">&quot;str3&quot;</span>));<br></code></pre></td></tr></table></figure>
 
 <p><strong>List</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = jedis.lrange(<span class="string">&quot;mylist&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> (String element : list) &#123;</span><br><span class="line"> System.out.println(element);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;String&gt; list = jedis.lrange(<span class="hljs-string">&quot;mylist&quot;</span>,<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>);<br><span class="hljs-keyword">for</span> (String element : list) &#123;<br> System.out.println(element);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>Set</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jedis.sadd(<span class="string">&quot;orders&quot;</span>, <span class="string">&quot;order01&quot;</span>);</span><br><span class="line">Set&lt;String&gt; smembers = jedis.smembers(<span class="string">&quot;orders&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (String order : smembers) &#123;</span><br><span class="line"> System.out.println(order);</span><br><span class="line">&#125;</span><br><span class="line">jedis.srem(<span class="string">&quot;orders&quot;</span>, <span class="string">&quot;order02&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">jedis.sadd(<span class="hljs-string">&quot;orders&quot;</span>, <span class="hljs-string">&quot;order01&quot;</span>);<br>Set&lt;String&gt; smembers = jedis.smembers(<span class="hljs-string">&quot;orders&quot;</span>);<br><span class="hljs-keyword">for</span> (String order : smembers) &#123;<br> System.out.println(order);<br>&#125;<br>jedis.srem(<span class="hljs-string">&quot;orders&quot;</span>, <span class="hljs-string">&quot;order02&quot;</span>);<br></code></pre></td></tr></table></figure>
 
 <p><strong>Hash</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">jedis.hset(<span class="string">&quot;hash1&quot;</span>,<span class="string">&quot;userName&quot;</span>,<span class="string">&quot;lisi&quot;</span>);</span><br><span class="line">System.out.println(jedis.hget(<span class="string">&quot;hash1&quot;</span>,<span class="string">&quot;userName&quot;</span>));</span><br><span class="line"></span><br><span class="line">Map&lt;String,String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String,String&gt;();</span><br><span class="line">map.put(<span class="string">&quot;telphone&quot;</span>,<span class="string">&quot;13810169999&quot;</span>);</span><br><span class="line">jedis.hmset(<span class="string">&quot;hash2&quot;</span>,map);</span><br><span class="line">List&lt;String&gt; result = jedis.hmget(<span class="string">&quot;hash2&quot;</span>, <span class="string">&quot;telphone&quot;</span>,<span class="string">&quot;email&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (String element : result) &#123;</span><br><span class="line"> System.out.println(element);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">jedis.hset(<span class="hljs-string">&quot;hash1&quot;</span>,<span class="hljs-string">&quot;userName&quot;</span>,<span class="hljs-string">&quot;lisi&quot;</span>);<br>System.out.println(jedis.hget(<span class="hljs-string">&quot;hash1&quot;</span>,<span class="hljs-string">&quot;userName&quot;</span>));<br><br>Map&lt;String,String&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;String,String&gt;();<br>map.put(<span class="hljs-string">&quot;telphone&quot;</span>,<span class="hljs-string">&quot;13810169999&quot;</span>);<br>jedis.hmset(<span class="hljs-string">&quot;hash2&quot;</span>,map);<br>List&lt;String&gt; result = jedis.hmget(<span class="hljs-string">&quot;hash2&quot;</span>, <span class="hljs-string">&quot;telphone&quot;</span>,<span class="hljs-string">&quot;email&quot;</span>);<br><span class="hljs-keyword">for</span> (String element : result) &#123;<br> System.out.println(element);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>zset</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jedis.zadd(<span class="string">&quot;zset01&quot;</span>, <span class="number">100d</span>, <span class="string">&quot;z3&quot;</span>);</span><br><span class="line">Set&lt;String&gt; zrange = jedis.zrange(<span class="string">&quot;zset01&quot;</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> (String e : zrange) &#123;</span><br><span class="line"> System.out.println(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">jedis.zadd(<span class="hljs-string">&quot;zset01&quot;</span>, <span class="hljs-number">100d</span>, <span class="hljs-string">&quot;z3&quot;</span>);<br>Set&lt;String&gt; zrange = jedis.zrange(<span class="hljs-string">&quot;zset01&quot;</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);<br><span class="hljs-keyword">for</span> (String e : zrange) &#123;<br> System.out.println(e);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
-<h3 id="Jedis-主从复制"><a href="#Jedis-主从复制" class="headerlink" title="Jedis 主从复制"></a><em>Jedis</em> 主从复制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> JedisSentinelPool jedisSentinelPool=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span>  Jedis <span class="title function_">getJedisFromSentinel</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(jedisSentinelPool==<span class="literal">null</span>)&#123;</span><br><span class="line">        Set&lt;String&gt; sentinelSet=<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        sentinelSet.add(<span class="string">&quot;172.16.88.168:26379&quot;</span>); <span class="comment">// 端口为sentinal</span></span><br><span class="line">        <span class="comment">//创建自定义pool连接池类</span></span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">jedisPoolConfig</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        jedisPoolConfig.setMaxTotal(<span class="number">10</span>); <span class="comment">// 最大可用连接数</span></span><br><span class="line">        jedisPoolConfig.setMaxIdle(<span class="number">5</span>); <span class="comment">// 最大闲置连接数</span></span><br><span class="line">        jedisPoolConfig.setMinIdle(<span class="number">5</span>); <span class="comment">// 最小闲置连接数</span></span><br><span class="line">        jedisPoolConfig.setBlockWhenExhausted(<span class="literal">true</span>); <span class="comment">// 连接耗尽是否等待</span></span><br><span class="line">        jedisPoolConfig.setMaxWaitMillis(<span class="number">2000</span>); <span class="comment">// 等待时间</span></span><br><span class="line">        jedisPoolConfig.setTestOnBorrow(<span class="literal">true</span>); <span class="comment">// 取连接的时候进行测试</span></span><br><span class="line"></span><br><span class="line">        jedisSentinelPool=<span class="keyword">new</span> <span class="title class_">JedisSentinelPool</span>(<span class="string">&quot;mymaster&quot;</span>,sentinelSet,jedisPoolConfig); <span class="comment">// 服务主机名</span></span><br><span class="line">        <span class="keyword">return</span> jedisSentinelPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jedisSentinelPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Jedis-主从复制"><a href="#Jedis-主从复制" class="headerlink" title="Jedis 主从复制"></a><em>Jedis</em> 主从复制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisSentinelPool jedisSentinelPool=<span class="hljs-literal">null</span>;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span>  Jedis <span class="hljs-title function_">getJedisFromSentinel</span><span class="hljs-params">()</span>&#123;<br><br>    <span class="hljs-keyword">if</span>(jedisSentinelPool==<span class="hljs-literal">null</span>)&#123;<br>        Set&lt;String&gt; sentinelSet=<span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        sentinelSet.add(<span class="hljs-string">&quot;172.16.88.168:26379&quot;</span>); <span class="hljs-comment">// 端口为sentinal</span><br>        <span class="hljs-comment">//创建自定义pool连接池类</span><br>        <span class="hljs-type">JedisPoolConfig</span> <span class="hljs-variable">jedisPoolConfig</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="hljs-title class_">JedisPoolConfig</span>();<br>        jedisPoolConfig.setMaxTotal(<span class="hljs-number">10</span>); <span class="hljs-comment">// 最大可用连接数</span><br>        jedisPoolConfig.setMaxIdle(<span class="hljs-number">5</span>); <span class="hljs-comment">// 最大闲置连接数</span><br>        jedisPoolConfig.setMinIdle(<span class="hljs-number">5</span>); <span class="hljs-comment">// 最小闲置连接数</span><br>        jedisPoolConfig.setBlockWhenExhausted(<span class="hljs-literal">true</span>); <span class="hljs-comment">// 连接耗尽是否等待</span><br>        jedisPoolConfig.setMaxWaitMillis(<span class="hljs-number">2000</span>); <span class="hljs-comment">// 等待时间</span><br>        jedisPoolConfig.setTestOnBorrow(<span class="hljs-literal">true</span>); <span class="hljs-comment">// 取连接的时候进行测试</span><br><br>        jedisSentinelPool=<span class="hljs-keyword">new</span> <span class="hljs-title class_">JedisSentinelPool</span>(<span class="hljs-string">&quot;mymaster&quot;</span>,sentinelSet,jedisPoolConfig); <span class="hljs-comment">// 服务主机名</span><br>        <span class="hljs-keyword">return</span> jedisSentinelPool.getResource();<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">return</span> jedisSentinelPool.getResource();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="集群的-Jedis-开发"><a href="#集群的-Jedis-开发" class="headerlink" title="集群的 Jedis 开发"></a>集群的 <em>Jedis</em> 开发</h3><p>即使连接的不是主机，集群会自动切换主机存储（主机写，从机读）</p>
 <p>无中心化主从集群，无论从哪台主机写的数据，其他主机上都能读到数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisClusterTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123; </span><br><span class="line">        Set&lt;HostAndPort&gt;set =<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;HostAndPort&gt;();</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">HostAndPort</span>(<span class="string">&quot;172.16.88.168&quot;</span>,<span class="number">6379</span>)); <span class="comment">// 任何一个端口</span></span><br><span class="line">        <span class="comment">//创建集群</span></span><br><span class="line">        <span class="type">JedisCluster</span> <span class="variable">jedisCluster</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisCluster</span>(set);</span><br><span class="line">        jedisCluster.set(<span class="string">&quot;k1&quot;</span>, <span class="string">&quot;v1&quot;</span>);</span><br><span class="line">        System.out.println(jedisCluster.get(<span class="string">&quot;k1&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JedisClusterTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123; <br>        Set&lt;HostAndPort&gt;set =<span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;HostAndPort&gt;();<br>        set.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">HostAndPort</span>(<span class="hljs-string">&quot;172.16.88.168&quot;</span>,<span class="hljs-number">6379</span>)); <span class="hljs-comment">// 任何一个端口</span><br>        <span class="hljs-comment">//创建集群</span><br>        <span class="hljs-type">JedisCluster</span> <span class="hljs-variable">jedisCluster</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JedisCluster</span>(set);<br>        jedisCluster.set(<span class="hljs-string">&quot;k1&quot;</span>, <span class="hljs-string">&quot;v1&quot;</span>);<br>        System.out.println(jedisCluster.get(<span class="hljs-string">&quot;k1&quot;</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="应用问题解决"><a href="#应用问题解决" class="headerlink" title="应用问题解决"></a>应用问题解决</h2><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><img src="Redis/image-20220402231713881.png" alt="image-20220402231713881" style="zoom: 80%;" />
+<h2 id="应用问题解决"><a href="#应用问题解决" class="headerlink" title="应用问题解决"></a>应用问题解决</h2><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><img src="Redis/image-20220402231713881.png" srcset="/img/loading.gif" lazyload alt="image-20220402231713881" style="zoom: 80%;" />
 
 <p><em><strong>key</strong></em> 对应的数据在数据源并不存在，每次针对此 <em><strong>key</strong></em> 的请求从缓存获取不到，请求都会压到数据源，从而可能压垮数据源</p>
 <p>比如用一个不存在的用户 <em><strong>id</strong></em> 获取用户信息，不论缓存还是数据库都没有，若黑客利用此漏洞进行攻击可能压垮数据库</p>
@@ -621,7 +784,7 @@
 <p>当发现 Redis 的命中率开始急速降低，需要排查访问对象和访问的数据，和运维人员配合，可以设置黑名单限制服务</p>
 </li>
 </ul>
-<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><img src="Redis/image-20220402231733279.png" alt="image-20220402231733279" style="zoom:80%;" />
+<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><img src="Redis/image-20220402231733279.png" srcset="/img/loading.gif" lazyload alt="image-20220402231733279" style="zoom:80%;" />
 
 <p><em><strong>key</strong></em> 对应的数据存在，但在 redis 中过期，此时若有大量并发请求过来，这些请求发现缓存过期一般都会从后端<em><strong>DB</strong></em> 加载数据并回设到缓存，这个时候大并发的请求可能会瞬间把后端 <em><strong>DB</strong></em> 压垮</p>
 <ol>
@@ -659,134 +822,377 @@
 </li>
 </ul>
 <h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3>
-      
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Redis</div>
+      <div>http://example.com/2021/11/16/Redis/</div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/16/Redis/" data-id="cl3u71bk4000j380l0eq0f39j" data-title="Redis" class="article-share-link">分享</a>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Beitragsautor</div>
+          <div>倔强的小强</div>
+        </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>Veröffentlicht am</div>
+          <div>2021年11月16日</div>
+        </div>
       
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/11/16/JavaWeb/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          JavaWeb
-        
+      
+      <div class="license-meta-item">
+        <div>Urheberrechtshinweis</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2021/11/13/Linux8/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Linux8</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
     </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/05/31/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/04/LeetCode/">LeetCode</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/01/SpringBoot2/">SpringBoot2</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/30/MyBatisPlus/">MyBatis-Plus</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/29/RabbitMQ/">RabbitMQ</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/16/JavaWeb/" title="JavaWeb">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaWeb</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/13/Linux8/" title="Linux8">
+                        <span class="hidden-mobile">Linux8</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 ��ǿ��Сǿ<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+  </noscript>
 </body>
 </html>

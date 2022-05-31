@@ -1,106 +1,269 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh_CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="倔强的小强">
+  <meta name="keywords" content="倔强的小强">
   
-  <title>JavaWeb | Сǿ�Ĳ���</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Servlet，JSP，EL表达式，JSTL标签，Filter过滤器，JQuery框架，AJAX，JSON，MVC开发模式">
+    <meta name="description" content="Servlet，JSP，EL表达式，JSTL标签，Filter过滤器，JQuery框架，AJAX，JSON，MVC开发模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb">
 <meta property="og:url" content="http://example.com/2021/11/16/JavaWeb/index.html">
-<meta property="og:site_name" content="Сǿ�Ĳ���">
+<meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="Servlet，JSP，EL表达式，JSTL标签，Filter过滤器，JQuery框架，AJAX，JSON，MVC开发模式">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-16T11:03:57.000Z">
 <meta property="article:modified_time" content="2022-03-17T14:12:11.398Z">
-<meta property="article:author" content="��ǿ��Сǿ">
-<meta property="article:tag" content="��ǿ��Сǿ">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Сǿ�Ĳ���" type="application/atom+xml">
+<meta property="article:author" content="倔强的小强">
+<meta property="article:tag" content="倔强的小强">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>JavaWeb - 小强的博客</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Сǿ�Ĳ���</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">��ӭ�����������</a>
-        </h2>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>❤</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Startseite
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archiv
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Kategorien
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Schlagwörter
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                Über
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JavaWeb"></span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-16 19:03" pubdate>
+          2021年11月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          20k wörter
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        
+          167 minuten
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-JavaWeb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/16/JavaWeb/" class="article-date">
-  <time class="dt-published" datetime="2021-11-16T11:03:57.000Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      JavaWeb
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Tomcat服务器"><a href="#Tomcat服务器" class="headerlink" title="Tomcat服务器"></a>Tomcat服务器</h2><p><strong>tomcat是实现了Servlet和JSP规范的容器</strong></p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JavaWeb</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="Tomcat服务器"><a href="#Tomcat服务器" class="headerlink" title="Tomcat服务器"></a>Tomcat服务器</h2><p><strong>tomcat是实现了Servlet和JSP规范的容器</strong></p>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>bin：存放命令</p>
 <p>conf：配置文件</p>
 <p>lib：字节码库</p>
@@ -121,7 +284,7 @@
 <li>实现service()方法，处理请求，并响应数据</li>
 <li>到web.xml中配置servlet程序的访问地址 或者 用@WebServlet(“虚拟路径”)</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 给Tomcat配置servlet程序--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 给servlet程序起一个别名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- servlet程序的全类名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.test.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 给servlet程序配置访问地址--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 告诉服务器，当前给HelloServlet程序配置地址--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置访问地址</span></span><br><span class="line"><span class="comment">		/代表：http://ip:端口/工程路径</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 给Tomcat配置servlet程序--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 给servlet程序起一个别名--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- servlet程序的全类名--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>com.test.HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 给servlet程序配置访问地址--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 告诉服务器，当前给HelloServlet程序配置地址--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 配置访问地址</span><br><span class="hljs-comment">		/代表：http://ip:端口/工程路径</span><br><span class="hljs-comment">	--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/hello<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -205,7 +368,7 @@
 </li>
 <li>获取web.xml中配置的上下文参数context-param</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 上下文参数（属于整个web工程）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上下文参数名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>namespace<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上下文参数值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 上下文参数（属于整个web工程）--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上下文参数名--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>namespace<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 上下文参数值--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>root<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <ol start="5">
 <li><p>功能</p>
@@ -236,7 +399,7 @@
 <li><p>将init方法的ServletConfig参数在service方法中使用时，创建一个私有实例变量ServletConfig，在init的方法中将局部变量赋值给实例变量，将getServletConfig方法中返回实例变量ServletConfig供子类使用</p>
 </li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- 创建在servlet标签中--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 初始化参数--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 初始化参数名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>namespace<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 初始化参数值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- 创建在servlet标签中--&gt;</span><br><span class="hljs-comment">&lt;!-- 初始化参数--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span><br>     <span class="hljs-comment">&lt;!-- 初始化参数名--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>namespace<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>     <span class="hljs-comment">&lt;!-- 初始化参数值--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>root<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -312,11 +475,11 @@
 <h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><p>给服务器使用的路径不需要加虚拟目录（项目的访问路径）</p>
 <p>给浏览器使用的需要加虚拟目录【请求从哪来路径就是给谁使用】</p>
 <p>base标签：设置页面相对路径工作时参照的地址</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">常用的路径：</span><br><span class="line">1. <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/项目名/资源路径&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">2. <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/项目名/资源路径&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">3. cookie.setPath(&quot;/项目名/资源路径&quot;)</span><br><span class="line">4. 重定向：response.getRequestDispatcher(&quot;/资源路径&quot;).forward(request, reponse)</span><br><span class="line">5. 欢迎页面：资源路径</span><br><span class="line">6. servlet路径：/自定义资源路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html">常用的路径：<br>1. <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/项目名/资源路径&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>2. <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/项目名/资源路径&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>3. cookie.setPath(&quot;/项目名/资源路径&quot;)<br>4. 重定向：response.getRequestDispatcher(&quot;/资源路径&quot;).forward(request, reponse)<br>5. 欢迎页面：资源路径<br>6. servlet路径：/自定义资源路径<br></code></pre></td></tr></table></figure>
 
 
 
-<h3 id="欢迎页面"><a href="#欢迎页面" class="headerlink" title="欢迎页面"></a>欢迎页面</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>页面名称<span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="欢迎页面"><a href="#欢迎页面" class="headerlink" title="欢迎页面"></a>欢迎页面</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">welcome-file-list</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">welcome-file</span>&gt;</span>页面名称<span class="hljs-tag">&lt;/<span class="hljs-name">welcome-file-list</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">welcome-file-list</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>注意：</p>
 <ol>
@@ -394,7 +557,7 @@
 <p>Session的实现依赖于Cookie，浏览器首次请求时会话建立，创建一个HttpSession对象，同时生成session对象对应的cookie对象，cookie对象的key是JSESSIONID，value是32位的字符串，将cookie对象的value字符串值和session对象绑定到session的map列表中，每次请求浏览器向服务器发送cookie，服务器查找session列表找到cookie对象中key值对应的session对象，响应给session</p>
 </li>
 <li><p>服务器中的session对象销毁是遵循超时销毁规则的，默认是会话结束30分钟内没有会话建立时，session销毁，可以在web.xml文件中设置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>时间<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">session-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">session-timeout</span>&gt;</span>时间<span class="hljs-tag">&lt;/<span class="hljs-name">session-timeout</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">session-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>默认情况下，客户端关闭，服务器不关闭，两次获取的session不是同一个</p>
 <p>可以创建Cookie，键为<strong>JSESSIONID</strong>，设置存活时间，让cookie持久化保存</p>
@@ -417,7 +580,7 @@
 <h2 id="Filter过滤器"><a href="#Filter过滤器" class="headerlink" title="Filter过滤器"></a>Filter过滤器</h2><p>作用：当访问服务器的资源时，过滤器可以将请求和响应拦截下来，完成一些特殊功能；比如登录验证，统一编码处理，敏感字符过滤</p>
 <h3 id="FilterConfig"><a href="#FilterConfig" class="headerlink" title="FilterConfig"></a>FilterConfig</h3><p>Filter的配置信息类，相当于ServletConfig</p>
 <p>常用方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filterConfig.getFilterName()：获取Filter的Name</span><br><span class="line">filterConfig.getInitParameterNames()：获取所有的初始化参数名称</span><br><span class="line">filterConfig.getInitParameter(name)：获取name对应的value值</span><br><span class="line">filterConfig.getServletContext()：获取全局域对象</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">filterConfig.getFilterName()：获取Filter的Name<br>filterConfig.getInitParameterNames()：获取所有的初始化参数名称<br>filterConfig.getInitParameter(name)：获取name对应的value值<br>filterConfig.getServletContext()：获取全局域对象<br></code></pre></td></tr></table></figure>
 
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li><p>定义一个类，实现接口Filter</p>
@@ -462,7 +625,7 @@
 </ol>
 </li>
 <li><p>web.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>name<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>全限定类名<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>name<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">usl-pattern</span>&gt;</span>拦截路径<span class="tag">&lt;/<span class="name">usl-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>拦截方式<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>全限定类名<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">usl-pattern</span>&gt;</span>拦截路径<span class="hljs-tag">&lt;/<span class="hljs-name">usl-pattern</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dispatcher</span>&gt;</span>拦截方式<span class="hljs-tag">&lt;/<span class="hljs-name">dispatcher</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="过滤器链"><a href="#过滤器链" class="headerlink" title="过滤器链"></a>过滤器链</h3><p>配置多个过滤器</p>
 <p>执行顺序：过滤器1， 过滤器2， 资源， 过滤器2， 过滤器1</p>
@@ -482,7 +645,7 @@
 <p>void contextDestroyed(ServletContextEvent sce)：监听对象销毁前调用</p>
 </li>
 <li><p>配置：web.xml    或     注解@WebListener</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">lstener-class</span>&gt;</span>全限定类名<span class="tag">&lt;/<span class="name">lstener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">lstener-class</span>&gt;</span>全限定类名<span class="hljs-tag">&lt;/<span class="hljs-name">lstener-class</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p>jsp是javaEE规范之一，jsp底层其实就是java程序，会服务器会将jsp文件翻译成java类，在将java类进行编译</p>
 <p>jsp主要是做页面展示的，修改之后Tomcat会自动部署，根据jsp文件的最后修改时间判断是否重新部署</p>
@@ -636,7 +799,7 @@
 <p>​		count：循环次数，从1开始</p>
 <h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>一个JavaScript框架，是js库，简化JS的开发</p>
 <h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤"></a>步骤</h3><p>导入jQuery的min.js文件（min.js生产版本，js开发版本）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script typr=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;JQuery文件路径&quot;</span>&gt; &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script typr=<span class="hljs-string">&quot;text/javascript&quot;</span> src=<span class="hljs-string">&quot;JQuery文件路径&quot;</span>&gt; &lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
 <p>jQuery对象和JS对象的转换</p>
 <p>​	jQuery —&gt;JS：jQuery对象[索引]   或  jQuery对象.get(索引)</p>
@@ -692,16 +855,16 @@
 <h3 id="JS实现方式"><a href="#JS实现方式" class="headerlink" title="JS实现方式"></a>JS实现方式</h3><p>步骤：</p>
 <ol>
 <li><p>创建AJAX异步对象XMLHttpRequest，XMLHttpRequest对象可以在浏览器当中单独开启一个线程，接收和响应数据都在异步对象XMLHttprequest中，使用异步对象的responseText属性以字符串的形式获取响应的数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">XMLHttpRequest</span>)&#123;</span><br><span class="line">	xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">//IE5和IE6使用AvtiveXObject</span></span><br><span class="line">	xhr = <span class="keyword">new</span> <span class="title class_">ActiveXObject</span>(<span class="string">&quot;Microsoft.XMLHTTP&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> xhr;<br><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">XMLHttpRequest</span>)&#123;<br>	xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>	<span class="hljs-comment">//IE5和IE6使用AvtiveXObject</span><br>	xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ActiveXObject</span>(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>注册回调函数，给异步对象绑定事件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序指定到这里，程序不会执行，只是将回调函数注册给异步对象，等异步对象的readyState属性改变时，回调函数才会执行（readyState属性属性值改变就会调用一次回调函数）</span></span><br><span class="line">xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.<span class="property">readyStart</span> == <span class="number">4</span>)&#123;<span class="comment">//服务器响应结束</span></span><br><span class="line">        <span class="keyword">if</span> (xhr.<span class="property">status</span> == <span class="number">200</span>)&#123;<span class="comment">//200表示服务器正常响应结束</span></span><br><span class="line">            <span class="comment">//在浏览器端接收服务器端响应的文本</span></span><br><span class="line">            <span class="keyword">var</span> s = xhr.<span class="property">responseText</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="title function_">alert</span>(xhr.<span class="property">status</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//程序指定到这里，程序不会执行，只是将回调函数注册给异步对象，等异步对象的readyState属性改变时，回调函数才会执行（readyState属性属性值改变就会调用一次回调函数）</span><br>xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyStart</span> == <span class="hljs-number">4</span>)&#123;<span class="hljs-comment">//服务器响应结束</span><br>        <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">status</span> == <span class="hljs-number">200</span>)&#123;<span class="hljs-comment">//200表示服务器正常响应结束</span><br>            <span class="hljs-comment">//在浏览器端接收服务器端响应的文本</span><br>            <span class="hljs-keyword">var</span> s = xhr.<span class="hljs-property">responseText</span>;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-title function_">alert</span>(xhr.<span class="hljs-property">status</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>开启浏览器和服务器之间的通道</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//method：指定请求方式为get还是put</span></span><br><span class="line"><span class="comment">//url：请求路径,get请求在url后加?提交</span></span><br><span class="line"><span class="comment">//asyn：true/false（true：支持异步，false：支持同步）</span></span><br><span class="line">xhr.<span class="title function_">open</span>(method, url, asyn);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//method：指定请求方式为get还是put</span><br><span class="hljs-comment">//url：请求路径,get请求在url后加?提交</span><br><span class="hljs-comment">//asyn：true/false（true：支持异步，false：支持同步）</span><br>xhr.<span class="hljs-title function_">open</span>(method, url, asyn);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>发送AJAX请求js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//此时才会发送请求,get请求</span></span><br><span class="line">xhr.<span class="title function_">send</span>();</span><br><span class="line">   </span><br><span class="line"><span class="comment">//此时才会发送请求,post请求在这提交数据</span></span><br><span class="line"><span class="comment">//post请求时要写，模拟form表单提交数据</span></span><br><span class="line">xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="string">&quot;数据&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//此时才会发送请求,get请求</span><br>xhr.<span class="hljs-title function_">send</span>();<br>   <br><span class="hljs-comment">//此时才会发送请求,post请求在这提交数据</span><br><span class="hljs-comment">//post请求时要写，模拟form表单提交数据</span><br>xhr.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;</span>);<br>xhr.<span class="hljs-title function_">send</span>(<span class="hljs-string">&quot;数据&quot;</span>);<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="JQeury实现方式"><a href="#JQeury实现方式" class="headerlink" title="JQeury实现方式"></a>JQeury实现方式</h3><h4 id="ajax-名称-值-名称1-值1……-名称-值之间不能存在空格"><a href="#ajax-名称-值-名称1-值1……-名称-值之间不能存在空格" class="headerlink" title="$.ajax({名称:值, 名称1:值1…….})     名称:值之间不能存在空格"></a>$.ajax({名称:值, 名称1:值1…….})     名称:值之间不能存在空格</h4><p>url:”路径”：请求路径</p>
 <p>type:get&#x2F;post：请求方式</p>
@@ -771,7 +934,7 @@
 <p>​		OutputStream：将obj对象转化为json字符串，并将json数据填充到字节输出流中</p>
 </li>
 <li><p>writeValueAsString(obj)：将对象转化为json字符串       （List转成的是数组，Map转成的就是对象格式）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ObjectMapper</span> <span class="variable">objectMapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">objectMapper.writeValueAsString(java对象);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">ObjectMapper</span> <span class="hljs-variable">objectMapper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectMapper</span>();<br>objectMapper.writeValueAsString(java对象);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>注解</p>
 <ol>
@@ -920,134 +1083,377 @@
 <li>数据访问层：操作数据存储文件</li>
 </ol>
 
-      
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JavaWeb</div>
+      <div>http://example.com/2021/11/16/JavaWeb/</div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/16/JavaWeb/" data-id="cl3u71bjv0009380l26ovexni" data-title="JavaWeb" class="article-share-link">分享</a>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Beitragsautor</div>
+          <div>倔强的小强</div>
+        </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>Veröffentlicht am</div>
+          <div>2021年11月16日</div>
+        </div>
       
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/01/30/SpringMVC/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          SpringMVC
-        
+      
+      <div class="license-meta-item">
+        <div>Urheberrechtshinweis</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2021/11/16/Redis/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Redis</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
     </div>
+    <div class="license-icon iconfont"></div>
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/05/31/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/04/LeetCode/">LeetCode</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/01/SpringBoot2/">SpringBoot2</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/30/MyBatisPlus/">MyBatis-Plus</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/29/RabbitMQ/">RabbitMQ</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/30/SpringMVC/" title="SpringMVC">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SpringMVC</span>
+                        <span class="visible-mobile">Vorheriger</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/16/Redis/" title="Redis">
+                        <span class="hidden-mobile">Redis</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 ��ǿ��Сǿ<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+  </noscript>
 </body>
 </html>
