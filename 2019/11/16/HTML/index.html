@@ -106,7 +106,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Startseite
+                Home
               </a>
             </li>
           
@@ -118,7 +118,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Archiv
+                Archives
               </a>
             </li>
           
@@ -130,7 +130,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Kategorien
+                Categories
               </a>
             </li>
           
@@ -142,7 +142,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Schlagwörter
+                Tags
               </a>
             </li>
           
@@ -154,7 +154,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                Über
+                About
               </a>
             </li>
           
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.4k wörter
+          5.4k words
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          46 minuten
+          46 mins
         
       </span>
     
@@ -379,15 +379,15 @@
 <p>权重一样谁在后显示谁，通过继承性继承的属性权重为零（如果全是零，谁描述的近听谁的）</p>
 <h5 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h5><p>如果三种样式同时控制我们的内容：行内优先级最高外部样式，内部样式：谁离着内容近，谁优先级高</p>
 <h4 id="CSS导入方式"><a href="#CSS导入方式" class="headerlink" title="CSS导入方式"></a>CSS导入方式</h4><h5 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h5><p>&lt;标记名 style&#x3D;”属性1:属性值1; 属性2:属性值2; 属性3:属性值3;”&gt; 内容 &lt;&#x2F;标记名&gt;</p>
-<h5 id="内嵌式"><a href="#内嵌式" class="headerlink" title="内嵌式"></a>内嵌式</h5><p>style type&#x3D;”text&#x2F;css”&gt;选择器 {属性1:属性值1; 属性2:属性值2; 属性3:属性值3;}</style></p>
-<h5 id="链入式"><a href="#链入式" class="headerlink" title="链入式"></a>链入式</h5><p>link href&#x3D;”CSS文件的路径” type&#x3D;”text&#x2F;css” rel&#x3D;”stylesheet” &#x2F;&gt;链入式将所有的样式放在一个或多个以.css为扩展名的外部样式表文件中通过<link />标记将外部样式表文件链接到HTML文档中  href：定义所链接外部样式表文件的URL ；  type：定义所链接文档的类型 ；  rel：定义当前文档与被链接文档之间的关系</p>
-<h5 id="导入式"><a href="#导入式" class="headerlink" title="导入式"></a>导入式</h5><p> style type&#x3D;”text&#x2F;css” &gt;@import url(css文件路径);或 @import “css文件路径”;</style></p>
+<h5 id="内嵌式"><a href="#内嵌式" class="headerlink" title="内嵌式"></a>内嵌式</h5><p>style type&#x3D;”text&#x2F;css”&gt;选择器 {属性1:属性值1; 属性2:属性值2; 属性3:属性值3;}</p>
+<h5 id="链入式"><a href="#链入式" class="headerlink" title="链入式"></a>链入式</h5><p>link href&#x3D;”CSS文件的路径” type&#x3D;”text&#x2F;css” rel&#x3D;”stylesheet” &#x2F;&gt;链入式将所有的样式放在一个或多个以.css为扩展名的外部样式表文件中通过<link>标记将外部样式表文件链接到HTML文档中  href：定义所链接外部样式表文件的URL ；  type：定义所链接文档的类型 ；  rel：定义当前文档与被链接文档之间的关系</p>
+<h5 id="导入式"><a href="#导入式" class="headerlink" title="导入式"></a>导入式</h5><p> style type&#x3D;”text&#x2F;css” &gt;@import url(css文件路径);或 @import “css文件路径”;</p>
 <h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h4><p>{属性1:属性值1; 属性2:属性值2; 属性3:属性值3;}  属性与属性值间用冒号，多个属性之间用英文分号隔开，属性的值由多个单词组成且中间包含空格则必须为这个属性值加上英文状态下的引号。</p>
 <h5 id="标签-元素-选择器"><a href="#标签-元素-选择器" class="headerlink" title="标签(元素)选择器"></a>标签(元素)选择器</h5><p>标记名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }   使用:&lt;标记名&gt;内容&lt;&#x2F;标记名&gt;</p>
-<h5 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h5><p>.类名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }  使用：<p class="类名"> 内容</p>     id选择器和类选择器的值不能以数字开头；用字母开头   a12   12a(不行)</p>
+<h5 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h5><p>.类名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }  使用：</p><p class="类名"> 内容</p>     id选择器和类选择器的值不能以数字开头；用字母开头   a12   12a(不行)<p></p>
 <h5 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h5><p>#id名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }  使用：<div id="id">内容 </div></p>
 <h5 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h5><p>*{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }</p>
-<h5 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h5><p>标签名[标签属性&#x3D;’标签属性值’]{属性名：属性值；……}nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记<br /></p>
+<h5 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h5><p>标签名[标签属性&#x3D;’标签属性值’]{属性名：属性值；……}nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记<br></p>
 <h5 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h5><p>父标签&gt;子标签{属性名:属性值;……} 设置后代元素的属性</p>
 <h5 id="后代元素选择器"><a href="#后代元素选择器" class="headerlink" title="后代元素选择器"></a>后代元素选择器</h5><p>父元素 后代元素{属性名:属性值;…… } 例如table b{属性名:属性值;…… }表示表格中所有b标签设置属性</p>
 <h5 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h5><p>标签1+标签2{属性名:属性值;…… } 标签1和标签2具有同一个父元素并且在父元素中相邻</p>
@@ -415,19 +415,19 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Beitragsautor</div>
+          <div>Author</div>
           <div>倔强的小强</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Veröffentlicht am</div>
+          <div>Posted on</div>
           <div>2019年11月16日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Urheberrechtshinweis</div>
+        <div>Licensed under</div>
         <div>
           
             
@@ -455,7 +455,7 @@
                       <a href="/2020/11/13/JVM/" title="JVM">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">JVM</span>
-                        <span class="visible-mobile">Vorheriger</span>
+                        <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
@@ -477,7 +477,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -531,7 +531,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -539,7 +539,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -758,7 +758,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
   </noscript>
 </body>
 </html>

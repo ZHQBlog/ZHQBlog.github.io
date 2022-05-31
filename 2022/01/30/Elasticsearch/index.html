@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="Elasticsearch">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/01/30/Elasticsearch/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
-<meta property="og:image" content="http://example.com/2022/01/30/Elasticsearch/Elasticsearch/3940d6cdb197259368542b86384911a4.png">
+<meta property="og:image" content="http://example.com/.com//20d54cba223bd9d70ea356d3e40a8161.png">
+<meta property="og:image" content="http://example.com/.com//3940d6cdb197259368542b86384911a4.png">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
 <meta property="article:modified_time" content="2022-05-28T13:12:24.816Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/01/30/Elasticsearch/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
+<meta name="twitter:image" content="http://example.com/.com//20d54cba223bd9d70ea356d3e40a8161.png">
   
   
   <title>Elasticsearch - 小强的博客</title>
@@ -109,7 +109,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Startseite
+                Home
               </a>
             </li>
           
@@ -121,7 +121,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Archiv
+                Archives
               </a>
             </li>
           
@@ -133,7 +133,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Kategorien
+                Categories
               </a>
             </li>
           
@@ -145,7 +145,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Schlagwörter
+                Tags
               </a>
             </li>
           
@@ -157,7 +157,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                Über
+                About
               </a>
             </li>
           
@@ -213,7 +213,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          43k wörter
+          43k words
         
       </span>
     
@@ -224,7 +224,7 @@
         
         
         
-          355 minuten
+          355 mins
         
       </span>
     
@@ -400,7 +400,7 @@
 <p>报错只因创建映射时”tel”的”index”为false</p>
 <h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><h3 id="创建（Put-amp-Post）"><a href="#创建（Put-amp-Post）" class="headerlink" title="创建（Put &amp; Post）"></a>创建（Put &amp; Post）</h3><p>文档可以类比为关系型数据库中的表数据，添加的数据格式为 JSON 格式</p>
 <p>向 ES 服务器发 <strong>POST</strong> 请求 ： <code>http://127.0.0.1:9200/索引名称/_doc</code>，需要发送请求体JSON</p>
-<img src="Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png" srcset="/img/loading.gif" lazyload style="zoom: 80%;" />
+<img src="/.com//20d54cba223bd9d70ea356d3e40a8161.png" srcset="/img/loading.gif" lazyload style="zoom: 80%;">
 
 <p>数据创建后，由于没有指定数据唯一性标识（ID），默认ES会随机生成id</p>
 <p>在创建时指定id： <code>http://127.0.0.1:9200/索引名称/_doc/1</code></p>
@@ -541,7 +541,7 @@
 
 <p>routing 是一个可变值，默认是文档的 _id 。 routing 通过hash 函数生成一个数字，然后这个数字再除以 number_of_primary_shards （主分片的数量）后得到余数 </p>
 <h3 id="分片控制"><a href="#分片控制" class="headerlink" title="分片控制"></a>分片控制</h3><p>每个节点都有能力处理任意请求。每个节点都知道集群中任一文档位置，所以可以直接将请求转发到需要的节点上</p>
-<img src="Elasticsearch/3940d6cdb197259368542b86384911a4.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 50%;" />
+<img src="/.com//3940d6cdb197259368542b86384911a4.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 50%;">
 
 <p>当发送请求的时候， 为了扩展负载，更好的做法是轮询集群中所有的节点</p>
 <h3 id="数据写流程"><a href="#数据写流程" class="headerlink" title="数据写流程"></a>数据写流程</h3><p>新建、索引和删除请求都是写操作， 必须在主分片上面完成之后才能被复制到相关的副本分片。</p>
@@ -976,19 +976,19 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Beitragsautor</div>
+          <div>Author</div>
           <div>倔强的小强</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Veröffentlicht am</div>
+          <div>Posted on</div>
           <div>2022年1月30日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Urheberrechtshinweis</div>
+        <div>Licensed under</div>
         <div>
           
             
@@ -1016,16 +1016,16 @@
                       <a href="/2022/03/03/Git/" title="Git">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Git</span>
-                        <span class="visible-mobile">Vorheriger</span>
+                        <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/30/Nginx/" title="Nginx">
-                        <span class="hidden-mobile">Nginx</span>
-                        <span class="visible-mobile">Nächster</span>
+                      <a href="/2022/01/30/Mybatis/" title="MyBatis">
+                        <span class="hidden-mobile">MyBatis</span>
+                        <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -1044,7 +1044,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -1098,7 +1098,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1106,7 +1106,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -1325,7 +1325,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
   </noscript>
 </body>
 </html>

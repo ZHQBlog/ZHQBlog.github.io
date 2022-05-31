@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="Spring">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/Spring5/20210807143733.png">
+<meta property="og:image" content="http://example.com/.com//20210807143733.png">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
 <meta property="article:modified_time" content="2022-05-03T13:04:50.007Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/Spring5/20210807143733.png">
+<meta name="twitter:image" content="http://example.com/.com//20210807143733.png">
   
   
   <title>Spring5 - 小强的博客</title>
@@ -108,7 +108,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Startseite
+                Home
               </a>
             </li>
           
@@ -120,7 +120,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Archiv
+                Archives
               </a>
             </li>
           
@@ -132,7 +132,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Kategorien
+                Categories
               </a>
             </li>
           
@@ -144,7 +144,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Schlagwörter
+                Tags
               </a>
             </li>
           
@@ -156,7 +156,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                Über
+                About
               </a>
             </li>
           
@@ -212,7 +212,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          40k wörter
+          40k words
         
       </span>
     
@@ -223,7 +223,7 @@
         
         
         
-          330 minuten
+          330 mins
         
       </span>
     
@@ -588,7 +588,7 @@
 <h2 id="Spring5新特性"><a href="#Spring5新特性" class="headerlink" title="Spring5新特性"></a>Spring5新特性</h2><h4 id="自带了日志封装"><a href="#自带了日志封装" class="headerlink" title="自带了日志封装"></a>自带了日志封装</h4><p>Spring5移除了Log4jConfigListener，官方建议使用Log4j2</p>
 <p>Spring5整合Log4j2：</p>
 <p>引入jar包</p>
-<p><img src="/Spring5/20210807143733.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/.com//20210807143733.png" srcset="/img/loading.gif" lazyload></p>
 <p>创建log4j2.xml配置文件</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-comment">&lt;!--日志级别以及优先级排序: OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG &gt; TRACE &gt; ALL --&gt;</span><br><span class="hljs-comment">&lt;!--Configuration后面的status用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，可以看到log4j2内部各种详细输出--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span> <span class="hljs-attr">status</span>=<span class="hljs-string">&quot;INFO&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--先定义所有的appender--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">appenders</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--输出日志信息到控制台--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">console</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Console&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;SYSTEM_OUT&quot;</span>&gt;</span><br>            <span class="hljs-comment">&lt;!--控制日志输出的格式--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">PatternLayout</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">&quot;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%t] %-5level %logger&#123;36&#125; - %msg%n&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">console</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">appenders</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--然后定义logger，只有定义了logger并引入的appender，appender才会生效--&gt;</span><br>    <span class="hljs-comment">&lt;!--root：用于指定项目的根日志，如果没有单独指定Logger，则会使用root作为默认的日志输出--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">loggers</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">root</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">appender-ref</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;Console&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">root</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">loggers</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -664,19 +664,19 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Beitragsautor</div>
+          <div>Author</div>
           <div>倔强的小强</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Veröffentlicht am</div>
+          <div>Posted on</div>
           <div>2022年1月30日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Urheberrechtshinweis</div>
+        <div>Licensed under</div>
         <div>
           
             
@@ -701,10 +701,10 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/30/Mybatis/" title="MyBatis">
+                      <a href="/2022/01/30/Nginx/" title="Nginx">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MyBatis</span>
-                        <span class="visible-mobile">Vorheriger</span>
+                        <span class="hidden-mobile">Nginx</span>
+                        <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
@@ -713,7 +713,7 @@
                     
                       <a href="/2022/01/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">
                         <span class="hidden-mobile">设计模式</span>
-                        <span class="visible-mobile">Nächster</span>
+                        <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -732,7 +732,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -786,7 +786,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -794,7 +794,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -1013,7 +1013,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
   </noscript>
 </body>
 </html>
