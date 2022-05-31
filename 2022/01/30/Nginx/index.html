@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Nginx | Сǿ�Ĳ���</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://example.com/2022/01/30/Nginx/index.html">
+<meta property="og:site_name" content="Сǿ�Ĳ���">
+<meta property="og:description" content="Nginx">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170418910.png">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170528360.png">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170208042.png">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402105027839.png">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170309808.png">
+<meta property="og:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170320028.png">
+<meta property="og:image" content="http://example.com/Nginx/image-20220402170352757.png">
+<meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
+<meta property="article:modified_time" content="2022-04-13T08:11:15.709Z">
+<meta property="article:author" content="��ǿ��Сǿ">
+<meta property="article:tag" content="��ǿ��Сǿ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/01/30/Nginx/Nginx/image-20220402170418910.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Сǿ�Ĳ���" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Сǿ�Ĳ���</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">��ӭ�����������</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Nginx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/30/Nginx/" class="article-date">
+  <time class="dt-published" datetime="2022-01-30T05:47:47.000Z" itemprop="datePublished">2022-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Nginx
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>Nginx (“engine x”) 是一个高性能的 HTTP 和反向代理服务器,特点是占有内存少，并发能力强</p>
+<p><strong>反向代理</strong></p>
+<p>将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址隐藏了真实服务器 IP 地址</p>
+<p><strong>负载均衡</strong><br>将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的负载均衡</p>
+<img src="Nginx/image-20220402170418910.png" style="zoom:80%;" />
+
+<p><strong>动静分离</strong></p>
+<p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度</p>
+<img src="Nginx/image-20220402170528360.png" style="zoom:80%;" />
+
+
+
+<h2 id="Nginx-安装"><a href="#Nginx-安装" class="headerlink" title="Nginx 安装"></a>Nginx 安装</h2><ul>
+<li><strong>安装 pcre，openssl，zlib</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install pcre-devel</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>安装 nginx</strong></li>
+</ul>
+<p>  1、 解压缩 nginx-xx.tar.gz 包</p>
+<p>  2、 进入解压缩目录，执行.&#x2F;configure</p>
+<p>  3、 make &amp;&amp; make install</p>
+<ul>
+<li><strong>查看开放的端口号</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>设置开放的端口号</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>重启防火墙</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用的命令和配置文件"><a href="#常用的命令和配置文件" class="headerlink" title="常用的命令和配置文件"></a>常用的命令和配置文件</h2><h3 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h3><ul>
+<li><strong>启动命令</strong></li>
+</ul>
+<p>在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin 目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>关闭命令</strong></li>
+</ul>
+<p>在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin 目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>重新加载命令</strong></li>
+</ul>
+<p>在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin 目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询版本号</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="nginx-conf-配置文件"><a href="#nginx-conf-配置文件" class="headerlink" title="nginx.conf 配置文件"></a>nginx.conf 配置文件</h3><p>nginx 安装目录下(&#x2F;usr&#x2F;local&#x2F;nginx)，其默认的配置文件都放在这个目录的 conf 目录下，主配置文件<strong>nginx.conf</strong></p>
+<p><strong>nginx.conf 配置文件分为三部分：</strong></p>
+<p><strong>第一部分：全局块</strong></p>
+<p>从配置文件开始到 events 块之间的内容，主要会设置一些<strong>影响 nginx 服务器整体运行的配置指令</strong></p>
+<p>配置运行 Nginx 服务器的用户（组）</p>
+<p>允许生成的 worker process 数</p>
+<p>进程 PID 存放路径</p>
+<p>日志存放路径和类型以及配置文件的引入等</p>
+<p><strong>第二部分： events 块</strong></p>
+<p>events 块涉及的指令主要影响 Nginx 服务器与用户的网络连接</p>
+<p>是否开启对多 work process下的网络连接进行序列化</p>
+<p>是否允许同时接收多个网络连接</p>
+<p>选取哪种事件驱动模型来处理连接请求</p>
+<p>worker_connections</p>
+<p>每个 wordprocess 可以同时支持的最大连接数等</p>
+<p><strong>第三部分： http 块</strong></p>
+<p>代理、缓存和日志定义等绝大多数功能和第三方模块的配置</p>
+<p>需要注意的是：http 块也可以包括 http 全局块、server 块</p>
+<p><strong>http 全局块</strong></p>
+<p>http 全局块配置的指令包括文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等</p>
+<p><strong>server 块</strong></p>
+<p>和虚拟主机有密切关系，虚拟主机从用户角度看，和一台独立的硬件主机是完全一样的（为了节省互联网服务器硬件成本）</p>
+<p>每个 http 块可以包括多个 server 块，而每个 server 块就相当于一个虚拟主机。而每个 server 块也分为全局 server 块，以及可以同时包含多个 locaton 块</p>
+<p>​	<strong>全局 server 块</strong></p>
+<p>​	 最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或 IP 配置<br>​	<strong>location 块</strong></p>
+<p>​	 一个 server 块可以配置多个 location 块</p>
+<p>​	这块的主要作用是基于 Nginx 服务器接收到的请求字符串，对虚拟主机名称之外的字符串进行匹配，对特定的	请求进行处理。地址定向、数据缓存和应答控制等功能，还有许多第三方模块的配置也在这里进行</p>
+<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>通过修改本地 host 文件，将 <a target="_blank" rel="noopener" href="http://www.123.com/">www.123.com</a> 映射到 127.0.0.1</p>
+<p>访问<a target="_blank" rel="noopener" href="http://192.168.197.130/user/a.html%EF%BC%8C%E4%BC%9A%E8%B7%B3%E8%BD%AC%E5%88%B0http://192.168.197.130:8080/user/a.html">http://192.168.197.130/user/a.html，会跳转到http://192.168.197.130:8080/user/a.html</a></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen <span class="number">80</span>;</span><br><span class="line">	server_name  localhost;</span><br><span class="line">	location ~ /user/ &#123;</span><br><span class="line">		proxy_pass http://localhost:<span class="number">8080</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>location 指令说明</strong>：该指令用于匹配 URL</p>
+<p><strong>&#x3D;</strong> ：请求字符串与 uri 严格匹配，如果匹配成功，就停止继续向下搜索并立即处理该请求</p>
+<p>**~**：用于表示 uri 包含正则表达式，并且区分大小写</p>
+<p><strong>~</strong> *：用于表示 uri 包含正则表达式，并且不区分大小写</p>
+<p>**^~**：要求 Nginx 服务器找到标识 uri 和请求字符串匹配度最高的 location 后，立即使用此 location 处理请     		求，而不再使用 location块中的正则 uri 和请求字符串做匹配</p>
+<p>注意：如果 uri 包含正则表达式，则必须要有 ~ 或者 ~ * 标识</p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><ul>
+<li><p><strong>轮询（默认）</strong></p>
+<p>每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器 down 掉，能自动剔除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">upstream server_pool &#123;</span><br><span class="line">    server 192.168.5.21; #服务器1</span><br><span class="line">    server 192.168.5.22; #服务器2</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_pass http://server_pool;  #进行负载均衡</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>weight</strong></p>
+<p>weight 代表权重默认为 1,权重越高被分配的客户端越多指定轮询几率，weight 和访问比率成正比，用于后端服务器性能不均的情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">upstream server_pool &#123;</span><br><span class="line">    server 192.168.5.21 weight = 10;</span><br><span class="line">    server 192.168.5.22 weight = 10;</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_pass http://server_pool;  #进行负载均衡</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>ip_hash</strong></p>
+<p>每个请求按访问 ip 的 hash 结果分配，这样每个访客固定访问一个后端服务器，可以解决 session 的问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">upstream server_pool &#123;</span><br><span class="line">    ip_hash;</span><br><span class="line">    server 192.168.5.21:80;</span><br><span class="line">    server 192.168.5.22:80;</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_pass http://server_pool;  #进行负载均衡</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>fair</strong></p>
+<p>按后端服务器的响应时间来分配请求，响应时间短的优先分配</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">upstream server_pool &#123;</span><br><span class="line">    server 192.168.5.21:80;</span><br><span class="line">    server 192.168.5.22:80;</span><br><span class="line">    fair;</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_pass http://server_pool;  #进行负载均衡</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>把动态跟静态请求分开，不能理解成只是单纯的把动态页面和静态页面物理分离</p>
+<p>动态请求跟静态请求分开，可以理解成使用 Nginx处理静态页面，Tomcat 处理动态页面</p>
+<img src="Nginx/image-20220402170208042.png" style="zoom:80%;" />
+
+<p>动静分离从目前实现角度来讲大致分为两种</p>
+<ul>
+<li><p>纯粹把静态文件独立成单独的域名，放在独立的服务器上</p>
+</li>
+<li><p>动态跟静态文件混合在一起发布，通过 nginx 来分开</p>
+</li>
+</ul>
+<p><strong>location</strong>：指定不同的后缀名实现不同的请求转发（url路径中包含此字符串则进行里边的操作）</p>
+<p><strong>expires</strong>：给一个资源设定一个过期时间，无需去服务端验证，直接通过浏览器自身确认是否过期即可（如果经常更新的文件，不建议使用 Expires 来缓存）</p>
+<ul>
+<li><strong>进行 nginx 配置</strong></li>
+</ul>
+<img src="Nginx/image-20220402105027839.png" style="zoom:80%;"/>
+
+<p>监听192.168.17.129中的80端口中路径如果有www就转发到本地路径为&#x2F;data&#x2F;下面的&#x2F;www目录下</p>
+<p>如果路径中有&#x2F;image&#x2F;就转发到&#x2F;data&#x2F;下的&#x2F;image目录下</p>
+<h2 id="原理-amp-优化参数配置"><a href="#原理-amp-优化参数配置" class="headerlink" title="原理&amp;优化参数配置"></a>原理&amp;优化参数配置</h2><img src="Nginx/image-20220402170309808.png" style="zoom:80%;" />
+
+<img src="Nginx/image-20220402170320028.png" style="zoom:80%;" />
+
+
+
+<ul>
+<li><p><strong>1个master&amp;多个workers</strong></p>
+<ul>
+<li><code>nginx -s reload</code>热部署，利用nginx进行热部署操作</li>
+<li>每个work是独立的进程，不会造成服务的中断</li>
+<li>采用独立的进程，一个进程退出后，其它进程还在工作，服务不会中断，master 进程则很快启动新的worker 进程</li>
+<li>异常退出，会导致当前 worker 上的所有请求失败，不过不会影响到所有请求，所以降低了风险</li>
+</ul>
+</li>
+<li><p><strong>设置 worker 数量</strong></p>
+<p>worker数量和服务器的cpu数相等最为适宜</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 4</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">work 绑定 cpu(4 work 绑定 4cpu)</span></span><br><span class="line">worker_cpu_affinity 0001 0010 0100 1000</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">work 绑定 cpu (4 work 绑定 8cpu 中的 4 个)</span> </span><br><span class="line">worker_cpu_affinity 0000001 00000010 00000100 00001000</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><strong>连接数 worker_connection</strong></p>
+<p>表示每个 worker 进程所能建立连接的最大值</p>
+<p>普通的静态访问最大并发数：worker_connections * worker_processes &#x2F;2</p>
+<p>HTTP作为反向代理最大并发数： worker_connections * worker_processes&#x2F;4</p>
+</li>
+</ul>
+<h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><p>解决nginx宕机请求无法响应的问题</p>
+<p><img src="/Nginx/image-20220402170352757.png"></p>
+<ul>
+<li><strong>在两台服务器安装keepalived</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install keepalived -y</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>修改&#x2F;etc&#x2F;keepalived&#x2F;keepalivec.conf 配置文件</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">全局配置</span></span><br><span class="line">global_defs &#123;</span><br><span class="line">    notification_email &#123;</span><br><span class="line">    acassen@firewall.loc</span><br><span class="line">    failover@firewall.loc</span><br><span class="line">    sysadmin@firewall.loc</span><br><span class="line">    &#125;</span><br><span class="line">    notification_email_from Alexandre.Cassen@firewall.loc</span><br><span class="line">    smtp_server 192.168.17.129 #主机ip</span><br><span class="line">    smtp_connect_timeout 30</span><br><span class="line">    router_id LVS_DEVEL #服务器域名名字，可在/etc/hosts中查看127.0.0.1映射的域名</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">脚本配置</span></span><br><span class="line">vrrp_script chk_http_port &#123;</span><br><span class="line">    script &quot;/usr/local/src/nginx_check.sh&quot;   #脚本路径</span><br><span class="line">    interval 2    #（检测脚本执行的间隔）每隔2s检查一次</span><br><span class="line">    weight 2    #设置服务器权重</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">虚拟ip的配置</span></span><br><span class="line">vrrp_instance VI_1 &#123;</span><br><span class="line">        state BACKUP   # 主服务器为Master；备份服务器为BACKUP</span><br><span class="line">        interface ens33   #网卡；可以用ip addr 看网卡名</span><br><span class="line">        virtual_router_id 51   # 主、备机的 virtual_router_id 必须相同</span><br><span class="line">        priority 90   # 主、备机取不同的优先级，主机值较大，备份机值较小</span><br><span class="line">        advert_int 1   #每1s发送一次心跳</span><br><span class="line">        authentication &#123;</span><br><span class="line">        auth_type PASS</span><br><span class="line">        auth_pass 1111</span><br><span class="line">	&#125;</span><br><span class="line">	virtual_ipaddress &#123;</span><br><span class="line">    	192.168.17.50   # VRRP H 虚拟ip地址,多台keepalived绑定一个ip；必须同一网段</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><strong>在&#x2F;usr&#x2F;local&#x2F;src 添加检测脚本</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">A=`ps -C nginx –no-header |wc -l`</span><br><span class="line">if [ $A -eq 0 ];then</span><br><span class="line">    /usr/local/nginx/sbin/nginx #nginx启动路径</span><br><span class="line">    sleep 2</span><br><span class="line">    if [ `ps -C nginx --no-header |wc -l` -eq 0 ];then</span><br><span class="line">        killall keepalived #nginx挂掉后，杀掉这个服务器的所有keepalived进程</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p><strong>把两台服务器上 nginx 和 和 keepalived 启动</strong></p>
+<p>启动 nginx ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx</span><br></pre></td></tr></table></figure>
+
+<p>启动 keepalived ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start keepalived.service</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>整合FastDFS中的fastdfs-nginx-module报错unknown directive “ngx_fastdfs_module” in &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf，因为nginx 目录下的 objs&#x2F;Makefile中自动生成的ALL_INCS 多了&#x2F;</p>
+<p>启动fastdfs接收和访问静态资源：</p>
+<p>​	启动tracker：&#x2F;usr&#x2F;bin&#x2F;.&#x2F;fdfs_trackerd &#x2F;etc&#x2F;fdfs&#x2F;tracker.conf</p>
+<p>​	启动storage：&#x2F;usr&#x2F;bin&#x2F;.&#x2F;fdfs_storaged &#x2F;etc&#x2F;fdfs&#x2F;storage.conf</p>
+<p>​	启动nginx：&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/30/Nginx/" data-id="cl3u71bk3000h380l6zx73vp2" data-title="Nginx" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/01/30/Mybatis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          MyBatis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/01/30/Spring5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Spring5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/31/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/04/LeetCode/">LeetCode</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/01/SpringBoot2/">SpringBoot2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/30/MyBatisPlus/">MyBatis-Plus</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/RabbitMQ/">RabbitMQ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 ��ǿ��Сǿ<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

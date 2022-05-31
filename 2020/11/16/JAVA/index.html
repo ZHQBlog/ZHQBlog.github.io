@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>JAVA | Сǿ�Ĳ���</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JAVA基础，IO流，反射，注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA">
+<meta property="og:url" content="http://example.com/2020/11/16/JAVA/index.html">
+<meta property="og:site_name" content="Сǿ�Ĳ���">
+<meta property="og:description" content="JAVA基础，IO流，反射，注解">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-16T11:03:57.000Z">
+<meta property="article:modified_time" content="2022-04-08T13:01:51.983Z">
+<meta property="article:author" content="��ǿ��Сǿ">
+<meta property="article:tag" content="��ǿ��Сǿ">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Сǿ�Ĳ���" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Сǿ�Ĳ���</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">��ӭ�����������</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-JAVA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/11/16/JAVA/" class="article-date">
+  <time class="dt-published" datetime="2020-11-16T11:03:57.000Z" itemprop="datePublished">2020-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      JAVA
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/PorkBird/article/details/113666542?spm=1001.2014.3001.5501">https://blog.csdn.net/PorkBird/article/details/113666542?spm=1001.2014.3001.5501</a></p>
+<h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><p>JavaSE：标准版</p>
+<p>JavaEE：企业版</p>
+<p>JavaME：微型版</p>
+<p>JDK：java开发工具箱</p>
+<p>JRE：java运行环境</p>
+<p>JVM：java虚拟机</p>
+<p>JDK包括JRE，JRE包括JVM</p>
+<h3 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h3><p>类名，接口名：首字母大写，后边每个单词的首字母大写</p>
+<p>变量名，方法名：首字母小写，后边每个单词的首字母大写</p>
+<p>常量名：全部大写，单词之间用_隔开</p>
+<h3 id="经典异常"><a href="#经典异常" class="headerlink" title="经典异常"></a>经典异常</h3><p>空指针异常：NullpointerException</p>
+<p>类型转换异常：ClassCastException</p>
+<p>数组下标越界异常：ArraysIndexOutOfBoundsException</p>
+<p>数字格式化异常：NumberFormatException</p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>组成：数字，字母，下划线，美元字符$</p>
+<p>要求：不能由数字开头，区分大小写，不能是关键字</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>组成：数据类型，名称，字面值（数据）</p>
+<p>变量是内存中存储数据的最基本单元</p>
+<p>局部变量：在方法体中声明的变量</p>
+<p>成员变量(实例变量和静态变量)：在方法体外并在类体内声明的变量，若没手动赋值，系统会自动赋默认值</p>
+<p>成员变量（堆内存）局部变量（栈内存）</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>整形：byte(1),short(2),int(4),long(8)	java中将整数型默认为int，要将字面值后加L表示整数型为long</p>
+<p>浮点型：float(4), double(8)	浮点型默认为double</p>
+<p>布尔型：boolean(1)	java中只有两个值 float和true</p>
+<p>字符型：char(2)   在c中字符型占用一个字节</p>
+<p>一字节（byte）等于八比特位（bit）1byte &#x3D; 8bit</p>
+<p>byte的取值范围为-128~127</p>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>自动类型转换（向上转型）：自动从小容量到大容量转换byte&lt;short&lt;int&lt;long&lt;float&lt;double&lt;char</p>
+<p>强制类型转换（向下转型）：大容量到小容量转换，可能会丢失精度</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>算术运算符：+，-，*，&#x2F;,%,++,–</p>
+<p>​			整数操作只能得到整数，要想得到小数，必须有浮点数参与运算。</p>
+<p>关系运算符：&lt;,&gt;,&lt;&#x3D;,&gt;&#x3D;,&#x3D;&#x3D;,!&#x3D;</p>
+<p>逻辑运算符：&amp;,|,!,^,&amp;&amp;,||（&amp;（|）和&amp;&amp;（||）最终的结果是一样的，但是&amp;&amp;（||）存在短路现象）</p>
+<p>​			短路现象：第二个表达式可能不执行，执行效率较高</p>
+<p>赋值运算符：&#x3D;，+&#x3D;，-&#x3D;，*&#x3D;，&#x2F;+，%&#x3D;</p>
+<p>​		先执行等号右边的表达式，在将执行结果赋值给左边</p>
+<p>字符串连接运算符：+</p>
+<p>​	当+两边只要有一个是字符串，就会进行字符串连接运算</p>
+<p>​	将一个变量塞到一个字符串当中应该是：“+变量+”</p>
+<p>三目运算符：布尔表达式？表达式1：表达式2</p>
+<h3 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h3><p>选择结构：if{}，if{}else{}，if{}else if{}，switch{}case  :{}</p>
+<p>循环结构：for{}，while{}，do{}while{}</p>
+<p>改变控制语句顺序：break，continue</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>相当于c语言中的函数</p>
+<p>语法：</p>
+<p>​			[修饰符列表] 返回值类型 方法名 （形式参数列表）{</p>
+<p>​			方法体；</p>
+<p>​			}</p>
+<p>定义在类体中，方法体中不能再定义方法</p>
+<p>调用方法：</p>
+<p>​	修饰符列表中有static时，调用该方法是:类名.方法名(实际参数列表）</p>
+<p>​	当执行的程序和要调用的程序在一个类里类名.可以省略</p>
+<h4 id="方法体"><a href="#方法体" class="headerlink" title="方法体"></a>方法体</h4><p>方法体中编写java语句</p>
+<p>主方法是程序的入口</p>
+<h4 id="方法重载（名称相同，参数不同）"><a href="#方法重载（名称相同，参数不同）" class="headerlink" title="方法重载（名称相同，参数不同）"></a>方法重载（名称相同，参数不同）</h4><p>要求：在同一类中，方法名相同，参数列表不同，参数数量不同，参数类型不同，参数顺序不同</p>
+<ul>
+<li>重载仅对应方法的定义，与方法的调用无关，调用方式参照标准格式</li>
+<li>重载仅针对同一个类中方法的名称与参数进行识别，<strong>与返回值无关</strong>，换句话说不能通过返回值来判定两个方法是否相互构成重载</li>
+</ul>
+<h4 id="方法重写（覆盖）"><a href="#方法重写（覆盖）" class="headerlink" title="方法重写（覆盖）"></a>方法重写（覆盖）</h4><p>发生在具有继承关系的父子类之间（返回值，方法名，形参列表相同）</p>
+<p>方法重写注意事项和要求</p>
+<ol>
+<li>重写方法的名称、形参列表必须与被重写方法的名称和参数列表一致。</li>
+<li>子类重写父类方法时，访问权限必须大于或者等于父类 （暂时了解 ：缺省 &lt; protected &lt; public）</li>
+<li>子类不能重写父类的静态方法和私有方法</li>
+</ol>
+<p>子类中所有的构造器默认都会先访问父类中无参的构造器，再执行自己。<strong>没有无参构造器，需要手动调用父类的有参构造器（super(参数)）</strong></p>
+<h4 id="方法递归"><a href="#方法递归" class="headerlink" title="方法递归"></a>方法递归</h4><p>容易造成栈内存溢出</p>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><p>构造方法：																			普通方法：</p>
+<p>​	[修饰符列表] 构造方法名 （形式参数列表{						[修饰符列表]  返回值类型  方法名 （形式参数列表{</p>
+<p>​	构造方法体；																		方法体；</p>
+<p>​	}																							 }</p>
+<p>构造方法名和类名必须保持一致 </p>
+<p>构造方法不需要手动调用，创建对象时自动调用构造方法</p>
+<h3 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h3><p>封装之后才会产生独立体–对象</p>
+<p>安全性高，可重复利用性强</p>
+<p>private私有化修饰，只能在本类中访问</p>
+<p>封装：</p>
+<p>​	private修饰</p>
+<p>操作入口：</p>
+<p>​	setters方法（外部修改）：</p>
+<p>​	puhlic void setAge (int a){</p>
+<p>​	 	age &#x3D; a;</p>
+<p>​	}</p>
+<p>​	getters方法（外部读取）：</p>
+<p>​	puhlic int  getAge (){</p>
+<p>​	 	return age;</p>
+<p>​	}</p>
+<p>自动抒写：右键–Source–setters and getters ；alt+insert快速生成</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>语法：</p>
+<p>​	[修饰符列表] class 类名 extends 父类名{</p>
+<p>​		类体；</p>
+<p>​	}</p>
+<p>java中只有单继承，只能继承一个类，但可以继承多个接口</p>
+<p>私有的类和构造方法不支持继承，私有的成员可以被继承，只是不能直接访问</p>
+<p>有了继承才有了“方法覆盖”和“多态机制”，可以重复利用代码</p>
+<p>在子类方法中访问成员（成员变量、成员方法）满足：就近原则</p>
+<ol>
+<li>先子类局部范围找</li>
+<li>然后子类成员范围找</li>
+<li>然后父类成员范围找，如果父类范围还没有找到则报错。</li>
+</ol>
+<h3 id="多态性（必需有继承关系）"><a href="#多态性（必需有继承关系）" class="headerlink" title="多态性（必需有继承关系）"></a>多态性（必需有继承关系）</h3><p>向上转型：子类型–&gt;父类型（自动类型转换） 强制类型转换有安全隐患</p>
+<p>向下转型：父类型–&gt;子类型（强制类型转换）</p>
+<p>子类型中特有的，必须进行强制类型转换</p>
+<p>采用（引用 instanceof  An）判断引用是否指向An类型的对象</p>
+<p>父类型引用指向子类型对象（降低程序的耦合度，提高程序的扩展力）</p>
+<p>方法调用：编译看左边，运行看右边。<br>变量调用：编译看左边，运行也看左边。（多态侧重行为多态）</p>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><p>类体：类体中不能直接编写java语句，除声明变量除外</p>
+<p>语法：</p>
+<p>​	[修饰符列表]  class 类名{</p>
+<p>​	属性；一般用变量形式来定义（状态信息）</p>
+<p>​	方法；(行为信息)</p>
+<p>​	}</p>
+<h3 id="对象的创建于使用"><a href="#对象的创建于使用" class="headerlink" title="对象的创建于使用"></a>对象的创建于使用</h3><p>new 类名()创建了一个对象，或者利用反射机制创建一个对象</p>
+<p>Student s &#x3D; new Student();将新创建的对象的地址用局部变量保存（局部变量存放在栈中）（s为引用，引用了对象的地址，来访问对象）</p>
+<p>java中只能通过引用来对堆内存中对象内部的实例变量进行操作</p>
+<p>读取数据：引用.变量名          修改数据：引用.变量名 &#x3D; 值</p>
+<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p>this是一个引用，是一个变量，this变量保存了内存地址指向自身，this存储在堆内存对象的内部</p>
+<p>调用自身类的构造方法，当构造方法有参数时this不能省</p>
+<p>this.访问本类的属性或方法</p>
+<h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><p>子类调用父类的构造方法，当父类构造方法有参数时super不能省</p>
+<p>super.访问父类的属性或方法</p>
+<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><p>静态的，修饰成员变量表示该成员变量只在内存中只存储一份，可以被共享访问、修改一般采用类名.的方式访问</p>
+<p>静态方法只能访问静态的成员，不可以直接访问实例成员。</p>
+<p>在方法区中分配内存</p>
+<h4 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h4><p>语法：</p>
+<p>​	static{</p>
+<p>​	java语句；</p>
+<p>​	}</p>
+<p>在类加载时执行，并且只执行一次，通常完成数据的准备工作</p>
+<h3 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h3><p>final修饰的类无法被继承，修饰的方法无法被覆盖</p>
+<p>final修饰的变量一旦被赋值将不能再次赋值（实例变量必须手动赋值）</p>
+<p>final修饰的引用一旦指向对象，将不能再指向其他对象，并且所指向的对象无法被垃圾回收器回收，但对象内部的内容可以改变</p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>public static final 类型 常量名 &#x3D; 值；</p>
+<p>常量名全部大写，且单词之间用_链接</p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>修饰符  enum  枚举名称{<br>            第一行都是罗列枚举类实例的名称。<br>}</p>
+<p>枚举类都是继承了枚举类型：java.lang.Enum<br>枚举都是最终类，不可以被继承。<br>构造器的构造器都是私有的，枚举对外不能创建对象。<br>枚举类的第一行默认都是罗列枚举对象的名称的。<br>枚举类相当于是多例模式。</p>
+<h3 id="implements关键字"><a href="#implements关键字" class="headerlink" title="implements关键字"></a>implements关键字</h3><p>类继承接口（多继承）</p>
+<p>语法：</p>
+<p>​	[修饰符列表] class 类名implements 接口名{</p>
+<p>​		必须实现接口中的抽象方法（要写public）；</p>
+<p>​	}</p>
+<h3 id="extends关键字"><a href="#extends关键字" class="headerlink" title="extends关键字"></a>extends关键字</h3><p>类继承类（单继承）</p>
+<p>语法：</p>
+<p>​	[修饰符列表] class 类名 extends 父类名{</p>
+<p>​		类体；</p>
+<p>​	}</p>
+<h3 id="abstract关键字"><a href="#abstract关键字" class="headerlink" title="abstract关键字"></a>abstract关键字</h3><p>抽象类</p>
+<p>语法：</p>
+<p>​	[修饰符列表] abstract class 类名{</p>
+<p>​	类体；</p>
+<p>​	}</p>
+<p>抽象方法：例如：public abstract void 方法名（）；</p>
+<h3 id="transient关键字"><a href="#transient关键字" class="headerlink" title="transient关键字"></a>transient关键字</h3><p>游离的，不参与序列化</p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>不能创建对象，只能被继承使用，但是可以用抽象类类型引用调用方法</p>
+<p>语法：</p>
+<p>​	[修饰符列表] abstract class 类名{</p>
+<p>​	类体；</p>
+<p>​	}</p>
+<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><p>必须在抽象类中</p>
+<p>public abstract void 方法名（）；</p>
+<p>若非抽象类继承抽象类必须将抽象方法重写</p>
+<h3 id="接口（就是体现规范的）"><a href="#接口（就是体现规范的）" class="headerlink" title="接口（就是体现规范的）"></a>接口（就是体现规范的）</h3><p>语法：</p>
+<p>​	[修饰符列表] interface 接口名{</p>
+<p>​		常量；</p>
+<p>​		抽象方法；</p>
+<p>​	}</p>
+<p>接口支持多继承</p>
+<p>接口中只有常量（public static final可以省略）和抽象方法（public abstract可以省略）</p>
+<p>接口与接口之间没有继承关系也可以进行向下转型</p>
+<p>接口不能直接new对象，但可以用接口类型引用调用方法</p>
+<p>接口是用来被类实现（implements）的，实现接口的类称为实现类</p>
+<p>类和类的关系：单继承。<br>类和接口的关系：多实现。<br>接口和接口的关系：多继承，一个接口可以同时继承多个接口</p>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>内部类就是定义在一个类里面的类，里面的类可以理解成（寄生），外部类可以理解成（宿主）</p>
+<p>语法：</p>
+<p>public class People{</p>
+<p>  &#x2F;&#x2F; 内部类</p>
+<p>   public class Heart{</p>
+<p>​    }</p>
+<p>}</p>
+<p>内部类通常可以方便访问外部类的成员，包括私有的成员</p>
+<h4 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h4><p>new 类|抽象类名|或者接口名() {</p>
+<p>​    重写方法;</p>
+<p>};</p>
+<p>特点总结：<br>    匿名内部类是一个没有名字的内部类。<br>    匿名内部类写出来就会产生一个匿名内部类的对象。<br>    匿名内部类的对象类型相当于是当前new的那个的类型的子类类型。</p>
+<p>一个类要么默认继承了Object类，要么间接继承了Object类，Object类是Java中的祖宗类</p>
+<p>String类中重写了toString()方法和equals()方法，可以直接使用</p>
+<h4 id="Object类中的toString-方法（一般必须重写）"><a href="#Object类中的toString-方法（一般必须重写）" class="headerlink" title="Object类中的toString()方法（一般必须重写）"></a>Object类中的toString()方法（一般必须重写）</h4><p>目的：将java对象转换为字符串表示形式（输出时输出内容的形式），若不重写则输出内存地址</p>
+<p>输出引用时自动调用toString方法</p>
+<h4 id="Object类中的equals-方法（一般必须重写）"><a href="#Object类中的equals-方法（一般必须重写）" class="headerlink" title="Object类中的equals()方法（一般必须重写）"></a>Object类中的equals()方法（一般必须重写）</h4><p>目的：判断两个对象是否相等</p>
+<p>默认的是用&#x3D;&#x3D;判断，但这判断的是对象的内存地址，并非对象</p>
+<p>重写时要进行强制类型转换</p>
+<h4 id="Object类中的finalize-方法"><a href="#Object类中的finalize-方法" class="headerlink" title="Object类中的finalize()方法"></a>Object类中的finalize()方法</h4><p>不需要手动调用，当java对象即将被垃圾回收器回收时自动调用该方法</p>
+<h4 id="Object类中的wait-方法"><a href="#Object类中的wait-方法" class="headerlink" title="Object类中的wait()方法"></a>Object类中的wait()方法</h4><p>Object o &#x3D; new Object();</p>
+<p>o.wait();</p>
+<p>让正在o对象上活动的线程进入等待状态</p>
+<p>o.notify();让正在o对象上的等待的进程唤醒</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>声明语法格式：数据类型[] 变量名</p>
+<p>初始化语法格式：静态：数据类型[] 变量名 &#x3D; {1， 2}			动态：数据类型[] 变量名 &#x3D; new  数据类型[x]</p>
+<p>数组是引用数据类型，存放在堆内存中，父类是Object</p>
+<p>数组可以存放基本数据类型，如果存储java对象，则存储的是对象的引用，并非java对象</p>
+<p>java中规定数组一旦定义长度，数组的长度将不可变，但可以扩容（利用数组拷贝）</p>
+<p>数组对象有java自带的length属性，用来获取数组元素个数</p>
+<p>如果使用“数据类型[i]”取出数据，则“数据类型[i]”代表一个“数据类型”类型的对象，并不是数组</p>
+<p>数组扩容：只能将数组拷贝到大数组中</p>
+<p>数组拷贝：System.arraycopy(源数组，源数组起始位置，目标数组，目标起始位置，拷贝长度)</p>
+<p>利用Object类型可以存取任何引用类型的的数据</p>
+<h4 id="Arrays工具类（数组工具类）"><a href="#Arrays工具类（数组工具类）" class="headerlink" title="Arrays工具类（数组工具类）"></a>Arrays工具类（数组工具类）</h4><p>数组工具类，对数组进行操作，大部分都是静态的</p>
+<p>Arrays.sort(数组)直接进行排序</p>
+<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>核心思想：左边位置的数据和右边位置的数据进行对比</p>
+<p>两个for循环，第一个for决定有几个数据就循环比较几次，第二个for循环进行相邻数据的比较（因为第一个for循环执行一次之后就找出了最大值或最小值，所以第二个for循环可以少比较一个）</p>
+<p>for(int i&#x3D;arr.length-1;  i&gt;0; i–)</p>
+<p>​	for(int j&#x3D;0; j&lt;i; j++){</p>
+<p>​			if(arr[j] &gt; arr[j+1]){</p>
+<p>​				int temp;</p>
+<p>​				temp &#x3D; arr[j];</p>
+<p>​				arr[j] &#x3D; arr[j+1];</p>
+<p>​				arr[j+1] &#x3D; temp;</p>
+<p>​			}</p>
+<p>}</p>
+<h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>核心思想：循环一次找出数据中最新的元素，拿最小的元素和最前面的数据交换位置（交换完成之后该最小元素不参与下一次比较）</p>
+<p>第一个数据和各个数据进行比较，交换，完成一次之后，在用第二个数据与后边的各个数据进行比较</p>
+<p>两个for循环，第一个for决定有几个数据就循环比较几次，第二个for循环进行第一个数据和后边各个数据比较</p>
+<p>for(int i&#x3D;0; i &lt; arr.length-1; i++){</p>
+<p>​	int min &#x3D; i;</p>
+<p>​	for(int j&#x3D;i+1; j &lt; arr.length; j++){</p>
+<p>​		if(arr[j] &lt; arr[i]){</p>
+<p>​			min &#x3D; j;</p>
+<p>​		}</p>
+<p>​		if(min !&#x3D; i){</p>
+<p>​			int temp;</p>
+<p>​			temp &#x3D; arr[min];</p>
+<p>​			arr[i] &#x3D; temp;</p>
+<p>​			arr[min] &#x3D; arr[i];</p>
+<p>​		}</p>
+<p>​	}</p>
+<p>}</p>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>先将数据进行从小到大排序，在进行查找</p>
+<p>找出中间元素与要查找的元素比较，若中间元素小于目标元素，则将开始查找的下标变为中间元素下标+1</p>
+<p>若中间元素大于目标元素则结束查找的下标变为中间元素的下标-1</p>
+<p>设置开始下标，中间下标，结束下标</p>
+<p>int begin &#x3D; 0;</p>
+<p>int end &#x3D; arr.length-1;</p>
+<p>int mid &#x3D; (begin+end)&#x2F;2;</p>
+<p>while(begin &lt; end){</p>
+<p>​	if (arr[mid] &#x3D;&#x3D; x)</p>
+<p>​		return mid;</p>
+<p>​	else if (arr[mid] &lt; x)</p>
+<p>​		begin &#x3D; mid+1;</p>
+<p>​	else if (arr[mid] &gt; x)</p>
+<p>​		end &#x3D; mid-1;</p>
+<p>}</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="String字符串"><a href="#String字符串" class="headerlink" title="String字符串"></a>String字符串</h4><p>String属于引用类型，使用双引号括起来的都是String对象，底层是byte数组实现的</p>
+<p>String类中重写了toString()方法和equals()方法，可以直接使用（&#x3D;&#x3D;比较和equals()方法比较不一样，&#x3D;&#x3D;比较的是String类型变量存放的对象的地址值，而equals方法直接比较的String类型的对象是否相等）（使用equals方法比较字符串时建议用     字符串.equals(String对象)  这样可以避免空指针异常）</p>
+<p>双引号括起来的字符串是不可变的，直接存储在方法区的字符串常量池中</p>
+<p>若不使用new则不会再堆内存中开辟空间，该堆内存空间存放的是存放在字符串常量池中的String类型的内存地址</p>
+<p>int i &#x3D; 100; 因为i是基本数据类型，所以i中保存的是100</p>
+<p>String s &#x3D; “qqq”；因为s是引用数据类型，所以s中保存的是存放qqq对象的内存地址，“qqq”存放在方法区的字符串常量池当中，是一个对象</p>
+<h5 id="String构造方法"><a href="#String构造方法" class="headerlink" title="String构造方法"></a>String构造方法</h5><ol>
+<li>String s &#x3D; new String(“”);</li>
+<li>String s &#x3D; “”;</li>
+<li>String s &#x3D; new String(char数组);</li>
+<li>String s &#x3D; new String(char数组，起始下标，长度);</li>
+<li>String s &#x3D; new String(byte数组);</li>
+<li>String s &#x3D; new String(byte数组，起始下标，长度);</li>
+</ol>
+<h5 id="StringBuffer字符串拼接"><a href="#StringBuffer字符串拼接" class="headerlink" title="StringBuffer字符串拼接"></a>StringBuffer字符串拼接</h5><p>StringBuffer底层是一个byte[]数组，是可变的，初始化容量是16（String底层压实byte[]数组但是不能改变）</p>
+<p>目的：调用StringBuf.append拼接字符串节省了用+拼接时创建的中间字符串的内存空间</p>
+<p>StringBuffer和StringBuilder的区别：StringBuffer的方法有关键字synchronized修饰，在多线程环境下运行时安全的</p>
+<h4 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h4><p>包含执行基本数字运算的方法，Math类没有提供公开的构造器</p>
+<table>
+<thead>
+<tr>
+<th>public static int abs(int a)</th>
+<th>获取参数绝对值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public static double ceil(double a)</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>public static double floor(double a)</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>public static int round(float a)</td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td>public static int max(int a,int b)</td>
+<td>获取两个int值中的较大值</td>
+</tr>
+<tr>
+<td>public static double pow(double a,double b)</td>
+<td>返回a的b次幂的值</td>
+</tr>
+<tr>
+<td>public static double random()</td>
+<td>返回值为double的随机值，范围[0.0,1.0)</td>
+</tr>
+</tbody></table>
+<h4 id="System-类"><a href="#System-类" class="headerlink" title="System 类"></a>System 类</h4><p>System的功能是通用的，都是直接用类名调用即可，所以System不能被实例化</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public static void exit(int status)</td>
+<td>终止当前运行的 Java 虚拟机，非零表示异常终止</td>
+</tr>
+<tr>
+<td>public static long currentTimeMillis()</td>
+<td>返回当前系统的时间毫秒值形式</td>
+</tr>
+<tr>
+<td>public static void arraycopy(数据源数组, 起始索引, 目的地数组, 起始索引, 拷贝个数)</td>
+<td>数组拷贝</td>
+</tr>
+</tbody></table>
+<h4 id="Date-类"><a href="#Date-类" class="headerlink" title="Date 类"></a>Date 类</h4><p>Date类的对象在Java中代表的是当前所在系统的此刻日期时间</p>
+<ol>
+<li>日期对象如何创建，如何获取时间毫秒值？<br>Date date &#x3D; new Date();<br>Long time &#x3D; date.getTime();（指的是从1970年1月1日    00:00:00走到此刻）</li>
+<li>时间毫秒值怎么恢复成日期对象<br>Date d &#x3D; new Date(time);<br>d.setTime(time);</li>
+</ol>
+<h4 id="SimpleDateFormat-类"><a href="#SimpleDateFormat-类" class="headerlink" title="SimpleDateFormat 类"></a>SimpleDateFormat 类</h4><p>可以对Date对象或时间毫秒值格式化成我们喜欢的时间形式。</p>
+<p> y	年、 M	月、 d	日、 H	时、 m	分、 s	秒</p>
+<table>
+<thead>
+<tr>
+<th>public final String <strong>format(Date date)</strong></th>
+<th>将日期格式化成日期&#x2F;时间字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public final String <strong>format(Object time)</strong></td>
+<td>将时间毫秒值式化成日期&#x2F;时间字符串</td>
+</tr>
+<tr>
+<td>public Date <strong>parse(String source)</strong></td>
+<td>从给定字符串的开始解析文本以生成日期</td>
+</tr>
+</tbody></table>
+<h4 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h4><p>public static Calendar getInstance()获取当前日历对象</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public int get(int field)</td>
+<td>取日期中的某个字段信息。</td>
+</tr>
+<tr>
+<td>public void set(int field,int value)</td>
+<td>修改日历的某个字段信息。</td>
+</tr>
+<tr>
+<td>public void add(int field,int amount)</td>
+<td>为某个字段增加&#x2F;减少指定的值</td>
+</tr>
+<tr>
+<td>public final Date getTime()</td>
+<td>拿到此刻日期对象。</td>
+</tr>
+<tr>
+<td>public long getTimeInMillis()</td>
+<td>拿到此刻时间毫秒值</td>
+</tr>
+</tbody></table>
+<h4 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h4><p>数组操作工具类，专门用于操作数组元素的</p>
+<table>
+<thead>
+<tr>
+<th>public static String toString(类型[] a)</th>
+<th>对数组进行排序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public static void sort(类型[] a)</td>
+<td>对数组进行默认升序排序</td>
+</tr>
+<tr>
+<td>public static <T> void sort(类型[] a, Comparator&lt;? super T&gt; c)</td>
+<td>使用比较器对象自定义排序</td>
+</tr>
+<tr>
+<td>public static int binarySearch(int[] a, int key)</td>
+<td>二分搜索数组中的数据，存在返回索引，不存在返回-1</td>
+</tr>
+</tbody></table>
+<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><p>八种包装类时引用数据类型，父类是Object</p>
+<p>目的：传送对应的八种基本数据类型</p>
+<p>java中为了提高运行效率，将[-128 ~ 127]之间所有的包装对象提前创建好，存放在方法区的整数型常量池中（类加载时自动缓存到内存中）（Integer x &#x3D; 127,  Integer y &#x3D; 127  因为x和y存放的内存地址相同所以x&#x3D;&#x3D;y ）</p>
+<p>基本数据类型         包装类型</p>
+<p>byte						java.lang.Byte</p>
+<p>short					  java.lang.Short</p>
+<p>int 						  java.lang.Integer</p>
+<p>long						java.lang.Long</p>
+<p>float						java.lang.Float</p>
+<p>double				    java.lang.Double</p>
+<p>boolean				  java.lang.Boolean</p>
+<p>char						 java.lang.Character</p>
+<h4 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h4><p>装箱：基本数据类型转换为引用数据类型</p>
+<p>拆箱：引用数据类型转换为基本数据类型</p>
+<p>JDK1.5之后，支持自动装箱自动拆箱</p>
+<p>自动装箱：Integer x &#x3D; 100;（x是个引用，保存的是内存地址指向对象）</p>
+<p>自动拆箱：int y &#x3D; x;（在用运算符+ - * &#x2F;是会自动拆箱）</p>
+<p>可以把基本类型的数据转换成字符串类型&#x3D;</p>
+<p>​	调用toString()方法得到字符串结果。<br>​	调用Integer.toString(基本类型的数据)</p>
+<p>可以把字符串类型的数值转换成真实的数据类型</p>
+<p>​	Integer.parseInt(“字符串类型的整数”)<br>​	Double.parseDouble(“字符串类型的小数”)</p>
+<h3 id="枚举-1"><a href="#枚举-1" class="headerlink" title="枚举"></a>枚举</h3><p>结果又两种以上并且可一列举出来的，建议使用枚举类型</p>
+<p>枚举中的每个值可以看做是一个常量</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>异常：程序执行过程中的不正常情况 ，语法错误不算在异常体系中</p>
+<p>作用：增强程序的健壮性</p>
+<p>异常在java中以类的形式存在，每个异常类都可以创建异常对象</p>
+<p>异常都是在运行阶段发生的，因为程序只有运行阶段才会new对象，因为异常的发生就是new异常对象</p>
+<p>异常追踪信息从上往下看（SUN公司的代码就不用看了）</p>
+<p>异常类可以自己定义：</p>
+<ol>
+<li>编写一个类继承Exception（编译时异常）或RuntimeException（运行时异常）</li>
+<li>类中提供两个构造方法，一个无参的，一个带有String s参数的（语句中写super(s);）</li>
+</ol>
+<h4 id="异常结构"><a href="#异常结构" class="headerlink" title="异常结构"></a>异常结构</h4><p>Object:</p>
+<p>​	Object下有Throwable（可抛出的）（所有的异常都是可抛出的）</p>
+<p>​	Throwable下有两个分支：Error（不可处理的，直接退出JVM）和Exception（可处理的）</p>
+<p>Exception：</p>
+<p>​	Exception的直接子类：编译时异常（受控异常）（程序员必须对该错误进行处理，否则编译器报错）</p>
+<p>​	RuntimeException：运行时异常（未受控异常）</p>
+<h4 id="处理异常的两种方式"><a href="#处理异常的两种方式" class="headerlink" title="处理异常的两种方式"></a>处理异常的两种方式</h4><h5 id="throws关键字"><a href="#throws关键字" class="headerlink" title="throws关键字"></a>throws关键字</h5><ol>
+<li>在方法声明的位置上使用throws关键字，抛给上一级（调用该方法的），上一级进行异常处理</li>
+</ol>
+<h5 id="try-catch"><a href="#try-catch" class="headerlink" title="try..catch"></a>try..catch</h5><ol>
+<li>使用try{}catch(错误类名 变量名){}语句进行异常的捕捉</li>
+</ol>
+<p>只要异常没有捕捉，采取上报方式，此方法的后续代码将不被执行，若捕捉了则后续代码正常执行</p>
+<h5 id="try-catch中的finally子句"><a href="#try-catch中的finally子句" class="headerlink" title="try..catch中的finally子句"></a>try..catch中的finally子句</h5><p>finally子句中的代码是最后执行的，并且一定会执行</p>
+<p>通常在finally语句块中完成资源的释放和关闭</p>
+<p>退出JVMfinally语句块不会执行</p>
+<h4 id="手动抛出异常"><a href="#手动抛出异常" class="headerlink" title="手动抛出异常"></a>手动抛出异常</h4><p>throw new 异常类名(“1111”);手动抛出异常</p>
+<p>String msg &#x3D; 变量名.getMessage();获取异常简单的描述信息（构造方法的参数）</p>
+<p>变量名.printStackTrace();打印异常追踪的堆栈信息</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合实际上就是容器，可以一次容纳多个对象</p>
+<p>集合不能直接存储基本数据类型和java对象，存储的是java对象的内存地址（引用）</p>
+<p>每一个不同的集合底层对应不同的数据结构</p>
+<h4 id="单个方式存储元素，这一类集合的超级父类是：java-util-Collection"><a href="#单个方式存储元素，这一类集合的超级父类是：java-util-Collection" class="headerlink" title="单个方式存储元素，这一类集合的超级父类是：java.util.Collection"></a>单个方式存储元素，这一类集合的超级父类是：java.util.Collection</h4><p>​	接口：Iterable：可迭代的，可遍历的</p>
+<p>​	接口：Collection泛化（继承）Iterable				接口：Iterator：集合的迭代器对象</p>
+<p>​	接口：List集合：有序（存进去的顺序和取出来的顺序相同，每个元素都有下标）可重复（元素值可以相同）</p>
+<p>​	实现类：ArrayList：底层是数组</p>
+<p>​	实现类：LinkedList：底层是双向链表</p>
+<p>​	实现类：Vector：底层是数组，线程安全的，效率较低，使用较少</p>
+<p>​	接口：Set集合：无序（存进去的顺序和取出来的顺序不同，没有下标）不可重复</p>
+<p>​	实现类：HashSet：底层是HashMap，放到HashSet集合中的元素等同于放到HashMap集合key部分了</p>
+<p>​	接口：SortedSet集合：无序不可重复，但是元素是可排序的（大小顺序排序）</p>
+<p>​	实现类：TreeSet：底层是HashMap，放到TreeSet集合中的元素等同于放到TreeMap集合key部分了	</p>
+<h5 id="Collection接口常用方法"><a href="#Collection接口常用方法" class="headerlink" title="Collection接口常用方法"></a>Collection接口常用方法</h5><p>​	添加元素x：引用.add(x);   默认向集合末尾添加元素</p>
+<p>​	获取集合中元素的个数：引用.size();</p>
+<p>​	清空集合：引用.clear();</p>
+<p>​	判断集合中是否包含x：引用.contains(x);  要重写equals方法</p>
+<p>​	删除x元素：引用.remove(x);  要重写equals方法</p>
+<p>​	判断集合是否为空：引用.isEmpty();</p>
+<p>​	转换为数组：引用.toArray();</p>
+<p>​	迭代（遍历）集合：</p>
+<p>​		第一步：Iterator it &#x3D; 引用.iterator();获取集合的迭代器对象</p>
+<p>​		第二步：it.hasNext();判断是否还有元素可以迭代</p>
+<p>​		第三步：it.next();将迭代器前进一位，并且拿到迭代器指向的元素</p>
+<p>如果数据结构发生变化，而没重写获取迭代器对象，java程序会报错，所以删除元素的时候要用迭代器指向当前元素（会自动更新迭代器和集合）</p>
+<h5 id="List接口特有方法"><a href="#List接口特有方法" class="headerlink" title="List接口特有方法"></a>List接口特有方法</h5><p>在i位置处添加元素x：引用.add(i, x);   </p>
+<p>获取i位置下的元素：引用.get(i);</p>
+<p>获取x对象第一次出现处的索引（位置）：引用.indexOf(x);</p>
+<p>获取x对象最后一次出现处的索引（位置）：引用.lastIndexOf(x);</p>
+<p>删除i位置下的元素：引用.remove(i);</p>
+<p>修改i位置下的元素：引用.set(i);</p>
+<h5 id="ArrayList集合（数组）"><a href="#ArrayList集合（数组）" class="headerlink" title="ArrayList集合（数组）"></a>ArrayList集合（数组）</h5><p>默认初始化容量是10（底层先创建一个数组，当添加元素时容量变为10）</p>
+<p>集合底层是Object[]数组</p>
+<p>构造方法：new ArrayList();容量是10          new ArrayList(20);容量是20     	new ArrayList(引用);将其他集合转换为ArrayList集合</p>
+<p>ArrayList集合扩容增长到原容量的1.5倍</p>
+<p>优点：检索，查找效率较高</p>
+<h5 id="LinkedList集合（双向链表）"><a href="#LinkedList集合（双向链表）" class="headerlink" title="LinkedList集合（双向链表）"></a>LinkedList集合（双向链表）</h5><p>没有固定容量</p>
+<p>底层是双向链表</p>
+<p>优点：增删效率较高</p>
+<p>first指向头结点的前结点</p>
+<p>last指向尾结点的后结点</p>
+<h5 id="vector集合-数组"><a href="#vector集合-数组" class="headerlink" title="vector集合(数组)"></a>vector集合(数组)</h5><p>底层是一个数组</p>
+<p>默认初始化容量是10</p>
+<p>vector集合扩容增长到原来的2倍 </p>
+<p>vector中所有的方法是线程同步的，都带有synchronized关键字，是线程安全的</p>
+<p>Collections.synchronizedList(引用);将非线程安全的转换为线程安全的</p>
+<h5 id="TreeSet集合（TreeMap）"><a href="#TreeSet集合（TreeMap）" class="headerlink" title="TreeSet集合（TreeMap）"></a>TreeSet集合（TreeMap）</h5><p>TreeSet集合底层是一个TreeMap，TreeMap集合底层是一个二叉树</p>
+<p>放到TreeSet集合中的元素，相当于存放在TreeMap集合的key部分</p>
+<p>无序不可重复，但是对String类型自动排序，如果是自定义类型，需要实现Comparable接口并实现compareTo方法（里面写比较规则，其中返回0表示相同会覆盖value；返回&gt;0会继续在右子树上查找；返回&lt;0会在左子树上查找）或者要在构造TreeSet或TreeMap集合的时候给它传一个比较器对象（创建比较器类，比较器类实现Comparator接口并实现compare方法）</p>
+<p>当比较规则不会发生改变或者比较规则只有一个时建议实现Comparable接口；如果比较规则有多个并且频繁切换时建议实现Comparator接口</p>
+<p>TreeSet和TreeMap集合是自平衡二叉树，遵循左小右大的原则存放</p>
+<p>TreeSet和TreeMap集合和Iterator迭代器采用的都是中序遍历方式（左根右）</p>
+<h4 id="键值对的方式存储元素，这一类集合的超级父类是：java-util-Map"><a href="#键值对的方式存储元素，这一类集合的超级父类是：java-util-Map" class="headerlink" title="键值对的方式存储元素，这一类集合的超级父类是：java.util.Map"></a>键值对的方式存储元素，这一类集合的超级父类是：java.util.Map</h4><p>​	接口：Map集合的key部分就是一个Set集合（往Set集合存放数据，实际上是往Map集合的key部分存放）</p>
+<p>​	实现类：HashMap：底层是哈希表</p>
+<p>​	实现类：Hashtable：底层是哈希表，是线程安全的，效率较低，使用较少</p>
+<p>​	属性类：Properties：是线程安全的，并且key和value只能存储字符串String</p>
+<p>​	接口：SortedMap集合：无序不可重复，但是元素是可排序的（大小顺序排序）</p>
+<p>​	实现类：TreeMap：底层是二叉树，TreeMap集合的key可以自动按照大小顺序排序</p>
+<h5 id="Map接口常用方法"><a href="#Map接口常用方法" class="headerlink" title="Map接口常用方法"></a>Map接口常用方法</h5><p>Map集合一key和value的方式存储数据：键值对，key和value都是引用类型，key起主导作用</p>
+<p>V put( K key, V value);向Map集合中添加键值对</p>
+<p>V get(Object key);通过key获取value</p>
+<p>void clear();清空集合</p>
+<p>boolean containsKey(Object key);判断Map中是否包含某个key</p>
+<p>boolean containsValue(Object value);判断Map中是否包含某个value</p>
+<p>boolean isEmpty();判断集合是否为空</p>
+<p>Set<K> keySet();获取Map中所有的key（所有的键是一个set集合）</p>
+<p>V remove(Object key);通过key键删除键值对</p>
+<p>int size();获取键值对个数</p>
+<p>Collection<V> values();获取Map集合中所有的value</p>
+<p>Set&lt;Map.Entry&lt;K, V&gt;&gt;entrySet();将Map集合转换为Set集合</p>
+<p>Map集合：</p>
+<p>​	key  			value</p>
+<p>​	1					z</p>
+<p>Set集合：</p>
+<p>​	1 &#x3D; z</p>
+<p>Map集合通过entrySet()方法转换为Set集合，Set集合中元素类型是Map.Entry&lt;k,y&gt;</p>
+<p>遍历Map集合</p>
+<p>​	法一：调用keySet获取所有的key，用迭代器调用get()通过key获取value通</p>
+<p>​	法二：调用entrySet()方法将Map集合直接全部转换为Set集合（元素将变为Map.Entry类型），在通过迭代器遍历Set集合，先拿到Map.Entry类型元素，在调用getKey()和getValue()逐个取出key和value</p>
+<h5 id="HashMap集合（哈希表）"><a href="#HashMap集合（哈希表）" class="headerlink" title="HashMap集合（哈希表）"></a>HashMap集合（哈希表）</h5><p>底层是哈希表（数组和单链表组成）</p>
+<p>默认初始化是16，当存储达到75%时，数组开始扩容，初始化容量必须是2的倍数</p>
+<p>map.put(k, v)实现原理：</p>
+<p>​	第一步，先将k，v封装到Node对象中。第二步，底层会调用hashCode()方法得出hash值，然后通过哈希函数或哈希算法，将hash值转换为数组下标，下标位置上没有任何元素，就把Node添加到该位置上，如果下标位置上有链表，此时会拿着k和链表中的每个k进行equals，如果所有的equals返回的都是false，那么会将新节点添加到链表的末尾，如果有一个equals返回true，那么这个节点的value将会被覆盖</p>
+<p>v &#x3D; map.get(k)实现原理：</p>
+<p>​	先调用hashCode()方法得出哈希值，通过哈希算法转换为数组下标，通过数组下标快速定位到某个位置上，如果该位置什么也没有，返回null，如果该位置上有单向链表，那么会拿着参数k和每个节点的k进行equals，如果所有的equals返回false，那么ger方法返回null，如果有一个equals返回true，那么此时该节点的value就是要找的</p>
+<p>equals和hashCode方法必须重写，IDEA工具同时生成</p>
+<p>HashMap的key和value都可以为null，Hashtable的key和value都不能为空</p>
+<h5 id="Properties集合（哈希表）"><a href="#Properties集合（哈希表）" class="headerlink" title="Properties集合（哈希表）"></a>Properties集合（哈希表）</h5><p>Properties是一个Map集合，继承Hashtable，Properties的key和value都是String类型</p>
+<p>存：引用.setProperty(“key”, “value”);</p>
+<p>通过key取：引用.getProperty(“key”);</p>
+<h5 id="TreeMap集合（二叉树）"><a href="#TreeMap集合（二叉树）" class="headerlink" title="TreeMap集合（二叉树）"></a>TreeMap集合（二叉树）</h5><p>TreeMap集合底层是一个二叉树</p>
+<p>无序不可重复，但是对String类型自动排序，如果是自定义类型，需要实现Comparable接口并实现compareTo方法（里面写比较规则，其中返回0表示相同会覆盖value；返回&gt;0会继续在右子树上查找；返回&lt;0会在左子树上查找）或者要在构造TreeSet或TreeMap集合的时候给它传一个比较器对象（创建比较器类，比较器类实现Comparator接口并实现compare方法）</p>
+<p>当比较规则不会发生改变或者比较规则只有一个时建议实现Comparable接口；如果比较规则有多个并且频繁切换时建议实现Comparator接口</p>
+<p>TreeSet和TreeMap集合是自平衡二叉树，遵循左小右大的原则存放</p>
+<p>TreeSet和TreeMap集合和Iterator迭代器采用的都是中序遍历方式（左根右）</p>
+<h4 id="Collections工具类（集合工具类）"><a href="#Collections工具类（集合工具类）" class="headerlink" title="Collections工具类（集合工具类）"></a>Collections工具类（集合工具类）</h4><p>非线程安全的集合变为线程安全的集合：Collections.synchronizedList();</p>
+<p>排序：Collections.sort();定义比较规则</p>
+<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>File类可以定位文件：进行删除、获取文本本身信息等操作</p>
+<p>File file &#x3D; new File(“文件&#x2F;文件&#x2F;绝对路径&#x2F;相对路径”);</p>
+<table>
+<thead>
+<tr>
+<th>public boolean isDirectory()</th>
+<th>测试此抽象路径名表示的File是否为文件夹</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public boolean isFile()</td>
+<td>测试此抽象路径名表示的File是否为文件</td>
+</tr>
+<tr>
+<td>public boolean exists()</td>
+<td>测试此抽象路径名表示的File是否存在</td>
+</tr>
+<tr>
+<td>public String getAbsolutePath()</td>
+<td>返回此抽象路径名的绝对路径名字符串</td>
+</tr>
+<tr>
+<td>public String getPath()</td>
+<td>将此抽象路径名转换为路径名字符串</td>
+</tr>
+<tr>
+<td>public String getName()</td>
+<td>返回由此抽象路径名表示的文件或文件夹的名称</td>
+</tr>
+<tr>
+<td>public long lastModified()</td>
+<td>返回文件最后修改的时间毫秒值</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>public boolean createNewFile()</th>
+<th>创建一个新的空的文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public boolean mkdir()</td>
+<td>只能创建一级文件夹</td>
+</tr>
+<tr>
+<td>public boolean mkdirs()</td>
+<td>可以创建多级文件夹</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>public boolean delete()</th>
+<th>删除由此抽象路径名表示的文件或空文件夹</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>public String[] list()</th>
+<th>获取当前目录下所有的”一级文件名称”到一个字符串数组中去返回。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public File[] listFiles()(常用)</td>
+<td>获取当前目录下所有的”一级文件对象”到一个文件对象数组中去返回（重点）</td>
+</tr>
+</tbody></table>
+<h3 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h3><p>硬盘-内存：读（Read），输入（Input），输入流（InputStream）</p>
+<p>内存-硬盘：写（Write），输出（Output），输出流（OutputStream）</p>
+<p>所有流都实现了Closeable接口，都是可关闭的，都有close()方法，并且用完流一定要关闭不然会浪费资源</p>
+<p>所有的输出流都实现了Flushable接口，都是可刷新的，都有flush()方法，刷新就是强行将管道剩余数据输出，若不刷新可能会引起数据丢失</p>
+<h4 id="IO流分类"><a href="#IO流分类" class="headerlink" title="IO流分类"></a>IO流分类</h4><p>节点流：一个流的构造方法	需要一个流的时候，这个被传过去的流</p>
+<p>包装流（处理流）：外部负责包装</p>
+<p>关闭流时只需要关闭处理流即可，节点流会自动关闭</p>
+<h5 id="按内存分"><a href="#按内存分" class="headerlink" title="按内存分"></a>按内存分</h5><p>往内存中去，叫做输入（Input）</p>
+<p>从内存中出，叫做输出（Output）</p>
+<h5 id="按读取方式"><a href="#按读取方式" class="headerlink" title="按读取方式"></a>按读取方式</h5><p>按照字节的方式，一次读取一个byte（一次读取个二进制位），这种流什么文件多可以读取，读取完文件时就会读取到-1</p>
+<p>InputStream 字节输入流； OutputStream  字节输出流</p>
+<p>按照字符的方式，一次读取一个字符，这种流只能读取纯文本文件</p>
+<p>Reader 字符输入流； Writer  字符输出流</p>
+<h4 id="16个IO流"><a href="#16个IO流" class="headerlink" title="16个IO流"></a>16个IO流</h4><p>文件专属：</p>
+<p>​	java.io.FileInputStream    </p>
+<p>​	创建一个byte数组（设置长度），读取文件时用流引用读取byte数组，输出时再将byte数组转换成字符串（读取多少转换多少，读取时	会返回读取数量，读取完文件时就会读取到-1）</p>
+<p>​	其它常用方法：int available();返回流当中剩余的没有读到的字节数量	</p>
+<p>​								long skip(long n);跳过几个字节不读</p>
+<p>​	java,io.FileOutputStream</p>
+<p>​	用writer写入文件，writer(“文件名”, 0, 长度)可以控制文件从什么位置写入，写入几个字节</p>
+<p>​	构造函数直接是创建的文件名字（入存在该文件会将该文件的内容清空），或者名字，true表示在文件的末尾处添加数据不删除原有数据</p>
+<p>​	java,io.FileReader</p>
+<p>​	创建一个char数组（设置长度），读取文件时用流引用读取char数组</p>
+<p>​	只能读取纯文本文件（能用记事本编辑的）</p>
+<p>​	java,io.FileWriter</p>
+<p>转换流（将字节流转换为字符流）</p>
+<p>​	java,io.InputStreamReader</p>
+<p>​	java,io.OutputStreamWriter</p>
+<p>缓冲流</p>
+<p>​	java,io.BufferedReader</p>
+<p>​	自带缓冲区不需要自定义char数组</p>
+<p>​	java,io.BufferedWriter</p>
+<p>​	java,io.BufferedInputStream</p>
+<p>​	java,io.BufferedOutputStream</p>
+<p>数据流</p>
+<p>​	java.io.DataInputStream</p>
+<p>​	读取文件时需要知道写入的文件的类型顺序</p>
+<p>​	java.io.DataOutputStream</p>
+<p>​	将数据和数据类型一并写入文件</p>
+<p>标准输出流</p>
+<p>​	不需要手动控制关闭流，默认指向控制台</p>
+<p>​	可以利用构造函数传参的形式，将标准输出流改变指向（输出时会输出的指向的文件）</p>
+<p>​	java.io.PrintWriter</p>
+<p>​	java.io.PrintStream</p>
+<p>对象专属流</p>
+<p>​	java.io.ObiectInputStream  反序列化：DeSerialize，将硬盘上的数据重新恢复到内存中，恢复成java对象</p>
+<p>​	java.io.ObjectOutputStream  序列化：Serialize，java对象存储到硬盘文件中，将java对象的状态保存下来的过程</p>
+<p>参与序列化和反序列化的对象，必须实现Serializeable接口（标志接口），java虚拟机看到这个接口，会为该类自动生成一个序列化版本号</p>
+<p>序列化版本号是用来区分类的，java虚拟机默认提供序列化版本号，这导致java类在序列化后续不能修改代码（手动创建序列化版本号private static final long serialVersionUID &#x3D; 1111L）</p>
+<h5 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h5><p>File不能完成读和写</p>
+<p>File对象表示文件和目录路径名的抽象表示形式</p>
+<h4 id="IO-Properties联合应用"><a href="#IO-Properties联合应用" class="headerlink" title="IO+Properties联合应用"></a>IO+Properties联合应用</h4><p>将文件中的数据加载到Properties对象中吗，新建一个输入流对象，新建一个Map集合，调用Properties对象的load方法将文件的数据加载到Map集合中，等号&#x3D;左边做key，等号&#x3D;右边做value</p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><h4 id="进程和线程的关系"><a href="#进程和线程的关系" class="headerlink" title="进程和线程的关系"></a>进程和线程的关系</h4><p>进程是一个应用程序，进程和进程之间的内存不共享</p>
+<p>线程是一个进程中的执行场景&#x2F;执行单元，一个进程可以启动多个线程，线程和线程之间的堆内存和方法去内存共享，栈内存独立</p>
+<h4 id="线程分类"><a href="#线程分类" class="headerlink" title="线程分类"></a>线程分类</h4><p>用户线程：main方法时一个用户线程</p>
+<p>守护线程：一般是一个死循环，所有用户线程结束，守护线程自动结束；回收机制是一个守护线程</p>
+<p>​		setDaemon(true);将线程设置为守护线程</p>
+<h4 id="实现线程"><a href="#实现线程" class="headerlink" title="实现线程"></a>实现线程</h4><h5 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h5><p>编写一个类，直接继承java.lang.Thread，重写run方法</p>
+<p>创建线程对象，new继承了Thread的类</p>
+<p>启动线程,调用线程对象的start方法，该方法会启动一个新的线程，开辟一个新的栈空间，启动线程成功 会自动调用run方法，并且run方法在分支线的栈底部，main方法在主线的栈底部（start方法只是为了开辟新的栈，瞬间结束）</p>
+<h5 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h5><p>编写一个类，实现Runnable接口，实现run方法</p>
+<p>创建实现Runnable接口的可运行的对象，将可运行的对象封装成一个线程对象（将实现Runnable接口的对象传到Thread对象中），启动线程</p>
+<h5 id="实现Callable接口"><a href="#实现Callable接口" class="headerlink" title="实现Callable接口"></a>实现Callable接口</h5><p>这种方法实现线程可以获取线程的返回值</p>
+<h4 id="线程的常用方法"><a href="#线程的常用方法" class="headerlink" title="线程的常用方法"></a>线程的常用方法</h4><p>setName() 设置线程名字</p>
+<p>getName() 获取线程的名字</p>
+<p>Thread.currentThread() 获取当前线程（该代码写在哪个线程的方法中，就获取的哪个线程）</p>
+<p>sleep(毫秒) 让当前线程进入休眠状态（该代码写在哪个线程的方法中，就休眠的哪个线程）</p>
+<p>interrupt() 终断睡眠（依靠了java的异常处理机制）</p>
+<p>setPriority(优先数)设置线程优先级</p>
+<p>getPriority()获取线程优先级</p>
+<p>yield() 线程让位 该代码写在哪个线程的方法中，哪个线程让位）</p>
+<p>t.join() 合并线程  当前线程进入阻塞，执行t线程</p>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>使用线程同步机制（线程排队），解决线程安全问题</p>
+<p>同步：线程之间发生了等待关系，线程排队（效率较低）</p>
+<p>synchronized(){	在()中一定要写线程之间共享的对象，是谁和谁的共享对象谁和谁就会排队</p>
+<p>​	同步代码块;</p>
+<p>}</p>
+<p>synchronized可以写在实例方法上，表示同步代码块是整个方法体</p>
+<p>synchronized可以写在静态方法上，表示找类锁</p>
+<p>异步：谁也不需要等谁，多线程并发（效率较高）</p>
+<p>死锁</p>
+<h3 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h3><p>通过java中的反射机制，可以操作字节码文件</p>
+<h4 id="反射机制相关的重要类"><a href="#反射机制相关的重要类" class="headerlink" title="反射机制相关的重要类"></a>反射机制相关的重要类</h4><p>java.lang.Class：代表整个字节码，代表一个类型（整个类）</p>
+<p>java.lang.reflect.Method：代表字节码中的方法字节码（类中的方法）</p>
+<p>java.lang.reflect.Constructor：代表字节码中的构造方法字节码（类中的构造方法）</p>
+<p>java.lang.reflect.Field：代表字节码中的属性字节码（类中的静态变量和实例变量）</p>
+<h4 id="获取字节码（Class）"><a href="#获取字节码（Class）" class="headerlink" title="获取字节码（Class）"></a>获取字节码（Class）</h4><h5 id="Class-forName-“”"><a href="#Class-forName-“”" class="headerlink" title="Class.forName(“”);"></a>Class.forName(“”);</h5><p>是一个静态方法，方法的参数是一个字符串，字符串是一个完整的类名（带有包名）</p>
+<p>这个代码的执行会加载类，所以类会执行静态代码块</p>
+<h5 id="getClass-方法"><a href="#getClass-方法" class="headerlink" title="getClass()方法"></a>getClass()方法</h5><h5 id="任何类型-class"><a href="#任何类型-class" class="headerlink" title="任何类型.class"></a>任何类型.class</h5><h4 id="利用反射机制获取对象的属性（Field）"><a href="#利用反射机制获取对象的属性（Field）" class="headerlink" title="利用反射机制获取对象的属性（Field）"></a>利用反射机制获取对象的属性（Field）</h4><p>首先获取整个类（利用Class.forName(“带包名的完整类名”)方法），然后创建该类文件的对象（利用利用newInstance()方法调用无参构造函数）</p>
+<p>通过getDeclaredField(“属性名”)方法获取单个属性</p>
+<p>利用set(对象，值)方法修改属性的值</p>
+<p>利用get(对象)方法获取属性的值</p>
+<p>（私有属性调用setAccessible(true)方法打破封装，才能获取到属性）</p>
+<p>获取整个类之后再用getFileds()方法获取类中public修饰的所有属性，利用getDeclaredFileds()方法获取所有属性，利用getType()和getName方法获取属性的类型，用过getName()方法获取属性的名字，通过getModifiers()获取修饰符列表（返回的是修饰符代码int类型，利用Modifier.toString()方法将代号转换为字符串）</p>
+<h4 id="利用反射机制调用方法（Method）"><a href="#利用反射机制调用方法（Method）" class="headerlink" title="利用反射机制调用方法（Method）"></a>利用反射机制调用方法（Method）</h4><p>首先获取整个类（利用Class.forName(“带包名的完整类名”)方法），然后创建该类文件的对象（利用newInstance()方法调用无参构造函数）</p>
+<p>通过getDeclaredMethod(“方法名”， 形参类型.class)方法获取方法</p>
+<p>利用invoke(对象，实参)方法调用类的方法</p>
+<h4 id="利用反射机制创建对象"><a href="#利用反射机制创建对象" class="headerlink" title="利用反射机制创建对象"></a>利用反射机制创建对象</h4><p>首先获取整个类（利用Class.forName(“带包名的完整类名”)方法）</p>
+<p>利用getDeclaredConstructor(形参类型.class)获取有参构造方法</p>
+<p>利用newInstance()方法调用无参构造函数创建对象</p>
+<h4 id="利用反射机制获取注解"><a href="#利用反射机制获取注解" class="headerlink" title="利用反射机制获取注解"></a>利用反射机制获取注解</h4><p>首先获取整个类（利用Class.forName(“带包名的完整类名”)方法）</p>
+<p>利用isAnnotationPresent(x.class)方法判断类上是否有注解@x</p>
+<p>利用getAnnotation(x.class)方法获取注解对象</p>
+<p>利用注解对象.属性名()获取注解中的属性</p>
+<h4 id="获取父类和父接口"><a href="#获取父类和父接口" class="headerlink" title="获取父类和父接口"></a>获取父类和父接口</h4><p>利用getSuperclass()方法获取父类</p>
+<p>利用getSuperclass()方法获取所有接口</p>
+<h3 id="注解（注释）"><a href="#注解（注释）" class="headerlink" title="注解（注释）"></a>注解（注释）</h3><p>注解Annotation是一种引用数据类型，编译之后也会生成xx.class文件</p>
+<p>语法：</p>
+<p>​	[修饰符列表] @interface 注解类型名{}</p>
+<p>使用规则：</p>
+<pre><code> 1. @注解类型名
+ 2. 默认注解可以出现在任何位置上
+</code></pre>
+<p>如果注解中有属性，调用时必须给属性赋值（属性名 &#x3D; 属性值），除非利用default给属性指定默认值</p>
+<p>（如果注解中只有一个属性名为value的属性，调用该注解可以直接给属性赋值（属性值））</p>
+<h4 id="Override注解"><a href="#Override注解" class="headerlink" title="@Override注解"></a>@Override注解</h4><p>@Override注解只能注解方法</p>
+<p>@Override注解是给编译器参考的，和运行阶段无关</p>
+<p>java中的方法带有这个注解的，编译器都会进行编译检查，如果这个注解不是重写父类的方法，编译器报错</p>
+<h4 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h4><p>用来标注“注解类型”的“注解”，成为元注解</p>
+<h5 id="常见的元注解"><a href="#常见的元注解" class="headerlink" title="常见的元注解"></a>常见的元注解</h5><p>@Target(ElementType.METHOD)元注解：只能出现在方法上</p>
+<p>@Retention(RetentionPolicy.SOURCE)元注解：只能保留在java源文件中</p>
+<p>@Retention(RetentionPolicy.CLASS)元注解：保存在class文件中</p>
+<p>@Retention(RetentionPolicy.RUNTIME)元注解：保存在class文件中，并且可以被反射机制读取到</p>
+<h3 id="窗口创建"><a href="#窗口创建" class="headerlink" title="窗口创建"></a>窗口创建</h3><h4 id="创建窗体"><a href="#创建窗体" class="headerlink" title="创建窗体"></a>创建窗体</h4><p>窗体类：javax.swing.JFrame</p>
+<p>​				创建一个类继承JFrame类，在该类中给窗口设置属性</p>
+<p>​						setTitle()：设置窗口标题</p>
+<p>​						setSize()：设置窗口大小</p>
+<p>​						setLocationRelativeTo(null)：设置窗口位置，null表示相当于屏幕左上角居中</p>
+<p>​						setResizable(false)：设置不允许玩家改变窗口大小，默认为true</p>
+<p>​						setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)：设置关闭窗口时结束程序</p>
+<p>​						在主程序将窗口显示：setVisible(true)</p>
+<p>面板类：javax.swing.JPanel</p>
+<p>​				创建一个类继承JPanel类，在给类中给面板设置属性，在该类创建游戏的一切事物</p>
+<p>​				创建完成之后，new Thread(){}.start()新开启一个线程，运行面板游戏中的事物</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用鼠标监听器</span></span><br><span class="line"><span class="type">MouseAdapter</span> <span class="variable">adapter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MouseAdapter</span>() &#123;</span><br><span class="line">    <span class="comment">//创建鼠标适配器</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//将鼠标适配器装入到面板监听器中</span></span><br><span class="line">addMouseListener(adapter);</span><br><span class="line">addMouseMotionListener(adapter);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">KeyAdapter</span> <span class="variable">adapter1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">KeyAdapter</span>() &#123;</span><br><span class="line">    <span class="comment">//创建键盘适配器</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//将键盘适配器添加到窗体的监视器中</span></span><br><span class="line">frame.addKeyListener(adapter1);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//专门画图的方法，将图片画到面板中</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">paint</span><span class="params">(Graphics g)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.paint(g);</span><br><span class="line">        <span class="comment">//画背景</span></span><br><span class="line">        g.drawImage(bj, <span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">800</span>, <span class="literal">null</span>);</span><br><span class="line">        <span class="comment">//画战斗机</span></span><br><span class="line">        g.drawImage(hero.img, hero.x, hero.y, hero.w, hero.h, <span class="literal">null</span>);</span><br><span class="line">        <span class="comment">//画分数</span></span><br><span class="line">        g.setColor(Color.WHITE);</span><br><span class="line">        g.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;楷体&quot;</span>, Font.BOLD, <span class="number">20</span>));</span><br><span class="line">        g.drawString(<span class="string">&quot;分数：&quot;</span>+score, <span class="number">10</span>, <span class="number">30</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取图片的类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建静态方法，调用时不用创建对象，直接用类名调用</span></span><br><span class="line"><span class="comment">     * path 获取该项目中的相对路径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> BufferedImage <span class="title function_">getImg</span><span class="params">(String path)</span>&#123;</span><br><span class="line">        <span class="comment">//使用反射机制获取该类的路径,相对于src</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">BufferedImage</span> <span class="variable">img</span> <span class="operator">=</span> ImageIO.read(App.class.getResource(path));</span><br><span class="line">            <span class="comment">//如果找到图片返回该图片</span></span><br><span class="line">            <span class="keyword">return</span> img;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">//没有找对该图片则抛出异常，程序停止运行</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="零碎知识"><a href="#零碎知识" class="headerlink" title="零碎知识"></a>零碎知识</h3><h5 id="JVM内存"><a href="#JVM内存" class="headerlink" title="JVM内存"></a>JVM内存</h5><p>方法区内存：存放class字节码代码片段，静态变量存放在方法区内存中</p>
+<p>栈内存：执行方法时分配的内存</p>
+<p>堆内存：存放new创建的对象</p>
+<h5 id="Javac是一个编译器工具"><a href="#Javac是一个编译器工具" class="headerlink" title="Javac是一个编译器工具"></a>Javac是一个编译器工具</h5><p>javac  java源文件路径（在DOS中使用）</p>
+<p>配置path环境，使在任意位置都可以使用javac</p>
+<p>java源文件编译之后生成一个class文件，最终程序运行class文件</p>
+<h5 id="java是一个运行工具"><a href="#java是一个运行工具" class="headerlink" title="java是一个运行工具"></a>java是一个运行工具</h5><p>java  类名（在DOS中使用，使用时必须将目录打开到该类所在的目录）</p>
+<p>配置classpath环境，使在当前路径可以使用java</p>
+<h5 id="javadoc注释"><a href="#javadoc注释" class="headerlink" title="javadoc注释"></a>javadoc注释</h5><p>&#x2F;**</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>*&#x2F;  该注释会被javadoc.exe工具解析提取并生成帮助文档</p>
+<h5 id="public-class-和class的区别"><a href="#public-class-和class的区别" class="headerlink" title="public class 和class的区别"></a>public class 和class的区别</h5><p>一个 java源文件中可以有多个class</p>
+<p>一个java源文件中的一个class会生成一个**.class字节码文件</p>
+<p>一个java源文件中不是必须包含public class ，如果包含则源文件名和该类名必须保持一致（只能包含一个public class）</p>
+<p>每个class中可以编写一个main方法，运行时可以单个执行class字节码文件</p>
+<h5 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h5><p>间隔特定的时间，指定特定的程序</p>
+<p>定时器：java.util.Timer</p>
+<p>​	schedule(定时任务，定时开始时间，定时时间)</p>
+<p>Spring框架中有定时器</p>
+<h5 id="可变长度参数"><a href="#可变长度参数" class="headerlink" title="可变长度参数"></a>可变长度参数</h5><p>语法：类型…</p>
+<p>参数长度为0-n个</p>
+<p>可变长度参数列表必须在最后一个位置上，而且只能有一个</p>
+<p>可变长度参数可以看成是一个数组</p>
+<h5 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h5><p>启动类加载器：加载C:\Program Files\Java\jdk1.8.0_221\jre\lib\rt.jar</p>
+<p>扩展类加载器：C:\Program Files\Java\jdk1.8.0_221\jre\lib\ext*.jar</p>
+<p>应用类加载器：classpath中的jar包</p>
+<p>代码在开始执行之前，会将所需要的类全部加载到JVM当中</p>
+<p>首先通过启动类加载器，如果通过类加载器加载不到时，会通过拓展类加载器加载，如果拓展类加载器加载不到，会通过应用类加载器加载</p>
+<p>java中为了保证类加载的安全使用了双亲委派机制</p>
+<h5 id="实例化对象"><a href="#实例化对象" class="headerlink" title="实例化对象"></a>实例化对象</h5><p>通过newInstance()方法，实例化对象（内部实际上调用了无参构造方法）</p>
+<p>通过IO流读取属性文件（&#x3D;形式），将文件内容加载到Map集合中，通过key获取value，通过反射机制获取字节码文件，在创建对象</p>
+<h5 id="获取一个文件的绝对路径"><a href="#获取一个文件的绝对路径" class="headerlink" title="获取一个文件的绝对路径"></a>获取一个文件的绝对路径</h5><p>Thread.currentThread().getContextClassLoader().getResource(“文件名.文件类型”).getPath();</p>
+<p>该文件必须在类（src）目录下</p>
+<h5 id="资源绑定器"><a href="#资源绑定器" class="headerlink" title="资源绑定器"></a>资源绑定器</h5><p>只能绑定xx.properties文件，并且该文件必须在类路径下</p>
+<p>ResourceBundle bundle &#x3D; ResourceBundle.getBundle(“文件名”);</p>
+<h5 id="UML：统一建模语言"><a href="#UML：统一建模语言" class="headerlink" title="UML：统一建模语言"></a>UML：统一建模语言</h5><p>工程初期设计类与类之间的关系</p>
+<h5 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h5><p>在包java.util中</p>
+<h5 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符\"></a>转义字符\</h5><p>\将普通字符转义为特殊字符，将特殊字符转义为普通字符</p>
+<h5 id="native2ascii-exe命令"><a href="#native2ascii-exe命令" class="headerlink" title="native2ascii.exe命令"></a>native2ascii.exe命令</h5><p>将文字转化为unicode编码形式</p>
+<h5 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h5><p>字面值就是数据</p>
+<h5 id="包机制packa"><a href="#包机制packa" class="headerlink" title="包机制packa"></a>包机制packa</h5><p>在java源文件中的第一句编写package语句（package 包名）</p>
+<p>包名：公司域名倒序+项目名+模块+功能名</p>
+<p>使用package机制后，运行时要创建想要的文件夹（类名变为包名（调用时））</p>
+<h5 id="import"><a href="#import" class="headerlink" title="import"></a>import</h5><p>用来完成导入其他类</p>
+<p>import 类名   或   import 包名.*</p>
+<h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h5><p>优点：集合中存储的元素类型统一，从集合中取出的元素类型是泛型指定的类型，不需要大量的向下类型转换</p>
+<p>砖石表达式：JDK8之后new 类名&lt;这里的类型会自动推断&gt;</p>
+<h5 id="增强for循环：foreach"><a href="#增强for循环：foreach" class="headerlink" title="增强for循环：foreach"></a>增强for循环：foreach</h5><p>for (元素类型 变量名：数组或集合){</p>
+<p>​	System.out.println(变量名);  输出的就是数组或集合的各个元素</p>
+<p>}  </p>
+<p>缺点：没有下标</p>
+<h5 id="java对日期的处理"><a href="#java对日期的处理" class="headerlink" title="java对日期的处理"></a>java对日期的处理</h5><ol>
+<li><p>获取系统时间：java.util.Date Time &#x3D; new java.util.Date();直接调用无参构造方法，获取系统时间</p>
+</li>
+<li><p>Date转换为String：java.text.SimpleDateFormat sdf &#x3D; new java.text.SimpleDateFormat(“yyyy-MM-dd HH:mm:ss SSS”);专门处理设置输出时日期格式</p>
+<p>（年y，月M，日d，时H，分m，秒s，毫秒S）几个表示几位</p>
+<p>用该格式调用format()方法，将获取的系统时间传入，输出日期</p>
+</li>
+<li><p>String转换为Date：调用parse()方法（字符串字符格式和SimpleDateFormat格式要相同）</p>
+</li>
+</ol>
+<p>long x &#x3D; System.currentTimeMillis();获取一个毫秒数</p>
+<p>高精度处理数字：BigDecimal();</p>
+<h5 id="通过常量获取最大值最小值"><a href="#通过常量获取最大值最小值" class="headerlink" title="通过常量获取最大值最小值"></a>通过常量获取最大值最小值</h5><p>最大值：包装类.MAX_VALUE</p>
+<p>最小值：枣庄类.MIN_VALUE</p>
+<h5 id="String、int、Integer之间的互相转换"><a href="#String、int、Integer之间的互相转换" class="headerlink" title="String、int、Integer之间的互相转换"></a>String、int、Integer之间的互相转换</h5><p>String-int:Integer.parseInt(“123”);</p>
+<p>int-String:数字+‘’“，String.valueOf(int)</p>
+<p>int-Integer:装箱</p>
+<p>Integer-int:装箱</p>
+<p>String-Integer:Integer.valueOf(“123”)</p>
+<p>Integer-String:Integer.valueOf(Integer对象)</p>
+<h5 id="main方法String参数"><a href="#main方法String参数" class="headerlink" title="main方法String参数"></a>main方法String参数</h5><p>接收用户参数，可以通过Run-Edit设置账户，密码</p>
+<h5 id="类型和类型之间的关系"><a href="#类型和类型之间的关系" class="headerlink" title="类型和类型之间的关系"></a>类型和类型之间的关系</h5><p>is a（我是一个人）（A extends B）：满足is a的表示继承关系</p>
+<p>has a（我有一个电脑）(A{ B b; })：满足has a的表示关联关系  通常以属性的方式存在</p>
+<p>like a（厨师像菜单）(A implements B)：满足like a的表示实现关系  通常是类实现接口</p>
+<h5 id="内部类-1"><a href="#内部类-1" class="headerlink" title="内部类"></a>内部类</h5><p>静态内部类</p>
+<p>实例内部类</p>
+<p>局部内部类</p>
+<p>匿名内部类：new一个接口，但是要加{}实现接口中的抽象方法</p>
+<h5 id="集成开发环境IDE"><a href="#集成开发环境IDE" class="headerlink" title="集成开发环境IDE"></a>集成开发环境IDE</h5><p>workspace：工作区，将编写的java代码和自动生成的class字节码文件存放在工作区</p>
+<p>.metadata文件存放MEclipse软件的工作状态</p>
+<p>打开窗口：Window–show view–Other</p>
+<p>切换布局：右上角</p>
+<p>还原布局：window–reset</p>
+<p>Package Explore、Navigator、Project Explore：可以看到java源文件</p>
+<p>Console：控制台窗口</p>
+<p>创建java工程：创建工程名称（一般小写），指定java存放的路径，选择java运行环境（JRE配置），Project layout工程的目录布局（多数情况下，选择两个独立的文件夹存放源码src和字节码bin），在src目录下创建软件包（package机制）new–package，在软件包下创建一个java类new–class</p>
+<p>显示行号：左侧栏–show line number</p>
+<p>字体设置：window–Preferences–输入font–colors and fonts–Basic–Text Font–Edit</p>
+<p>快捷键：ctrl-D 删除一行，alt-&#x2F;自动补全，出现红色下划线表示出错Ctrl -1自动纠错，Ctrl-&#x2F;单行注释，Ctrl-shift-&#x2F;多行注释</p>
+<p>Ctrl-鼠标移动到该位置点击可查看访问那个属性，alt+insert快速生成</p>
+<p>设置断点–右键–Debug</p>
+<h5 id="空指针异常"><a href="#空指针异常" class="headerlink" title="空指针异常"></a>空指针异常</h5><p>编译会通过，运行时出现错误：java.lang.NullPointerException</p>
+<p>原因：空引用访问“实例”相关的数据一定会出现空指针异常（实例相关的数据：有对象参与的数据）</p>
+<p>（当对象呗回收了，但引用还指向该对象时引起的空引用）</p>
+<h5 id="键盘输入数据"><a href="#键盘输入数据" class="headerlink" title="键盘输入数据"></a>键盘输入数据</h5><p>java.util.Scanner s &#x3D; new  java.util.Scanner(System.in);</p>
+<p>String str &#x3D; s.next();或int num &#x3D; s.nextInt();</p>
+<h5 id="屏幕输出"><a href="#屏幕输出" class="headerlink" title="屏幕输出"></a>屏幕输出</h5><p>System.out.println(“”);</p>
+<h5 id="自动垃圾回收机制（GC机制）"><a href="#自动垃圾回收机制（GC机制）" class="headerlink" title="自动垃圾回收机制（GC机制）"></a>自动垃圾回收机制（GC机制）</h5><p>当堆内存中的java对象成为垃圾数据时会被垃圾回收器回收</p>
+<h3 id="日志技术"><a href="#日志技术" class="headerlink" title="日志技术"></a>日志技术</h3><p>可以将系统执行的信息选择性的记录到指定的位置（控制台、文件中、数据库中）。</p>
+<p>可以随时以开关的形式控制是否记录日志，无需修改源代码。</p>
+<p>使用：</p>
+<p>在项目下新建文件夹lib，导入Logback的相关jar包到该文件夹下，并添加到项目依赖库中去。</p>
+<p>②：将Logback的核心配置文件logback.xml直接拷贝到src目录下（必须是src下）。<br>③：在代码中获取日志的对象</p>
+<p>public static final Logger LOGGER &#x3D; LoggerFactory.getLogger(“类对象”);</p>
+<p>④：使用日志对象LOGGER调用其方法输出不能的日志信息</p>
+<p>输出到控制台的配置标志：<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"></p>
+<p>输出到系统文件的配置标志：<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"></p>
+<p>具体在<root level="INFO">标签的level属性中设置日志级别。</p>
+<h3 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h3><p><strong>实现网络编程关键的三要素</strong></p>
+<p>​	IP地址：设备在网络中的地址，是唯一的标识。<br>​	端口：应用程序在设备中唯一的标识。<br>​	协议:   数据在网络中传输的规则，常见的协议有UDP协议和TCP协议。</p>
+<p><strong>IP常用命令：</strong><br>    ipconfig：查看本机IP地址<br>    ping IP地址：检查网络是否连通</p>
+<p>注意：本机IP: 127.0.0.1或者localhost：称为回送地址也可称本地回环地址，只会寻找当前所在本机</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/16/JAVA/" data-id="cl3u71bjw000a380lbyqxexif" data-title="JAVA" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/JavaScript/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          JavaScript
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">数据结构</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/31/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/04/LeetCode/">LeetCode</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/01/SpringBoot2/">SpringBoot2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/30/MyBatisPlus/">MyBatis-Plus</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/RabbitMQ/">RabbitMQ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 ��ǿ��Сǿ<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
