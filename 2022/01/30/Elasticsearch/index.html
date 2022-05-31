@@ -19,18 +19,18 @@
     <meta name="description" content="Elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch">
-<meta property="og:url" content="https://zhqblog.github.io/2022/01/30/Elasticsearch/index.html">
+<meta property="og:url" content="https://github.com/ZHQBlog/2022/01/30/Elasticsearch/index.html">
 <meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="Elasticsearch">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhqblog.github.io/ZHQBlog.github.io.git/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
-<meta property="og:image" content="https://zhqblog.github.io/ZHQBlog.github.io.git/2022/01/30/Elasticsearch/3940d6cdb197259368542b86384911a4.png">
+<meta property="og:image" content="https://github.com/ZHQBlog.github.io.git/ZHQBlog/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
+<meta property="og:image" content="https://github.com/ZHQBlog.github.io.git/ZHQBlog/2022/01/30/Elasticsearch/3940d6cdb197259368542b86384911a4.png">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
 <meta property="article:modified_time" content="2022-05-28T13:12:24.816Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhqblog.github.io/ZHQBlog.github.io.git/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
+<meta name="twitter:image" content="https://github.com/ZHQBlog.github.io.git/ZHQBlog/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png">
   
   
   <title>Elasticsearch - 小强的博客</title>
@@ -70,7 +70,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"zhqblog.github.io","root":"/ZHQBlog.github.io.git/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/ZHQBlog.github.io.git/local-search.xml"};
+    var CONFIG = {"hostname":"github.com","root":"/ZHQBlog.github.io.git/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/ZHQBlog.github.io.git/local-search.xml"};
   </script>
   <script  src="/ZHQBlog.github.io.git/js/utils.js" ></script>
   <script  src="/ZHQBlog.github.io.git/js/color-schema.js" ></script>
@@ -400,7 +400,7 @@
 <p>报错只因创建映射时”tel”的”index”为false</p>
 <h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><h3 id="创建（Put-amp-Post）"><a href="#创建（Put-amp-Post）" class="headerlink" title="创建（Put &amp; Post）"></a>创建（Put &amp; Post）</h3><p>文档可以类比为关系型数据库中的表数据，添加的数据格式为 JSON 格式</p>
 <p>向 ES 服务器发 <strong>POST</strong> 请求 ： <code>http://127.0.0.1:9200/索引名称/_doc</code>，需要发送请求体JSON</p>
-<img src="/ZHQBlog.github.io.git/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png" srcset="/ZHQBlog.github.io.git/img/loading.gif" lazyload style="zoom: 80%;">
+<img src="/ZHQBlog.github.io.git/ZHQBlog/2022/01/30/Elasticsearch/20d54cba223bd9d70ea356d3e40a8161.png" srcset="/ZHQBlog.github.io.git/img/loading.gif" lazyload style="zoom: 80%;">
 
 <p>数据创建后，由于没有指定数据唯一性标识（ID），默认ES会随机生成id</p>
 <p>在创建时指定id： <code>http://127.0.0.1:9200/索引名称/_doc/1</code></p>
@@ -541,7 +541,7 @@
 
 <p>routing 是一个可变值，默认是文档的 _id 。 routing 通过hash 函数生成一个数字，然后这个数字再除以 number_of_primary_shards （主分片的数量）后得到余数 </p>
 <h3 id="分片控制"><a href="#分片控制" class="headerlink" title="分片控制"></a>分片控制</h3><p>每个节点都有能力处理任意请求。每个节点都知道集群中任一文档位置，所以可以直接将请求转发到需要的节点上</p>
-<img src="/ZHQBlog.github.io.git/2022/01/30/Elasticsearch/3940d6cdb197259368542b86384911a4.png" srcset="/ZHQBlog.github.io.git/img/loading.gif" lazyload alt="img" style="zoom: 50%;">
+<img src="/ZHQBlog.github.io.git/ZHQBlog/2022/01/30/Elasticsearch/3940d6cdb197259368542b86384911a4.png" srcset="/ZHQBlog.github.io.git/img/loading.gif" lazyload alt="img" style="zoom: 50%;">
 
 <p>当发送请求的时候， 为了扩展负载，更好的做法是轮询集群中所有的节点</p>
 <h3 id="数据写流程"><a href="#数据写流程" class="headerlink" title="数据写流程"></a>数据写流程</h3><p>新建、索引和删除请求都是写操作， 必须在主分片上面完成之后才能被复制到相关的副本分片。</p>
@@ -788,7 +788,7 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;tokens&quot;</span>: [<br>        &#123;<br>            <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;测&quot;</span>, <br>            <span class="hljs-attr">&quot;start_offset&quot;</span>: <span class="hljs-number">0</span>, <br>            <span class="hljs-attr">&quot;end_offset&quot;</span>: <span class="hljs-number">1</span>, <br>            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;&lt;IDEOGRAPHIC&gt;&quot;</span>, <br>            <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-number">0</span><br>        &#125;, <br>        &#123;<br>            <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;试&quot;</span>, <br>            <span class="hljs-attr">&quot;start_offset&quot;</span>: <span class="hljs-number">1</span>, <br>            <span class="hljs-attr">&quot;end_offset&quot;</span>: <span class="hljs-number">2</span>, <br>            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;&lt;IDEOGRAPHIC&gt;&quot;</span>, <br>            <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-number">1</span><br>        &#125;, <br>        &#123;<br>            <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;单&quot;</span>, <br>            <span class="hljs-attr">&quot;start_offset&quot;</span>: <span class="hljs-number">2</span>, <br>            <span class="hljs-attr">&quot;end_offset&quot;</span>: <span class="hljs-number">3</span>, <br>            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;&lt;IDEOGRAPHIC&gt;&quot;</span>, <br>            <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-number">2</span><br>        &#125;, <br>        &#123;<br>            <span class="hljs-attr">&quot;token&quot;</span>: <span class="hljs-string">&quot;词&quot;</span>, <br>            <span class="hljs-attr">&quot;start_offset&quot;</span>: <span class="hljs-number">3</span>, <br>            <span class="hljs-attr">&quot;end_offset&quot;</span>: <span class="hljs-number">4</span>, <br>            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;&lt;IDEOGRAPHIC&gt;&quot;</span>, <br>            <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-number">3</span><br>        &#125;<br>    ]<br>&#125;<br><span class="hljs-number">1234567891011121314151617181920212223242526272829303132</span><br></code></pre></td></tr></table></figure>
 
 <p>这样的结果显然不符合我们的使用要求，所以我们需要下载 ES 对应版本的中文分词器。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.8.0">IK 中文分词器下载网址</a></p>
+<p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.8.0">IK 中文分词器下载网址</a></p>
 <p>将解压后的后的文件夹放入 ES 根目录下的 plugins 目录下，重启 ES 即可使用。</p>
 <p>我们这次加入新的查询参数”analyzer”:“ik_max_word”。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs json"># GET http:<span class="hljs-comment">//localhost:9200/_analyze</span><br>&#123;<br>	<span class="hljs-attr">&quot;text&quot;</span>:<span class="hljs-string">&quot;测试单词&quot;</span>,<br>	<span class="hljs-attr">&quot;analyzer&quot;</span>:<span class="hljs-string">&quot;ik_max_word&quot;</span><br>&#125;<br><span class="hljs-number">12345</span><br></code></pre></td></tr></table></figure>
@@ -971,7 +971,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Elasticsearch</div>
-      <div>https://zhqblog.github.io/2022/01/30/Elasticsearch/</div>
+      <div>https://github.com/ZHQBlog/2022/01/30/Elasticsearch/</div>
     </div>
     <div class="license-meta">
       
