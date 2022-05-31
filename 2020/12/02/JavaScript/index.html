@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/ZHQBlog.github.io.git/img/fluid.png">
+  <link rel="icon" href="/ZHQBlog.github.io.git/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="倔强的小强">
+  <meta name="keywords" content="倔强的小强">
+  
+    <meta name="description" content="JavaScript基本使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="https://zhqblog.github.io/2020/12/02/JavaScript/index.html">
+<meta property="og:site_name" content="小强的博客">
+<meta property="og:description" content="JavaScript基本使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/ksohtml/wps746F.tmp.png">
+<meta property="article:published_time" content="2020-12-02T08:43:29.000Z">
+<meta property="article:modified_time" content="2022-04-08T13:01:39.908Z">
+<meta property="article:author" content="倔强的小强">
+<meta property="article:tag" content="倔强的小强">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="file:///C:/Users/Lenovo/AppData/Local/Temp/ksohtml/wps746F.tmp.png">
+  
+  
+  <title>JavaScript - 小强的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/ZHQBlog.github.io.git/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/ZHQBlog.github.io.git/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/ZHQBlog.github.io.git/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zhqblog.github.io","root":"/ZHQBlog.github.io.git/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/ZHQBlog.github.io.git/local-search.xml"};
+  </script>
+  <script  src="/ZHQBlog.github.io.git/js/utils.js" ></script>
+  <script  src="/ZHQBlog.github.io.git/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/ZHQBlog.github.io.git/">
+      <strong>❤</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/ZHQBlog.github.io.git/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JavaScript"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-12-02 16:43" pubdate>
+          2020年12月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          46 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JavaScript</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="JavaScript概述"><a href="#JavaScript概述" class="headerlink" title="JavaScript概述"></a>JavaScript概述</h2><ol>
+<li><p>JavaScript语言是一种脚本语言（解释型语言），JavaScript的“目标程序”是以普通文本的形式保存。用记事本是可以直接打开的。浏览器打开就直接解释执行了。</p>
+</li>
+<li><p>JavaScript是一门编程语言，专门用来操作HTML页面中的节点，让网页产生动态效果的。JavaScript中也有变量、数据类型、运算符、if语句、for循环、标识符、关键字等。</p>
+</li>
+<li><p>JavaScript和Java的区别</p>
+<p>​    JavaScript运行在浏览器当中，浏览器中有执行JS代码的内核。</p>
+<p>​    Java运行在JVM当中。JavaScript和Java没有任何关系。</p>
+<p>​    Java语言是SUN公司开发的，JavaScript这个名字是SUN公司给起的名。</p>
+</li>
+</ol>
+<h2 id="JavaScript包括三块：ECMAScript、DOM、BOM"><a href="#JavaScript包括三块：ECMAScript、DOM、BOM" class="headerlink" title="JavaScript包括三块：ECMAScript、DOM、BOM"></a>JavaScript包括三块：ECMAScript、DOM、BOM</h2><ol>
+<li><p>ECMAScript是ECMA制定的262标准，JavaScript和JScript都遵守这个标准，ECMAScript是JavaScript核心语法</p>
+</li>
+<li><p>DOM编程是通过JavaScript对HTML中的dom节点进行操作，DOM规范是W3C制定的。（Document Object Model：文档对象模型）</p>
+</li>
+<li><p>BOM编程是对浏览器本身操作，例如：前进、后退、地址栏、关闭窗口、弹窗等。由于浏览器有不同的厂家制造，所以BOM缺少规范，一般只是有一个默认的行业规范。（Browser Object Model：浏览器对象模型）</p>
+</li>
+</ol>
+<h2 id="嵌入JS三种方式"><a href="#嵌入JS三种方式" class="headerlink" title="嵌入JS三种方式"></a>嵌入JS三种方式</h2><h3 id="行间事件"><a href="#行间事件" class="headerlink" title="行间事件"></a>行间事件</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;window.alert(&#x27;hello js&#x27;)&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>JS中的任何一个事件都对应一个事件句柄，例如鼠标单击事件click，对应的事件句柄就是onclick，事件句柄都是以标签的属性方式存在。在事件句柄后面可以编写JS代码，当触发这个事件之后，这段JS代码则执行了。</li>
+<li>window是JS中的内置BOM顶级对象，代表当前浏览器窗口，window对象有一个alert()函数，该函数可以在浏览器上弹出消息框。</li>
+<li>window.alert()中的window.可以省略。</li>
+</ol>
+<h3 id="页面script标签嵌入"><a href="#页面script标签嵌入" class="headerlink" title="页面script标签嵌入"></a>页面script标签嵌入</h3><ol>
+<li>```html<script type="text/javascript">JS代码</script>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><br>2. window.alert()的执行会阻塞当前页面的加载<br>3. 一个页面中可以写多个脚本块，脚本块的位置没有限制<br>4. 暴露在脚本块中的JS代码在页面打开的时候遵循自上而下的顺序依次逐行执行<br><br><br><br><span class="hljs-comment">### 外部引入</span><br><br>1. ```html<br>   &lt;script <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;js文件路径&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="标识符和关键字"><a href="#标识符和关键字" class="headerlink" title="标识符和关键字"></a>标识符和关键字</h2><p>标识符命名规则和规范按照java执行</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量的声明与赋值"><a href="#变量的声明与赋值" class="headerlink" title="变量的声明与赋值"></a>变量的声明与赋值</h3><ol>
+<li>变量未赋值，系统默认赋值undefined</li>
+<li>JS是一种弱类型编程语言，一个变量var可以接收任何类型的数据</li>
+<li>一行上也可以声明多个变量</li>
+</ol>
+<h3 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h3><p><strong>局部变量</strong>：函数的形参是局部变量，另外使用var关键字在函数体中声明的变量是局部变量，函数执行结束之后，局部变量的内存就释放了。</p>
+<p><strong>全局变量</strong>：在函数体外声明的变量属于全局变量，另外不使用var关键字声明的变量无论位置在哪，它都是全局变量（没有var声明的变量，必须=手动赋值，没有默认值undefined），全局变量在浏览器关闭时销毁。</p>
+<h2 id="函数的定义与调用"><a href="#函数的定义与调用" class="headerlink" title="函数的定义与调用"></a>函数的定义与调用</h2><p>函数类似于java语言中的方法，是一段可以完成某个功能的可以被重复利用的代码片段</p>
+<h3 id="普通函数定义"><a href="#普通函数定义" class="headerlink" title="普通函数定义"></a>普通函数定义</h3><p>function 函数名(形式参数列表){                                             function sum(a, b){</p>
+<p>​        函数体;                                                                                      return a + b;</p>
+<p>}                                                                                                   }                                                                                                     </p>
+<p>注意：</p>
+<ol>
+<li><p>JS中的函数<strong>不需要指定返回值类型</strong>，因为JS是弱类型编程语言，变量可以接收任何类型的数据，也就是说JS中的函数可以返回任何类型的数据，当然也可以不返回任何数据。返回数据使用return语句。</p>
+</li>
+<li><p>JS中的函数在调用的时候，实参可以随意，例如调用以上的sum函数</p>
+<p>​    （1）sum()，没有传任何实参的时候a和b变量没有赋值，则a和b都是undefined</p>
+<p>​    （2）sum(10)，这样就表示a变量赋值10，b变量仍然是undefined</p>
+<p>​    （3）sum(1,2)，这样则表示a是1，b是2。</p>
+</li>
+</ol>
+<h3 id="把函数的声明当做类进行定义"><a href="#把函数的声明当做类进行定义" class="headerlink" title="把函数的声明当做类进行定义"></a>把函数的声明当做类进行定义</h3><p>函数名 = function(形式参数列表){                                                            sum = function(a, b){</p>
+<p>​    函数体;                                                                                                          return a + b;</p>
+<p>}                                                                                                                    }                                                                                                                          </p>
+<ol>
+<li><p>JS中的函数定义在脚本块中，页面在打开的时候，函数并不会自动执行，函数是需要手动调用才能执行的。</p>
+</li>
+<li><p>由于JS是一种弱类型编程语言，所以函数不能同名，没有重载机制，同名会将前边的函数消灭掉</p>
+</li>
+<li><p>这样的代码顺序是可以的，页面打开的时候会先进行所有函数的声明，函数声明优先级较高。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;<br>	sayHello();<br>	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>)</span>&#123;<br>		alert(<span class="hljs-string">&quot;Hello JS&quot;</span>);<br>	&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>用户点击按钮，调用函数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="javascript">		alert(<span class="hljs-string">&quot;hello js&quot;</span>);</span><br><span class="javascript">	&#125;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;sayHello();&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>Undefined：</strong></p>
+<p>（1）只有一个值undefined，变量声明没赋值，系统默认赋值undefined</p>
+<p><strong>Number：</strong></p>
+<p>（1）Number类型包括哪些值：0,1，-1,3.14,12,300，NaN，Infinity        NaN：表示数学表达式的结果应该是数字，但未返回数字时，返回NaN               Infinity：表示无穷大</p>
+<p>（2）parseInt()：取整，不会四舍五入</p>
+<p>（3）parseFloat()</p>
+<p>（4）Math.ceil()：向上取整</p>
+<p>（5）isNaN()：判断是否是数字类型的，先试图将类型转换为数字，成功了返回的是false</p>
+<p>（6）Number()：可以把能转化为数组的数据但不是数字转化为数字</p>
+<p><strong>String：</strong></p>
+<p>（1）可以使用单引号，也可以用双引号</p>
+<p>（2）JS中的字符串包括小String，也包括大String，小String属于原始类型，大String是JS的内置对象，大String属于Object类型。（小String是直接赋值字符串类型，大String是new String(“”)创建的）</p>
+<p>（3）无论大String还是小String，它们的属性和方法都是通用的。</p>
+<p>（4）字符串的substr()和substring()的区别。</p>
+<p><strong>Null：</strong></p>
+<p>（1）该类型只有一个值：null</p>
+<p>（2）typeof运算符的执行结果是”object”</p>
+<p><strong>Boolean：</strong></p>
+<p>（1）只有两个值：true和false</p>
+<p>（2）Boolean()：将不是Boolean类型的转化为Boolean类型</p>
+<p>（3）JS中的if语句自动调用Boolean()函数</p>
+<p><strong>Object</strong></p>
+<p>（1）JS中定义一个类和定义一个函数语法是相同的</p>
+<p>（2）JS中创建一个对象：new 类名()</p>
+<p>（3）JS中访问对象属性：this.属性名；调用对象的方法：this.方法名 = function(){}</p>
+<p>（4）JS中的一个函数，既是函数声明，又是类的定义，同时函数名也可以看做构造方法名。直接调用函数表示普          通函数调用，如果使用new运算符来调用该函数则会创建对象</p>
+<p>（5）使用prototype属性动态的给对象扩展属性以及方法</p>
+<p>ES6版本及之后添加了：<strong>Symbol</strong>和<strong>BigInt</strong></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><p>blur失去焦点</p>
+<p>focus获得焦点</p>
+<p>click鼠标单击</p>
+<p>dblclick鼠标双击</p>
+<p>keydown键盘按下</p>
+<p>keyup键盘弹起</p>
+<p>mousedown鼠标按下</p>
+<p>mouseup鼠标弹起</p>
+<p>mouseover鼠标经过</p>
+<p>mousemove鼠标移动</p>
+<p>mouseout鼠标离开</p>
+<p>submit表单提交</p>
+<p>reset表单重置</p>
+<p>select文本被选定</p>
+<p>load页面加载完毕</p>
+<p>change下拉列表选中项改变，或文本框内容改变</p>
+<h3 id="注册事件的两种方式"><a href="#注册事件的两种方式" class="headerlink" title="注册事件的两种方式"></a>注册事件的两种方式</h3><p>在标签中使用事件句柄的方式注册事件,当事件发生之后，注册在标签的代码执行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">&quot;sayHello()&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>隐含的内置对象：</p>
+<p>​    window：代表整个web窗口，是BOM的顶级对象</p>
+<p>​    document：代表整个HTML文档，是DOM的顶级对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	<span class="hljs-built_in">window</span>.onload = sayHello;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>或<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	<span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123; </span><br><span class="javascript">	&#125;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="代码的执行顺序"><a href="#代码的执行顺序" class="headerlink" title="代码的执行顺序"></a>代码的执行顺序</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mybtn&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span><br><span class="javascript">		<span class="hljs-keyword">var</span> elt = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn&quot;</span>);</span><br><span class="javascript">	</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span><br><span class="javascript">		<span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="javascript">			<span class="hljs-keyword">var</span> elt = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn&quot;</span>);</span><br><span class="javascript">		&#125;</span><br><span class="javascript">	</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mybtn&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h4 id="void运算符"><a href="#void运算符" class="headerlink" title="void运算符"></a>void运算符</h4><p>执行表达式，但不返回任何结果</p>
+<p>void(表达式)</p>
+<p>在a标签中的href中写javascript:void(0)就可以不跳转页面</p>
+<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4><p>动态获取变量的数据类型</p>
+<p>typeof a  获得a的数据类型，返回的是六个类型的字符串undefined，number，string，boolean，object，function（全部小写）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>)</span>&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;number&quot;</span> === <span class="hljs-keyword">typeof</span> a &amp;&amp; <span class="hljs-string">&quot;number&quot;</span> === <span class="hljs-keyword">typeof</span> b)&#123;<br>		<span class="hljs-keyword">return</span> a + b;<br>	&#125;<br>	alert(<span class="hljs-string">&quot;数据格式不合法&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>=、==、===三者的区别</strong></p>
+<p>​    ==：等同运算符，比价值是否相等</p>
+<p>​    ===：全等运算符，即比较值是否相等，还比较数据类型是否相等</p>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><p>for..in语句遍历数组，以及遍历一个对象的属性</p>
+<p>遍历数组：for(var index in 数组){}    index为数组元素的下标，和foreach有区别</p>
+<p>遍历对象属性：for(var index in 对象){}  index为对象的属性名</p>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>创建数组：</p>
+<p>​            var arr = [元素1,元素2];       js中的数组长度可变</p>
+<p>​            var arr = new Array(3,2,1,5)</p>
+<p>​            var arr = new Array(3)创建数组长度为3的数组</p>
+<p>JS中数组对象常用方法：push压栈，pop出栈，join连接，reverse翻转等</p>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><p>（1）new Date() 获取当前系统时间</p>
+<p>（2）new Date().getTime()获取时间戳</p>
+<p>（3）new Date().getFullYear()、getMonth()等方法</p>
+<h2 id="BOM和DOM"><a href="#BOM和DOM" class="headerlink" title="BOM和DOM"></a>BOM和DOM</h2><p><strong>BOM</strong>: Browser Object Model（浏览器对象模型），通过BOM的对象和方法可以完成浏览器窗口的操作，例如：关闭浏览器，前进，后退，修改地址栏上的地址等，BOM是包含DOM的。BOM的顶级内置对象是window</p>
+<p><strong>DOM</strong>: Document Object Model（文档对象模型），通过DOM的对象和方法可以完成网页中元素的增删改，让网页产生动态效果，DOM的顶级内置对象是document</p>
+<p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml\wps746F.tmp.png" srcset="/ZHQBlog.github.io.git/img/loading.gif" lazyload alt="img"> </p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="正则表达式概述"><a href="#正则表达式概述" class="headerlink" title="正则表达式概述"></a>正则表达式概述</h3><p>（1）正则表达式是一门独立的学科，不止用在JS中</p>
+<p>（2）正则表达式专门用来做字符串格式匹配的</p>
+<h3 id="常用的正则表达式符号"><a href="#常用的正则表达式符号" class="headerlink" title="常用的正则表达式符号"></a>常用的正则表达式符号</h3><p>参考30分钟入门正则表达式：</p>
+<p>^   字符串开始</p>
+<p>$   字符串结束</p>
+<p>\s   空白</p>
+<p>*   0~N次</p>
+<p>+   1~N次</p>
+<p>?   0或1次</p>
+<p>{3}   3次</p>
+<p>{3,}   3~N次</p>
+<p>{3,5}   3~5次</p>
+<p>(a|b)   a或b</p>
+<p>[a-z]   a到z</p>
+<p>[^abc]   不是abc</p>
+<h3 id="会创建JS中的正则表达式对象"><a href="#会创建JS中的正则表达式对象" class="headerlink" title="会创建JS中的正则表达式对象"></a>会创建JS中的正则表达式对象</h3><p>var regExp = new RegExp(“正则表达式”,”标记”)</p>
+<p>var regExp = /正则表达式/标记</p>
+<p>标记（可忽略不写）：g全局，i忽略大小写</p>
+<p>（2）var regExp = /^[1-9][0-9]{4,}$/;</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JavaScript</div>
+      <div>https://zhqblog.github.io/2020/12/02/JavaScript/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>倔强的小强</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年12月2日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/ZHQBlog.github.io.git/2021/01/30/MySQL/" title="MySQL">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MySQL</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/ZHQBlog.github.io.git/2020/11/16/JAVA/" title="JAVA">
+                        <span class="hidden-mobile">JAVA</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/ZHQBlog.github.io.git/js/events.js" ></script>
+<script  src="/ZHQBlog.github.io.git/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/ZHQBlog.github.io.git/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/ZHQBlog.github.io.git/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/ZHQBlog.github.io.git/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

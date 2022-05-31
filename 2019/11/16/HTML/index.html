@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/ZHQBlog.github.io.git/img/fluid.png">
+  <link rel="icon" href="/ZHQBlog.github.io.git/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="倔强的小强">
+  <meta name="keywords" content="倔强的小强">
+  
+    <meta name="description" content="基础标签，表格，表单，列表，CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="https://zhqblog.github.io/2019/11/16/HTML/index.html">
+<meta property="og:site_name" content="小强的博客">
+<meta property="og:description" content="基础标签，表格，表单，列表，CSS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-16T11:03:57.000Z">
+<meta property="article:modified_time" content="2022-04-08T13:02:01.416Z">
+<meta property="article:author" content="倔强的小强">
+<meta property="article:tag" content="倔强的小强">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>HTML - 小强的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/ZHQBlog.github.io.git/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/ZHQBlog.github.io.git/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/ZHQBlog.github.io.git/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zhqblog.github.io","root":"/ZHQBlog.github.io.git/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/ZHQBlog.github.io.git/local-search.xml"};
+  </script>
+  <script  src="/ZHQBlog.github.io.git/js/utils.js" ></script>
+  <script  src="/ZHQBlog.github.io.git/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/ZHQBlog.github.io.git/">
+      <strong>❤</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ZHQBlog.github.io.git/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/ZHQBlog.github.io.git/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HTML"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2019-11-16 19:03" pubdate>
+          2019年11月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          45 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML</h1>
+            
+            <div class="markdown-body">
+              
+              <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="基础标签"><a href="#基础标签" class="headerlink" title="基础标签"></a>基础标签</h4><ul>
+<li><p>meta charset=”utf-8” / &gt;    utf-8表示的是使用万国码</p>
+</li>
+<li><p>html&gt;表示代码是html，主要包含head和body两部分</p>
+</li>
+<li><p>head&gt;头部，这部分包含显示在网页标题栏中的标题和其他在网页中不显示的信息</p>
+</li>
+<li><p>body&gt;主体部分，显示页面中的文字图像连接等等</p>
+</li>
+<li><p>title&gt;网页标题栏中的标题，例如百度主页</p>
+</li>
+<li><p>h1&gt;~h6&gt; 标题，字体从打大到小</p>
+</li>
+<li><p>p&gt;段落 不自动分行（color颜色，align位置）</p>
+</li>
+<li><p>blockquote&gt;段落 自动分行</p>
+</li>
+<li><p>font&gt; 对字体进行修饰（color颜色，face字体，size大小）</p>
+</li>
+<li><p>b&gt;或strong&gt; 字体加粗</p>
+</li>
+<li><p>i&gt;字体倾斜</p>
+</li>
+<li><p>u&gt;字体下划线</p>
+</li>
+<li><p>br /&gt;强制换行 nobr&gt;不换行</p>
+</li>
+<li><p>hr/&gt;分割线</p>
+</li>
+<li><p>&lt;! –注释内容–&gt;   注释</p>
+</li>
+<li><p>&amp;nbsp空格</p>
+</li>
+<li><p>img src=”图片路径”&gt;插入图片（width长度，height宽度，align水平位置， valign上下位置）</p>
+</li>
+<li><p>a href=””&gt; 超链接</p>
+</li>
+<li><p>span&gt;改变一行内元素</p>
+</li>
+<li><p>div&gt; 块元素</p>
+</li>
+<li><p>details&gt; 标签用于描述文档或文档某个部分的细节。与 summary&gt; 标签 配合使用可以为 details 定义标题。标题是可见的，用户点击标题时，会显示出 details。</p>
+</li>
+<li><p>display:none;隐藏内容   display:block;显示内容</p>
+</li>
+</ul>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span> 定义表格<br><span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span> 定义表格标题<br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span> 定义表格的表头，相当于<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span> 定义表格的行<br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span> 定义表格单元<br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span> 定义表格的页眉<br><span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span> 定义表格的页脚<br><span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>  定义表格的主体<br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>  对表格的列进行组合<br><span class="hljs-tag">&lt;<span class="hljs-name">rowspan</span>&gt;</span>  列合并<br><span class="hljs-tag">&lt;<span class="hljs-name">colspan</span>&gt;</span> 行合并<br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">col</span>&gt;</span>  定义表格列属性（span标签规定列数）<br><span class="hljs-tag">&lt;<span class="hljs-name">cellspacing</span>&gt;</span> 规定单元格之间的间距<br><span class="hljs-tag">&lt;<span class="hljs-name">cellpadding</span>&gt;</span> 规定单元格与文本之间的边距<br><span class="hljs-tag">&lt;<span class="hljs-name">border</span>&gt;</span>  单元格边框（solid实线边框）<br><span class="hljs-tag">&lt;<span class="hljs-name">bgcolor</span>&gt;</span>  单元格背景颜色<br></code></pre></td></tr></table></figure>
+
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>无序列表（type规定列表图标类型）<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项<br><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>有序列表（type规定列表序列类型）<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>列表项  <span class="hljs-tag">&lt;<span class="hljs-name">start</span>&gt;</span>定义从几开始  <span class="hljs-tag">&lt;<span class="hljs-name">reversed</span>&gt;</span>逻辑属性，规定属性什么顺序排序（只在谷歌浏览器显示）<br><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>定义列表：多用于对事物的解释  <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>定义列表的项  <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>描述列表中的项<br></code></pre></td></tr></table></figure>
+
+<h4 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>创建表单<br>action=&quot;url&quot; 指定接收处理表单数据的服务器url地址<br>method=&quot;get\post&quot;设置表单数据提交方式 get是默认方式    post可大量提交数据<br>name指定表单名称<br>datalist 规定输入框的选项列表，通过option元素进行创建<br>keygen 用于表单的密钥生成器（私钥：储存在客户端；公钥：发送到服务器）<br>表单域<br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span>单行文本输入框<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> /&gt;</span>密码输入框<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> /&gt;</span>单选框<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> /&gt;</span>复选框<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> /&gt;</span>隐藏域<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> /&gt;</span>文件域<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span>/&gt;</span> 专门用于输入E-email地址的文本 框<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;url&quot;</span> /&gt;</span>输入url地址的输入域<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span>/&gt;</span> 用于提供输入数值的文本框 min最小值 max最大值 step设置合法的间隔<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span>/&gt;</span>用于提供输入一定范围数值，显示为滑动条 min最小值 max最大值 step指定每次滑动的步幅<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;search&quot;</span>/&gt;</span> 用于搜索域<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;color&quot;</span>/&gt;</span>用于选择颜色 <br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;tel&quot;</span>/&gt;</span>用于输入电话号码 <br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">autofocus</span>&gt;</span> 用于指定页面加载后是否自动获取焦点（光标自  动显示）<br><span class="hljs-tag">&lt;<span class="hljs-name">multiple</span>&gt;</span> 指定输入框可以选择多个值<br><span class="hljs-tag">&lt;<span class="hljs-name">placeholder</span>&gt;</span> 为input类型的输入框提供相关提示信息<br><span class="hljs-tag">&lt;<span class="hljs-name">reauired</span>&gt;</span> 规定输入框写的内容不能为空，否则不允许用户提 交表单<br><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>下拉列表框   size为1时为下拉列表  <br><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>&gt;</span>多行文本输入框  cols行数  rows列数<br><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>常用文本输入标签<br><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>分组或字段域<br><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>分组或字段域的标题<br><span class="hljs-tag">&lt;<span class="hljs-name">maxlength</span>&gt;</span>单行文本允许输入的最大字符数<br><span class="hljs-tag">&lt;<span class="hljs-name">autocomplete</span>&gt;</span> on开启自动填充 off关闭自动填充<br><span class="hljs-tag">&lt;<span class="hljs-name">novalidate</span>&gt;</span>提交表单时取消对表单进行有效的检查<br>    <br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> /&gt;</span>普通按钮  <br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> /&gt;</span>提交按钮，将表单信息  提交到   action所指的文件<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image&quot;</span> /&gt;</span>图片提交按钮<br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> /&gt;</span>重置按钮<br><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="CSS语法结构"><a href="#CSS语法结构" class="headerlink" title="CSS语法结构"></a>CSS语法结构</h4><h5 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">width</span>&gt;</span>宽<br><span class="hljs-tag">&lt;<span class="hljs-name">height</span>&gt;</span>高<br>并非显示的宽高，显示的宽高加上了border和padding<br>如果保持盒子真是占有宽度不变，加width就需要减padding<br><span class="hljs-tag">&lt;<span class="hljs-name">border</span>&gt;</span>边框（像素 线性：solid实线边框 颜色）<br>按要素拆分：把像素，border-style线性，颜色分开写(要素可以分别设置边框)<br>按方向拆分：例border-top-color上边框颜色<br><span class="hljs-tag">&lt;<span class="hljs-name">padding</span>&gt;</span>边框和文本的距离 也有背景颜色 可以描述四个方向left左，right右，bottom下，top上（上右下左   如果写两个的话下会和上一样，左会和右一样）<br><span class="hljs-tag">&lt;<span class="hljs-name">margin</span>&gt;</span><br>1. 塌陷现象：在标准文档流中margin竖直方向不叠加，以较大的为准,水平方向叠加<br>2. margin的值可以为auto，表示自动，可以用该属性（margin:0 auto;）让盒子居中，但盒子必须有width，并且在标准流中<br>3. 如果父亲没有border，儿子添加的margin就是对整行添加该属性<br>4. IE6双倍margin bug：当出现的连续浮动的元素携带和浮动方向相同的margin时，队首的元素会双倍margin；<br>可以使浮动方向和margin方向相反；<br>也可以使用hack：单独给队首的盒子写margin<br>5. IE6的 3px bug<br>6. 对于IE6小于12px的盒子兼容问题，追加一个_font-size:0;<br></code></pre></td></tr></table></figure>
+
+<h5 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h5><p>宏观定义：web页面制作必须从上至下</p>
+<ol>
+<li><p>空白折叠现象：插入的图片img换行中间会隔开（两个img紧密相邻时去掉空白）</p>
+</li>
+<li><p>高矮不齐，底端对齐</p>
+</li>
+<li><p>自动换行</p>
+</li>
+<li><p>块级元素和行内元素</p>
+<p>块级元素</p>
+<p>​        1&gt;霸占一行，不能与其他任何元素并列</p>
+<p>​        2&gt;能接受宽高</p>
+<p>​        3&gt;如果不设置宽高，宽高将默认变为父亲的100%</p>
+<p>行内元素</p>
+<p>​        1&gt;与其他行内元素并排</p>
+<p>​        2&gt;不能设置宽高，默认宽高就是文字宽高</p>
+<p>display:inline;将块元素改变为行内元素，改变为行内元素性质</p>
+<p>display:block;将行内元素改变为块元素，改变为块元素性质</p>
+</li>
+<li><p>HTML中将标签分为了文本级和容器级</p>
+<p>​        文本级：p, span, a, b, i, u, em</p>
+<p>​        容器级：div, h系列, li, dt, dd</p>
+<p>​    除了p是文本级标签但是是块级元素，其余文本级标签都是行内元素</p>
+</li>
+</ol>
+<h5 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h5><p>float:right; 右浮动</p>
+<p>使两个元素并排，且宽高不变</p>
+<ol>
+<li><p>浮动的元素脱离标准文档流：元素浮动将有块元素和行内元素的性质</p>
+</li>
+<li><p>浮动的元素相互贴靠</p>
+</li>
+<li><p>浮动的元素有“字围”效果：浮动的元素能挡住盒子，不能挡住盒子里的内容</p>
+</li>
+<li><p>浮动元素不设置宽，将自动收缩到文字的宽高</p>
+</li>
+</ol>
+<h5 id="浮动的清除"><a href="#浮动的清除" class="headerlink" title="浮动的清除"></a>浮动的清除</h5><ol>
+<li>给祖先元素加高度</li>
+</ol>
+<p>添加高度时，浮动就只在盒子里进行（有高度的盒子，才能关住浮动）</p>
+<p>添加内容撑出高度（相当于给盒子添加高度；脱标的属性不能撑出高）</p>
+<ol start="2">
+<li>clear:both;清除别人对我的影响；清除全部（左，右）浮动</li>
+</ol>
+<p>使用clear:both;时margin会失效</p>
+<ol start="3">
+<li>隔墙法</li>
+</ol>
+<p>在两个盒子之间创建一个div添加clear:both;属性并且添加高度</p>
+<p>内墙法：将隔墙法的盒子建在第一个盒子后</p>
+<ol start="4">
+<li>overflow:hidden;表示溢出隐藏；所有溢出边框的内容都隐藏掉</li>
+</ol>
+<p>一个父亲不能被浮动的儿子撑出高，但是给父亲添加overflow:hidden;就可以被撑出高</p>
+<h5 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h5><p>有些属性，当给自身添加属性时其后代也拥有了该属性（color, text-开头,  line-开头,  font-开头）</p>
+<p>关于文字样式的都能继承，所有关于定位的，盒子的，布局的都不能继承</p>
+<h5 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h5><p>css处理冲突的能力</p>
+<p>属性相同时会被叠层掉相同的属性，权重高的显示（数一个盒子用的各种选择器数量  依次比较id选择器 ，类选择器 ， 标签选择器的数量）遇见逗号，相当于两个盒子</p>
+<p>权重一样谁在后显示谁，通过继承性继承的属性权重为零（如果全是零，谁描述的近听谁的）</p>
+<h5 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h5><p>如果三种样式同时控制我们的内容：行内优先级最高外部样式，内部样式：谁离着内容近，谁优先级高</p>
+<h4 id="CSS导入方式"><a href="#CSS导入方式" class="headerlink" title="CSS导入方式"></a>CSS导入方式</h4><h5 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h5><p>&lt;标记名 style=”属性1:属性值1; 属性2:属性值2; 属性3:属性值3;”&gt; 内容 &lt;/标记名&gt;</p>
+<h5 id="内嵌式"><a href="#内嵌式" class="headerlink" title="内嵌式"></a>内嵌式</h5><p>style type=”text/css”&gt;选择器 {属性1:属性值1; 属性2:属性值2; 属性3:属性值3;}</p>
+<h5 id="链入式"><a href="#链入式" class="headerlink" title="链入式"></a>链入式</h5><p>link href=”CSS文件的路径” type=”text/css” rel=”stylesheet” /&gt;链入式将所有的样式放在一个或多个以.css为扩展名的外部样式表文件中通过<link>标记将外部样式表文件链接到HTML文档中  href：定义所链接外部样式表文件的URL ；  type：定义所链接文档的类型 ；  rel：定义当前文档与被链接文档之间的关系</p>
+<h5 id="导入式"><a href="#导入式" class="headerlink" title="导入式"></a>导入式</h5><p> style type=”text/css” &gt;@import url(css文件路径);或 @import “css文件路径”;</p>
+<h4 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h4><p>{属性1:属性值1; 属性2:属性值2; 属性3:属性值3;}  属性与属性值间用冒号，多个属性之间用英文分号隔开，属性的值由多个单词组成且中间包含空格则必须为这个属性值加上英文状态下的引号。</p>
+<h5 id="标签-元素-选择器"><a href="#标签-元素-选择器" class="headerlink" title="标签(元素)选择器"></a>标签(元素)选择器</h5><p>标记名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }   使用:&lt;标记名&gt;内容&lt;/标记名&gt;</p>
+<h5 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h5><p>.类名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }  使用：</p><p class="类名"> 内容</p>     id选择器和类选择器的值不能以数字开头；用字母开头   a12   12a(不行)<p></p>
+<h5 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h5><p>#id名{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }  使用：<div id="id">内容 </div></p>
+<h5 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h5><p>*{属性1:属性值1; 属性2:属性值2; 属性3:属性值3; }</p>
+<h5 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h5><p>标签名[标签属性=’标签属性值’]{属性名：属性值；……}nowrap：空格空行无效，强制文本不能换行，除非遇到换行标记<br></p>
+<h5 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h5><p>父标签&gt;子标签{属性名:属性值;……} 设置后代元素的属性</p>
+<h5 id="后代元素选择器"><a href="#后代元素选择器" class="headerlink" title="后代元素选择器"></a>后代元素选择器</h5><p>父元素 后代元素{属性名:属性值;…… } 例如table b{属性名:属性值;…… }表示表格中所有b标签设置属性</p>
+<h5 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h5><p>标签1+标签2{属性名:属性值;…… } 标签1和标签2具有同一个父元素并且在父元素中相邻</p>
+<h5 id="一般兄弟选择器"><a href="#一般兄弟选择器" class="headerlink" title="一般兄弟选择器"></a>一般兄弟选择器</h5><p>标签1~标签2{属性名:属性值;…… } 标签1和标签2具有同一个父元素并且在父元素中相邻与相邻兄弟选择器区别在于匹配所有标签1后边的兄弟元素</p>
+<h5 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h5><p>一般为标签.类{属性名:属性值;…… }</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HTML</div>
+      <div>https://zhqblog.github.io/2019/11/16/HTML/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>倔强的小强</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2019年11月16日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/ZHQBlog.github.io.git/2020/11/13/JVM/" title="JVM">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JVM</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/ZHQBlog.github.io.git/js/events.js" ></script>
+<script  src="/ZHQBlog.github.io.git/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/ZHQBlog.github.io.git/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/ZHQBlog.github.io.git/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/ZHQBlog.github.io.git/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
