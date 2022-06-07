@@ -24,7 +24,7 @@
 <meta property="og:description" content="代理模式等等">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
-<meta property="article:modified_time" content="2022-02-03T11:58:48.227Z">
+<meta property="article:modified_time" content="2022-06-01T06:03:48.303Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
@@ -106,7 +106,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Home
+                Startseite
               </a>
             </li>
           
@@ -118,7 +118,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Archives
+                Archiv
               </a>
             </li>
           
@@ -130,7 +130,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Categories
+                Kategorien
               </a>
             </li>
           
@@ -142,7 +142,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Tags
+                Schlagwörter
               </a>
             </li>
           
@@ -154,7 +154,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                About
+                Über
               </a>
             </li>
           
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          978 words
+          3.1k wörter
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          9 mins
+          26 minuten
         
       </span>
     
@@ -263,28 +263,20 @@
             
             <div class="markdown-body">
               
-              <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>代理模式是指为其他对象提供的一种代理以控制这个对象的访问。代理对象可以在客户类和目标对象之间起到中介的作用</p>
-<h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><p>代理类时自己寿佛那个实现的，自己创建的一个java类表示代理类</p>
-<p>当接口中的功能增加或减少时会影响众多的实现类</p>
-<p>代理类：目标类中的方法的调用，功能的增强</p>
+              <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>代理对象可以在客户类和目标对象之间起到中介的作用，扩展目标对象的功能</p>
+<h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><p>在程序编译前就已经存在</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//定义接口和实现类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TestProxy</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestProxyImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">TestProxy</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;TestProxy&quot;</span>);<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment">//创建代理类同时实现这个接口</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StaticProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">TestProxy</span>&#123;<br><br>    <span class="hljs-comment">//目标对象</span><br>    <span class="hljs-keyword">final</span> TestProxy testProxy;<br><br>    <span class="hljs-comment">//通过构造方法传入目标对象</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">StaticProxy</span><span class="hljs-params">(TestProxy testProxy)</span> &#123;<br>        <span class="hljs-built_in">this</span>.testProxy = testProxy;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;调用TestProxy前&quot;</span>);<br>        testProxy.test();<br>        System.out.println(<span class="hljs-string">&quot;调用TestProxy后&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">//将目标对象注入代理类，执行代理类的方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">TestProxyImpl</span> <span class="hljs-variable">testProxy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TestProxyImpl</span>();<br>        <span class="hljs-type">StaticProxy</span> <span class="hljs-variable">staticProxy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StaticProxy</span>(testProxy);<br>        staticProxy.test();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><p>在程序执行过程中，使用JDK反射机制创建代理类对象，并动态的指定要代理的目标类</p>
-<h3 id="JDK动态代理"><a href="#JDK动态代理" class="headerlink" title="JDK动态代理"></a>JDK动态代理</h3><p>使用java反射包中的类和接口实现的动态代理的功能</p>
-<h4 id="InvocationHandler接口"><a href="#InvocationHandler接口" class="headerlink" title="InvocationHandler接口"></a>InvocationHandler接口</h4><p>接口中存在方法invoke()，表示代理对象要执行的功能代码，代理类要完成的功能就写在该方法中</p>
-<h4 id="Method类"><a href="#Method类" class="headerlink" title="Method类"></a>Method类</h4><p>通过Method类可以执行某个目标类中的方法，Method.invoke(目标对象， 要调用方法的参数)</p>
-<h4 id="Proxy类"><a href="#Proxy类" class="headerlink" title="Proxy类"></a>Proxy类</h4><p>创建代理对象，等同于静态代理中的new</p>
-<p>newProxyInstance(ClassLoader, Class[], InvocationHandler)</p>
-<p>ClassLoader：目标对象的类的类加载器</p>
-<p>Class[]：接口，目标对象实现的接口</p>
-<p>InvocationHandler：自己完成的代理类要实现的功能</p>
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>创建接口，定义目标类要完成的功能</p>
-<p>创建目标类并且实现接口</p>
-<p>创建InvocationHandler接口的实现类，在invoke()方法中完成代理类的功能（调用目标方法，功能增强）</p>
-<p>使用Proxy类的静态方法创建代理对象，并把返回值转换为接口类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//InvocationHandler实现类中的invoke()方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">invoke</span><span class="hljs-params">(目标对象, Method method, Object args[])</span>&#123;<br>	<span class="hljs-comment">//调用目标方法</span><br>    method.invoke(目标对象, args);<br>    <span class="hljs-comment">//功能增强</span><br>    <br>    <span class="hljs-keyword">return</span> 返回目标方法的执行结果;<br>&#125;<br><br><span class="hljs-comment">//调用的代理类</span><br><span class="hljs-comment">//创建动态代理对象</span><br>接口 proxy = (接口)Proxy.newProxyInstance(目标类.getClass().getClassLoader(),<br>                                        目标类.getClass().getInterfaces(),<br>                                        InvocationHandler);<br>proxy.sell();<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//定义接口和实现类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TestProxy</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestProxyImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">TestProxy</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;TestProxy&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//定义类实现InvocationHandler接口并实现invoke()方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDKDynamicProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">InvocationHandler</span> &#123;<br><br>    <span class="hljs-keyword">final</span> TestProxy testProxy;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">JDKDynamicProxy</span><span class="hljs-params">(TestProxy testProxy)</span> &#123;<br>        <span class="hljs-built_in">this</span>.testProxy = testProxy;<br>    &#125;<br><br>    <span class="hljs-comment">//会自动调用该方法</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> <span class="hljs-keyword">throws</span> Throwable &#123;<br>        System.out.println(<span class="hljs-string">&quot;方法调用前&quot;</span>);<br>        <span class="hljs-comment">//调用原始方法</span><br>        <span class="hljs-type">Object</span> <span class="hljs-variable">invoke</span> <span class="hljs-operator">=</span> method.invoke(testProxy, args);<br>        System.out.println(<span class="hljs-string">&quot;方法调用后&quot;</span>);<br><br>        <span class="hljs-keyword">return</span> invoke;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//获取代理对象</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">TestProxy</span> <span class="hljs-variable">testProxy</span> <span class="hljs-operator">=</span> <br>            <span class="hljs-comment">//loader：类加载器，用于加载代理对象</span><br>            <span class="hljs-comment">//interfaces：被代理类的实现接口</span><br>            <span class="hljs-comment">//h：实现InvocationHandler接口的实现类</span><br>            (TestProxy) Proxy.newProxyInstance(TestProxyImpl.class.getClassLoader(),<br>                TestProxyImpl.class.getInterfaces(),<br>                <span class="hljs-keyword">new</span> <span class="hljs-title class_">JDKDynamicProxy</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">TestProxyImpl</span>()));<br><br>        testProxy.test();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
 <h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><p>通过继承目标类创建它的子类，在子类中重写父类中同名的方法实现功能的修改</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//定义目标类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestProxyImpl</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;TestProxy&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//自定义类实现MethodInterceptor接口（方法拦截器）</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CglibDynamicProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">MethodInterceptor</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> o：被代理的对象</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> method：被拦截的方法</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> objects：方法参数</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> methodProxy：用那个与调用原始方法</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> Throwable</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">intercept</span><span class="hljs-params">(Object o, Method method, Object[] objects, MethodProxy methodProxy)</span> <span class="hljs-keyword">throws</span> Throwable &#123;<br><br>        System.out.println(<span class="hljs-string">&quot;调用方法前&quot;</span>+method.getName());<br>        <span class="hljs-type">Object</span> <span class="hljs-variable">invoke</span> <span class="hljs-operator">=</span> methodProxy.invokeSuper(o, objects);<br>        System.out.println(<span class="hljs-string">&quot;调用方法后&quot;</span>+method.getName());<br><br>        <span class="hljs-keyword">return</span> invoke;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//获取代理对象</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Enhancer</span> <span class="hljs-variable">enhancer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Enhancer</span>();<br>        <span class="hljs-comment">//设置类加载器</span><br>        enhancer.setClassLoader(TestProxyImpl.class.getClassLoader());<br>        <span class="hljs-comment">//设置被代理的类</span><br>        enhancer.setSuperclass(TestProxyImpl.class);<br>        <span class="hljs-comment">//设置拦截的方法</span><br>        enhancer.setCallback(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CglibDynamicProxy</span>());<br>        <span class="hljs-comment">//获取代理对象</span><br>        <span class="hljs-type">TestProxyImpl</span> <span class="hljs-variable">testProxy</span> <span class="hljs-operator">=</span> (TestProxyImpl) enhancer.create();<br>        testProxy.test();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
               
             </div>
@@ -307,19 +299,19 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>Beitragsautor</div>
           <div>倔强的小强</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
+          <div>Veröffentlicht am</div>
           <div>2022年1月30日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Licensed under</div>
+        <div>Urheberrechtshinweis</div>
         <div>
           
             
@@ -347,7 +339,7 @@
                       <a href="/2022/01/30/Spring5/" title="Spring5">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Spring5</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
@@ -356,7 +348,7 @@
                     
                       <a href="/2022/01/30/SpringMVC/" title="SpringMVC">
                         <span class="hidden-mobile">SpringMVC</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -375,7 +367,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -429,7 +421,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -437,7 +429,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -656,7 +648,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
   </noscript>
 </body>
 </html>
