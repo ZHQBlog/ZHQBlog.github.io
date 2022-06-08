@@ -23,14 +23,11 @@
 <meta property="og:site_name" content="小强的博客">
 <meta property="og:description" content="SpringMVC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/01/30/SpringMVC/01/30/SpringMVC/8df6a30e77184eb0bc1547dae5838f65.png">
-<meta property="og:image" content="http://example.com/2022/01/30/SpringMVC/01/30/SpringMVC/67d25736b3b74dfe9145acedb0e8656d.png">
 <meta property="article:published_time" content="2022-01-30T05:47:46.000Z">
-<meta property="article:modified_time" content="2022-06-07T07:34:23.753Z">
+<meta property="article:modified_time" content="2022-06-08T09:58:45.845Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/01/30/SpringMVC/01/30/SpringMVC/8df6a30e77184eb0bc1547dae5838f65.png">
   
   
   <title>SpringMVC - 小强的博客</title>
@@ -224,7 +221,7 @@
         
         
         
-          241 minuten
+          240 minuten
         
       </span>
     
@@ -278,8 +275,7 @@
 <p>MVC的工作流程：<br>用户通过视图层发送请求到服务器，在服务器中请求被Controller接收，Controller调用相应的Model层处理请求，处理完毕将结果返回到Controller，Controller再根据请求处理的结果找到相应的View视图，渲染数据后最终响应给浏览器</p>
 <h3 id="SpringMVC的特点"><a href="#SpringMVC的特点" class="headerlink" title="SpringMVC的特点"></a>SpringMVC的特点</h3><ul>
 <li><strong>Spring 家族原生产品</strong>，与 IOC 容器等基础设施无缝对接</li>
-<li><strong>基于原生的Servlet</strong>，通过了功能强大的<strong>前端控制器DispatcherServlet</strong>，对请求和响应进行统一处理</li>
-<li>表述层各细分领域需要解决的问题<strong>全方位覆盖</strong>，提供<strong>全面解决方案</strong></li>
+<li><strong>基于原生的Servlet</strong>，通过<strong>前端控制器DispatcherServlet</strong>对请求和响应进行统一处理</li>
 <li><strong>代码清新简洁</strong>，大幅度提升开发效率</li>
 <li>内部组件化程度高，可插拔式组件<strong>即插即用</strong>，想要什么功能配置相应组件即可</li>
 <li><strong>性能卓著</strong>，尤其适合现代大型、超大型互联网项目要求</li>
@@ -491,7 +487,6 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>HiddenHttpMethodFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.springframework.web.filter.HiddenHttpMethodFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>HiddenHttpMethodFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
-<p>目前为止，SpringMVC中提供了两个过滤器：CharacterEncodingFilter和HiddenHttpMethodFilter</p>
 <p>在web.xml中注册时，必须先注册CharacterEncodingFilter，再注册HiddenHttpMethodFilter</p>
 <p>原因：request.setCharacterEncoding(encoding) 方法要求前面不能有任何获取请求参数的操作</p>
 </blockquote>
@@ -513,7 +508,7 @@
 
 
 <h3 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h3><p>springMVC提供的一个复合注解，标识在控制器的类上，就相当于为类添加了@Controller注解，并且为其中的每个方法添加了@ResponseBody注解</p>
-<h3 id="处理json"><a href="#处理json" class="headerlink" title="处理json"></a>处理json</h3><p>在SpringMVC的核心配置文件中开启mvc的注解驱动，此时在HandlerAdaptor中会自动装配一个消息转换器：MappingJackson2HttpMessageConverter，可以将响应到浏览器的Java对象转换为Json格式的字符串</p>
+<h3 id="处理json"><a href="#处理json" class="headerlink" title="处理json"></a>处理json</h3><p>在SpringMVC的核心配置文件中开启mvc的注解驱动，此时在HandlerAdaptor中会自动装配一个消息转换器：<strong>MappingJackson2HttpMessageConverter</strong>，可以将响应到浏览器的Java对象转换为Json格式的字符串</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml">导入JSON依赖<br><span class="hljs-tag">&lt;<span class="hljs-name">mvc:annotation-driven</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testResponseUser&quot;)</span><br><span class="hljs-meta">@ResponseBody</span><br><span class="hljs-keyword">public</span> User <span class="hljs-title function_">testResponseUser</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">1001</span>,<span class="hljs-string">&quot;admin&quot;</span>,<span class="hljs-string">&quot;123456&quot;</span>,<span class="hljs-number">23</span>,<span class="hljs-string">&quot;男&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -610,36 +605,46 @@
 </ul>
 </li>
 </ul>
-<h3 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h3><ol>
-<li>用户向服务器发送请求，请求被SpringMVC 前端控制器 DispatcherServlet捕获。</li>
-<li>DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI），判断请求URI对应的映射：</li>
-</ol>
-<p>a) 不存在</p>
-<p>i. 再判断是否配置了mvc:default-servlet-handler</p>
-<p>ii. 如果没配置，则控制台报映射查找不到，客户端展示404错误</p>
-<img src="/2022/01/30/SpringMVC/01/30/SpringMVC/8df6a30e77184eb0bc1547dae5838f65.png" srcset="/img/loading.gif" lazyload class title="在这里插入图片描述">
-
-<p>iii. 如果有配置，则访问目标资源（一般为静态资源，如：JS,CSS,HTML），找不到客户端也会展示404错误</p>
-<img src="/2022/01/30/SpringMVC/01/30/SpringMVC/67d25736b3b74dfe9145acedb0e8656d.png" srcset="/img/loading.gif" lazyload class title="在这里插入图片描述">
-
-<p>b) 存在则执行下面的流程</p>
-<ol>
-<li>根据该URI，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain执行链对象的形式返回。</li>
-<li>DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter。</li>
-<li>如果成功获得HandlerAdapter，此时将开始执行拦截器的preHandler(…)方法【正向】</li>
-<li>提取Request中的模型数据，填充Handler入参，开始执行Handler（Controller)方法，处理请求。在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：</li>
-</ol>
-<p>a) HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息</p>
-<p>b) 数据转换：对请求消息进行数据转换。如String转换成Integer、Double等</p>
-<p>c) 数据格式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等</p>
-<p>d) 数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</p>
-<ol>
-<li>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象。</li>
-<li>此时将开始执行拦截器的postHandle(…)方法【逆向】。</li>
-<li>根据返回的ModelAndView（此时会判断是否存在异常：如果存在异常，则执行HandlerExceptionResolver进行异常处理）选择一个适合的ViewResolver进行视图解析，根据Model和View，来渲染视图。</li>
-<li>渲染视图完毕执行拦截器的afterCompletion(…)方法【逆向】。</li>
-<li>将渲染结果返回给客户端。</li>
-</ol>
+<h3 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h3><ul>
+<li><p>用户向服务器发送请求，请求被前端控制器<strong>DispatcherServlet</strong>捕获</p>
+</li>
+<li><p>DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI），判断请求URI对应的映射</p>
+<ul>
+<li>映射不存在<ul>
+<li>判断是否配置了<strong>mvc:default-servlet-handler</strong></li>
+<li>如果没配置，则控制台报映射查找不到，客户端展示404错误</li>
+<li>如果有配置，则访问目标资源（一般为静态资源，如：JS,CSS,HTML），找不到客户端展示404错误</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>根据该URI，调用<strong>HandlerMapping</strong>获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以<strong>HandlerExecutionChain</strong>执行链对象的形式返回</p>
+</li>
+<li><p>DispatcherServlet 根据获得的Handler，选择一个合适的<strong>HandlerAdapter</strong></p>
+</li>
+<li><p>如果成功获得HandlerAdapter，此时将开始执行拦截器的**preHandler()**方法（正向调用）</p>
+</li>
+<li><p>提取Request中的模型数据，填充Handler的形参，开始执行<strong>Handler</strong>(Controller)方法，处理请求。</p>
+</li>
+<li><p>在填充Handler的形参过程中，根据你的配置，Spring将帮你做一些额外的工作：</p>
+<ul>
+<li>HttpMessageConveter： 将请求消息转换成一个对象，将对象转换为指定的响应信息</li>
+<li>数据转换：对请求消息进行数据转换。如String转换成Integer、Double等</li>
+<li>数据格式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等</li>
+<li>数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</li>
+</ul>
+</li>
+<li><p>Handler执行完成后，向DispatcherServlet 返回一个<strong>ModelAndView</strong>对象</p>
+</li>
+<li><p>此时将开始执行拦截器的**postHandle()**方法（逆向调用）</p>
+</li>
+<li><p>根据返回的ModelAndView（此时判断是否存在异常：如果存在异常，则执行<strong>HandlerExceptionResolver</strong>进行异常处理）选择一个适合的<strong>ViewResolver</strong>进行视图解析，根据Model和View，来渲染视图</p>
+</li>
+<li><p>渲染视图完毕执行拦截器的**afterCompletion()**方法（逆向调用）</p>
+</li>
+<li><p>将渲染结果返回给客户端</p>
+</li>
+</ul>
 
               
             </div>
