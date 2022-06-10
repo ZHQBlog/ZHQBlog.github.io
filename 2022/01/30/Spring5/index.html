@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/01/30/Spring5/01/30/Spring5/20210807143733.png">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
-<meta property="article:modified_time" content="2022-06-04T09:20:20.593Z">
+<meta property="article:modified_time" content="2022-06-10T01:23:47.864Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
@@ -309,7 +309,7 @@
 
 
 <h5 id="属性值包含特殊符号"><a href="#属性值包含特殊符号" class="headerlink" title="属性值包含特殊符号"></a>属性值包含特殊符号</h5><p>因为包含特殊符号，需要通过 <code>&lt;![CDATA[值]]&gt;</code> 来表示</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.entity.User&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;userName&quot;</span>&gt;</span> <br>        &lt;![CDATA[&lt;狗子&gt;]]&gt;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;user&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.entity.User&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;userName&quot;</span>&gt;</span> <br>       <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>&lt;![CDATA[&lt;狗子&gt;]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
