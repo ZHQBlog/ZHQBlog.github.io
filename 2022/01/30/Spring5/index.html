@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/01/30/Spring5/20210807143733.png">
 <meta property="article:published_time" content="2022-01-30T05:47:47.000Z">
-<meta property="article:modified_time" content="2022-06-11T10:02:22.725Z">
+<meta property="article:modified_time" content="2022-06-12T08:40:33.119Z">
 <meta property="article:author" content="倔强的小强">
 <meta property="article:tag" content="倔强的小强">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
         
         
         
-          373 minuten
+          374 minuten
         
       </span>
     
@@ -535,32 +535,32 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>PROPAGATION_REQUIRED（Spring默认）</td>
-<td>指定方法必须在事务内执行，若存在事务就加入到当前事务，若不存在事务则创建新事务</td>
-</tr>
-<tr>
-<td>PROPAGATION_REQUIRES_NEW</td>
-<td>指定方法支持当前事务，若没有事务也可以执行</td>
-</tr>
-<tr>
-<td>PROPAGATION_SUPPORTS</td>
-<td>执行方法新建一个事务，若存在当前事务则挂起该事务，直到新建的事务执行完毕</td>
+<td><strong>PROPAGATION_REQUIRED</strong>（Spring默认）</td>
+<td><strong>支持当前事务，如果当前没有事务，就新建一个事务</strong></td>
 </tr>
 <tr>
 <td>PROPAGATION_MANDATORY</td>
-<td></td>
+<td>支持当前事务，如果当前没有事务，就抛出异常</td>
+</tr>
+<tr>
+<td>PROPAGATION_SUPPORTS</td>
+<td>支持当前事务，如果当前没有事务，以非事务方式执行</td>
+</tr>
+<tr>
+<td><strong>PROPAGATION_REQUIRES_NEW</strong></td>
+<td><strong>新建事务，如果当前存在事务，把当前事务挂起</strong></td>
 </tr>
 <tr>
 <td>PROPAGATION_NESTED</td>
-<td></td>
+<td>如果当前存在事务，嵌套事务内执行，没有事务则新建</td>
 </tr>
 <tr>
 <td>PROPAGATION_NEVER</td>
-<td></td>
+<td>非事务方式运行，如果当前存在事务，就抛出异常</td>
 </tr>
 <tr>
 <td>PROPAGATION_NOT_SUPPORTED</td>
-<td></td>
+<td>非事务方式运行，如果当前存在事务，把当前事务挂起</td>
 </tr>
 </tbody></table>
 <p><strong>isolation</strong>：事务隔离级别</p>
@@ -625,11 +625,11 @@
 <p><strong>声明事务管理器对象</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--声明事务管理器--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;transactionManager&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--指定数据源，连接的数据库--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dataSource&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;myDataSource&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><strong>声明方法需要的事务类型（配置方法的事务属性【隔离级别，传播行为，超时】）</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">    声明业务方法（隔离级别，传播行为，超时时间）</span><br><span class="hljs-comment">    transaction-manager：指定事务管理器对象</span><br><span class="hljs-comment">--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tx:advice</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myAdvice&quot;</span> <span class="hljs-attr">transaction-manager</span>=<span class="hljs-string">&quot;transactionManager&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--tx:attributes：配置事务属性--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tx:attributes</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">            tx:method：给具体方法配置事务属性（可以有多个）</span><br><span class="hljs-comment">            name：方法名称（完整的方法名，不带包名和类名；可以使用通配符*）</span><br><span class="hljs-comment">            propagation：传播行为</span><br><span class="hljs-comment">            isolation：隔离级别</span><br><span class="hljs-comment">        --&gt;</span><br>        <span class="hljs-comment">&lt;!--添加--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;add*&quot;</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">&quot;REQUIRES_NEW&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--修改--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;modify*&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--删除--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;remove*&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--查询--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;*&quot;</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">&quot;SUPPORTS&quot;</span> <span class="hljs-attr">read-only</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tx:attributes</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tx:advice</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
 <p><strong>指定哪些类要创建代理使用事务</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">        配置切入点表达式，指定哪些包中的类要使用事务</span><br><span class="hljs-comment">        id：切入点表达式名称</span><br><span class="hljs-comment">        expression：切入点表达式，指定哪些类要使用事务</span><br><span class="hljs-comment">    --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;servicePt&quot;</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;execution(* *..service..*.*(..))&quot;</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">        配置切面</span><br><span class="hljs-comment">        advice-ref：通知</span><br><span class="hljs-comment">        pointcut-ref：切入点表达式</span><br><span class="hljs-comment">    --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">aop:advisor</span> <span class="hljs-attr">advice-ref</span>=<span class="hljs-string">&quot;myAdvice&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;servicePt&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>声明方法需要的事务类型（配置方法的事务属性【隔离级别，传播行为，超时】）</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">    设置事务方法的属性（隔离级别，传播行为，超时时间）</span><br><span class="hljs-comment">    transaction-manager：指定事务管理器对象</span><br><span class="hljs-comment">--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tx:advice</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myAdvice&quot;</span> <span class="hljs-attr">transaction-manager</span>=<span class="hljs-string">&quot;transactionManager&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--tx:attributes：配置事务属性--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tx:attributes</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">            tx:method：给具体方法配置事务属性（可以有多个）</span><br><span class="hljs-comment">            name：方法名称（完整的方法名，不带包名和类名；可以使用通配符*）</span><br><span class="hljs-comment">            propagation：传播行为</span><br><span class="hljs-comment">            isolation：隔离级别</span><br><span class="hljs-comment">        --&gt;</span><br>        <span class="hljs-comment">&lt;!--添加--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;add*&quot;</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">&quot;REQUIRES_NEW&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--修改--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;modify*&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--删除--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;remove*&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!--查询--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;*&quot;</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">&quot;SUPPORTS&quot;</span> <span class="hljs-attr">read-only</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tx:attributes</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tx:advice</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -752,9 +752,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">
+                      <a href="/2022/01/30/Mybatis/" title="MyBatis">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">设计模式</span>
+                        <span class="hidden-mobile">MyBatis</span>
                         <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
@@ -762,8 +762,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/30/SpringMVC/" title="SpringMVC">
-                        <span class="hidden-mobile">SpringMVC</span>
+                      <a href="/2022/01/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">
+                        <span class="hidden-mobile">设计模式</span>
                         <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
